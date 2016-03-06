@@ -1,3 +1,5 @@
 #!/usr/bin/env zsh
 
-nvim -u "$VIMPATH/.vimrc" "$@"
+export MYVIMRC="$VIMPATH/.vimrc"
+
+nvim -u "$MYVIMRC" "$@"

@@ -1,0 +1,54 @@
+[alias]
+  co                = checkout
+  count             = !git shortlog -sn
+  tree              = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+
+[apply]
+  whitespace = nowarn
+
+[color]
+  diff        = auto
+  status      = auto
+  branch      = auto
+  ui          = true
+  interactive = auto
+
+[core]
+  excludesfile = $DOTFILES/git/global.gitignore
+  editor       = vim
+
+[diff]
+  tool = Kaleidoscope
+
+[difftool]
+  prompt = false
+
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[help]
+  autocorrect = 1
+
+[merge]
+  tool = Kaleidoscope
+
+[mergetool]
+  keepBackup = false
+
+[mergetool "Kaleidoscope"]
+  cmd           = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+
+[user]
+  name = Lee Henson
+  email = lee.m.henson@gmail.com
+  helper = osxkeychain
+
+[heroku]
+  account = personal
+
+[push]
+  default = current
+
+[pull]
+  rebase = true

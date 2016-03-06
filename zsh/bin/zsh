@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
 export DOTFILES="$HOME/.dotfiles"
+export PRIVATE_DOTFILES="$HOME/.private-dotfiles"
+
 export PATH="/usr/local/bin:$PATH"
 export ZDOTDIR="$DOTFILES/zsh"
 
