@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+export DOTFILES="$HOME/.dotfiles"
+export PATH="/usr/local/bin:$PATH"
+export ZDOTDIR="$DOTFILES/zsh"
+
+zsh "$@"
