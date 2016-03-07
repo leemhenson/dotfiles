@@ -14,7 +14,7 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 source ~/.zplug/zplug
 
 zplug "plugins/git", from:oh-my-zsh
-zplug "junegunn/fzf-bin", as:command, from:gh-r, file:fzf, of:"*darwin*amd64*"
+# zplug "junegunn/fzf-bin", as:command, from:gh-r, file:fzf, of:"*darwin*amd64*"
 
 zplug "djui/alias-tips", nice:11
 zplug "willghatch/zsh-saneopt"
@@ -58,3 +58,5 @@ if [[ -d $PRIVATE_DOTFILES ]]; then
     source "$file"
   done
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

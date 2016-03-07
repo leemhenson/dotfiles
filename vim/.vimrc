@@ -19,7 +19,9 @@ Plug 'gregsexton/gitv'
 Plug 'hashivim/vim-terraform'
 Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle'
-Plug 'junkblocker/unite-codesearch'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
+Plug 'junegunn/fzf.vim'
+"Plug 'junkblocker/unite-codesearch'
 Plug 'luochen1990/rainbow'
 Plug 'matze/vim-move'
 Plug 'mhinz/vim-startify'
@@ -30,9 +32,9 @@ Plug 'peterhorne/tabline.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'Shougo/deoplete.nvim'
-Plug 'Shougo/neomru.vim'
-Plug 'Shougo/neoyank.vim'
-Plug 'Shougo/unite.vim'
+"Plug 'Shougo/neomru.vim'
+"Plug 'Shougo/neoyank.vim'
+"Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sjl/gundo.vim'
 Plug 'syngan/vim-vimlint' | Plug 'ynkdir/vim-vimlparser'
@@ -43,9 +45,9 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-vinegar'
-Plug 'tsukkee/unite-tag'
+"Plug 'tsukkee/unite-tag'
 Plug 'tpope/vim-surround'
-Plug 'ujihisa/unite-colorscheme'
+"Plug 'ujihisa/unite-colorscheme'
 Plug 'w0ng/vim-hybrid'
 
 " Add plugins to &runtimepath
@@ -173,41 +175,46 @@ let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', ''''
 " Blockle
 let g:blockle_mapping = '<Leader>d'
 
-" Unite
-call unite#filters#matcher_default#use(['matcher_context'])
-call unite#filters#sorter_default#use(['sorter_rank'])
+" fzf
+map <Leader>m <plug>(fzf-maps-n)
+" map <Leader>mi <plug>(fzf-maps-i)
+" map <Leader>mv <plug>(fzf-maps-x)
 
-let g:unite_source_menu_menus = {}
-let g:unite_source_menu_menus.git = {}
+" " Unite
+" call unite#filters#matcher_default#use(['matcher_context'])
+" call unite#filters#sorter_default#use(['sorter_rank'])
 
-let g:unite_source_menu_menus.git.command_candidates = [
-    \['▷ git status       (Fugitive)', 'Gstatus'],
-    \['▷ git diff         (Fugitive)', 'Gdiff'],
-    \['▷ git log          (Fugitive)', 'exe "silent Glog | Unite quickfix"'],
-    \['▷ git blame        (Fugitive)', 'Gblame'],
-    \['▷ git push         (Fugitive)', 'Git! push'],
-    \['▷ git pull         (Fugitive)', 'Git! pull'],
-    \]
+" let g:unite_source_menu_menus = {}
+" let g:unite_source_menu_menus.git = {}
 
-nnoremap <Leader>a :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=tags tag<cr>
-nnoremap <Leader>b :Unite -direction=dynamicbottom -start-insert -buffer-name=buffers buffer<cr>
-nnoremap <Leader>c :Unite -direction=dynamicbottom -start-insert -buffer-name=commands command<cr>
-nnoremap <Leader>C :Unite -direction=dynamicbottom -start-insert -buffer-name=commands colorscheme<cr>
-nnoremap <Leader>f :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=files file_rec/async:!<cr>
-nnoremap <Leader>g :Unite -direction=dynamicbottom -start-insert -buffer-name=gitfiles file_rec/git<cr>
-nnoremap <Leader>m :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=mappings mapping<cr>
-nnoremap <Leader>r :UniteResume<cr>
-nnoremap <Leader>s :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=tehcodez codesearch<cr>
-nnoremap <Leader>t :Unite -force-redraw -direction=dynamicbottom -buffer-name=todos todo<cr>
-nnoremap <Leader>v :Unite -direction=dynamicbottom -start-insert menu:git<cr>
-nnoremap <Leader>y :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=yanks history/yank<cr>
-nnoremap <Leader>/ :Unite -force-redraw -direction=dynamicbottom -buffer-name=greps grep:.<cr>
+" let g:unite_source_menu_menus.git.command_candidates = [
+"     \['▷ git status       (Fugitive)', 'Gstatus'],
+"     \['▷ git diff         (Fugitive)', 'Gdiff'],
+"     \['▷ git log          (Fugitive)', 'exe "silent Glog | Unite quickfix"'],
+"     \['▷ git blame        (Fugitive)', 'Gblame'],
+"     \['▷ git push         (Fugitive)', 'Git! push'],
+"     \['▷ git pull         (Fugitive)', 'Git! pull'],
+"     \]
 
-autocmd FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()
-  imap <silent><buffer><expr> <C-h> unite#do_action('split')
-  imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-endfunction
+" nnoremap <Leader>a :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=tags tag<cr>
+" nnoremap <Leader>b :Unite -direction=dynamicbottom -start-insert -buffer-name=buffers buffer<cr>
+" nnoremap <Leader>c :Unite -direction=dynamicbottom -start-insert -buffer-name=commands command<cr>
+" nnoremap <Leader>C :Unite -direction=dynamicbottom -start-insert -buffer-name=commands colorscheme<cr>
+" nnoremap <Leader>f :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=files file_rec/async:!<cr>
+" nnoremap <Leader>g :Unite -direction=dynamicbottom -start-insert -buffer-name=gitfiles file_rec/git<cr>
+" nnoremap <Leader>m :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=mappings mapping<cr>
+" nnoremap <Leader>r :UniteResume<cr>
+" nnoremap <Leader>s :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=tehcodez codesearch<cr>
+" nnoremap <Leader>t :Unite -force-redraw -direction=dynamicbottom -buffer-name=todos todo<cr>
+" nnoremap <Leader>v :Unite -direction=dynamicbottom -start-insert menu:git<cr>
+" nnoremap <Leader>y :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=yanks history/yank<cr>
+" nnoremap <Leader>/ :Unite -force-redraw -direction=dynamicbottom -buffer-name=greps grep:.<cr>
+
+" autocmd FileType unite call s:unite_my_settings()
+" function! s:unite_my_settings()
+"   imap <silent><buffer><expr> <C-h> unite#do_action('split')
+"   imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+" endfunction
 
 " JSX
 let g:jsx_ext_required = 0
