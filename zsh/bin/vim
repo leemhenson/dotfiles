@@ -2,4 +2,7 @@
 
 export MYVIMRC="$VIMPATH/.vimrc"
 
+# fixes the <C-h> mangling bug in neovim
+export TERMINFO="$HOME/.terminfo"
+
 nvim -u "$MYVIMRC" "$@"
