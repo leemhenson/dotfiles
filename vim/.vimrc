@@ -21,7 +21,6 @@ Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
-"Plug 'junkblocker/unite-codesearch'
 Plug 'luochen1990/rainbow'
 Plug 'matze/vim-move'
 Plug 'mhinz/vim-startify'
@@ -32,9 +31,6 @@ Plug 'peterhorne/tabline.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'Shougo/deoplete.nvim'
-"Plug 'Shougo/neomru.vim'
-"Plug 'Shougo/neoyank.vim'
-"Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sjl/gundo.vim'
 Plug 'syngan/vim-vimlint' | Plug 'ynkdir/vim-vimlparser'
@@ -45,9 +41,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-vinegar'
-"Plug 'tsukkee/unite-tag'
 Plug 'tpope/vim-surround'
-"Plug 'ujihisa/unite-colorscheme'
 Plug 'w0ng/vim-hybrid'
 
 " Add plugins to &runtimepath
@@ -176,45 +170,39 @@ let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', ''''
 let g:blockle_mapping = '<Leader>d'
 
 " fzf
-map <Leader>m <plug>(fzf-maps-n)
-" map <Leader>mi <plug>(fzf-maps-i)
-" map <Leader>mv <plug>(fzf-maps-x)
+let g:fzf_command_prefix = 'Fzf'
 
-" " Unite
-" call unite#filters#matcher_default#use(['matcher_context'])
-" call unite#filters#sorter_default#use(['sorter_rank'])
+imap <Leader>m <plug>(fzf-maps-i)
+nmap <Leader>m <plug>(fzf-maps-n)
+omap <Leader>m <plug>(fzf-maps-o)
+xmap <Leader>m <plug>(fzf-maps-x)
 
-" let g:unite_source_menu_menus = {}
-" let g:unite_source_menu_menus.git = {}
+imap <Leader>cb <plug>(fzf-complete-buffer-line)
+imap <Leader>cf <plug>(fzf-complete-file)
+imap <Leader>cg <plug>(fzf-complete-file-ag)
+imap <Leader>cl <plug>(fzf-complete-line)
+imap <Leader>cp <plug>(fzf-complete-path)
+imap <Leader>cw <plug>(fzf-complete-word)
 
-" let g:unite_source_menu_menus.git.command_candidates = [
-"     \['▷ git status       (Fugitive)', 'Gstatus'],
-"     \['▷ git diff         (Fugitive)', 'Gdiff'],
-"     \['▷ git log          (Fugitive)', 'exe "silent Glog | Unite quickfix"'],
-"     \['▷ git blame        (Fugitive)', 'Gblame'],
-"     \['▷ git push         (Fugitive)', 'Git! push'],
-"     \['▷ git pull         (Fugitive)', 'Git! pull'],
-"     \]
+fun! s:fzf_root()
+  let path = finddir(".git", expand("%:p:h").";")
+  return fnamemodify(substitute(path, ".git", "", ""), ":p:h")
+endfun
 
-" nnoremap <Leader>a :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=tags tag<cr>
-" nnoremap <Leader>b :Unite -direction=dynamicbottom -start-insert -buffer-name=buffers buffer<cr>
-" nnoremap <Leader>c :Unite -direction=dynamicbottom -start-insert -buffer-name=commands command<cr>
-" nnoremap <Leader>C :Unite -direction=dynamicbottom -start-insert -buffer-name=commands colorscheme<cr>
-" nnoremap <Leader>f :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=files file_rec/async:!<cr>
-" nnoremap <Leader>g :Unite -direction=dynamicbottom -start-insert -buffer-name=gitfiles file_rec/git<cr>
-" nnoremap <Leader>m :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=mappings mapping<cr>
-" nnoremap <Leader>r :UniteResume<cr>
-" nnoremap <Leader>s :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=tehcodez codesearch<cr>
-" nnoremap <Leader>t :Unite -force-redraw -direction=dynamicbottom -buffer-name=todos todo<cr>
-" nnoremap <Leader>v :Unite -direction=dynamicbottom -start-insert menu:git<cr>
-" nnoremap <Leader>y :Unite -force-redraw -direction=dynamicbottom -start-insert -buffer-name=yanks history/yank<cr>
-" nnoremap <Leader>/ :Unite -force-redraw -direction=dynamicbottom -buffer-name=greps grep:.<cr>
-
-" autocmd FileType unite call s:unite_my_settings()
-" function! s:unite_my_settings()
-"   imap <silent><buffer><expr> <C-h> unite#do_action('split')
-"   imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-" endfunction
+nnoremap <Leader>: :FzfCommands<cr>
+nnoremap <Leader>a :FzfAg<tab>
+nnoremap <Leader>b :FzfBuffers<cr>
+nnoremap <Leader>c :FzfTags<tab>
+nnoremap <Leader>f :exe 'FzfFiles ' . <SID>fzf_root()<CR>
+nnoremap <Leader>fc :FzfColors<cr>
+nnoremap <Leader>fl :FzfLocate<tab>
+nnoremap <Leader>g :FzfGitFiles<cr>
+nnoremap <Leader>gc :FzfCommits<cr>
+nnoremap <Leader>h :FzfHistory<cr>
+nnoremap <Leader>hc :FzfHistory:<cr>
+nnoremap <Leader>hs :FzfHistory/<cr>
+nnoremap <Leader>ht :FzfHelptags<cr>
+nnoremap <Leader>l :FzfLines<cr>
 
 " JSX
 let g:jsx_ext_required = 0
