@@ -8,30 +8,23 @@ bindkey -v
 
 export CLICOLOR=true
 export EDITOR=vim
-export ENHANCD_FILTER=fzf
 export KEYTIMEOUT=1
 export LSCOLORS="exfxcxdxbxegedabagacad"
 
 source ~/.zplug/zplug
 
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/vi-mode", from:oh-my-zsh
-
-zplug "junegunn/fzf-bin", \
-    as:command, \
-    from:gh-r, \
-    file:fzf, \
-    of:"*darwin*amd64*"
+zplug "junegunn/fzf-bin", as:command, from:gh-r, file:fzf, of:"*darwin*amd64*"
 
 zplug "djui/alias-tips", nice:11
-zplug "hchbaw/zce.zsh", of:zce.zsh
 zplug "willghatch/zsh-saneopt"
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "zsh-users/zsh-completions", nice:11
-zplug "zsh-users/zsh-history-substring-search", nice:12
 
 zplug "$DOTFILES/zsh/plugins/chruby", from:local, of:chruby.zsh
 zplug "$DOTFILES/zsh/plugins/dirpersist", from:local, of:dirpersist.zsh
+zplug "$DOTFILES/zsh/plugins/fzf", from:local, of:fzf.zsh
+zplug "$DOTFILES/zsh/plugins/editcommand", from:local, of:editcommand.zsh
 zplug "$DOTFILES/zsh/themes", from:local, of:"garyblessington.zsh-theme"
 
 # Install plugins if there are plugins that have not been installed
@@ -43,19 +36,6 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
-
-
-# history-substring-search
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
-# zce
-bindkey "^E" zce
 
 
 # aliases
