@@ -42,7 +42,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
-zplug load --verbose
+zplug load
 
 
 # history-substring-search
