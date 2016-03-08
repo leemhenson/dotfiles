@@ -11,7 +11,7 @@ call plug#begin('$DOTFILES/vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'artnez/vim-wipeout'
 Plug 'benekastah/neomake'
-Plug 'bling/vim-airline'
+Plug 'bronson/vim-crosshairs'
 Plug 'Chiel92/vim-autoformat'
 Plug 'djoshea/vim-autoread'
 Plug 'easymotion/vim-easymotion'
@@ -44,18 +44,21 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'w0ng/vim-hybrid'
-Plug 'znake/znake-vim'
 
 " Add plugins to &runtimepath
 call plug#end()
 
 filetype plugin indent on    " required
+syntax enable
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme hybrid
-syntax enable
 set guifont=Inconsolata
+let g:airline_theme='hybridline'
 
 " More frequent updates for, e.g. signs.
 set updatetime=750
@@ -67,8 +70,8 @@ set laststatus=2
 set mouse=a
 
 " Highlight current line
-set cul
-highlight CursorLine ctermbg=232
+:set cursorline
+highlight CursorLine cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NON
 
 " Line numbers
 set nu
