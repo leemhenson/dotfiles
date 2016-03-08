@@ -41,11 +41,14 @@ alias hc='heroku config "$@"'
 alias hcp='hc -r production "$@"'
 alias hcs='hc -r staging "$@"'
 alias hlt='heroku logs --tail "$@"'
-alias hrb='heroku run bash "$@"'
 alias hltp='hlt -r production "$@"'
 alias hlts='hlt -r staging "$@"'
+alias hrb='heroku run bash "$@"'
 alias hrbp='hrb -r production "$@"'
 alias hrbs='hrb -r staging "$@"'
+alias hrc='heroku run rails console "$@"'
+alias hrcp='hrc -r production "$@"'
+alias hrcs='hrc -r staging "$@"'
 
 # source private scripts
 if [[ -d $PRIVATE_DOTFILES ]]; then
