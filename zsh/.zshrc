@@ -41,6 +41,7 @@ zplug load
 # aliases
 alias ls='ls -alh'
 alias bu='bundle update'
+alias gt='git tree'
 alias hc='heroku config "$@"'
 alias hcp='hc -r production "$@"'
 alias hcs='hc -r staging "$@"'
