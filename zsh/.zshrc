@@ -19,7 +19,7 @@ zplug "zsh-users/zsh-completions", nice:11
 zplug "$DOTFILES/zsh/plugins/chruby", from:local, of:chruby.zsh
 zplug "$DOTFILES/zsh/plugins/dirpersist", from:local, of:dirpersist.zsh
 zplug "$DOTFILES/zsh/plugins/editcommand", from:local, of:editcommand.zsh, nice:13
-zplug "$DOTFILES/zsh/plugins/fzf", from:local, of:fzf.zsh
+zplug "$DOTFILES/zsh/plugins/fzf", from:local, of:fzf.zsh, nice:14
 zplug "$DOTFILES/zsh/plugins/vi-mode", from:local, of:"vi-mode.zsh", nice:12
 zplug "$DOTFILES/zsh/themes", from:local, of:"garyblessington.zsh-theme"
 
