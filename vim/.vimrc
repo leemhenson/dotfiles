@@ -9,6 +9,7 @@ set rtp^=$DOTFILES/vim
 call plug#begin('$DOTFILES/vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'artnez/vim-wipeout'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'Chiel92/vim-autoformat'
