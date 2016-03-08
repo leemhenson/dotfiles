@@ -46,6 +46,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'w0ng/vim-hybrid'
+Plug 'znake/znake-vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -67,6 +68,7 @@ set mouse=a
 
 " Highlight current line
 set cul
+highlight CursorLine ctermbg=232
 
 " Line numbers
 set nu
