@@ -170,7 +170,7 @@ let g:airline_section_z=''
 let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
 
 " Blockle
-map ∫ <Plug>BlockToggle
+let g:blockle_mapping="∫"
 
 " fzf
 let g:fzf_command_prefix = 'Fzf'
