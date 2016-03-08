@@ -13,21 +13,22 @@ Plug 'artnez/vim-wipeout'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'Chiel92/vim-autoformat'
-Plug 'craigemery/vim-autotag'
 Plug 'djoshea/vim-autoread'
 Plug 'easymotion/vim-easymotion'
-Plug 'gregsexton/gitv'
-Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'janko-m/vim-test'
-Plug 'jgdavey/vim-blockle'
+Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-fnr'
+Plug 'junegunn/vim-oblique' | Plug 'junegunn/vim-pseudocl'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'luochen1990/rainbow'
 Plug 'matze/vim-move'
 Plug 'mhinz/vim-startify'
-Plug 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'peterhorne/tabline.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Raimondi/delimitMate'
@@ -43,6 +44,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'w0ng/vim-hybrid'
 
 " Add plugins to &runtimepath
@@ -168,7 +170,7 @@ let g:airline_section_z=''
 let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
 
 " Blockle
-let g:blockle_mapping = '<Leader>d'
+map ∫ <Plug>BlockToggle
 
 " fzf
 let g:fzf_command_prefix = 'Fzf'
