@@ -192,17 +192,17 @@ endfun
 nnoremap <Leader>: :FzfCommands<cr>
 nnoremap <Leader>a :FzfAg<tab>
 nnoremap <Leader>b :FzfBuffers<cr>
-nnoremap <Leader>c :FzfTags<tab>
-nnoremap <Leader>f :exe 'FzfFiles ' . <SID>fzf_root()<CR>
+nnoremap <Leader>ff :exe 'FzfFiles ' . <SID>fzf_root()<CR>
 nnoremap <Leader>fc :FzfColors<cr>
 nnoremap <Leader>fl :FzfLocate<tab>
-nnoremap <Leader>g :FzfGitFiles<cr>
+nnoremap <Leader>gf :FzfGitFiles<cr>
 nnoremap <Leader>gc :FzfCommits<cr>
-nnoremap <Leader>h :FzfHistory<cr>
+nnoremap <Leader>hh :FzfHistory<cr>
 nnoremap <Leader>hc :FzfHistory:<cr>
 nnoremap <Leader>hs :FzfHistory/<cr>
 nnoremap <Leader>ht :FzfHelptags<cr>
 nnoremap <Leader>l :FzfLines<cr>
+nnoremap <Leader>t :FzfTags<tab>
 
 " JSX
 let g:jsx_ext_required = 0
