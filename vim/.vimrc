@@ -22,6 +22,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-fnr'
 Plug 'junegunn/vim-oblique' | Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/vim-peekaboo'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'luochen1990/rainbow'
 Plug 'matze/vim-move'
