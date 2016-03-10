@@ -9,6 +9,7 @@ set rtp^=$DOTFILES/vim
 call plug#begin('$DOTFILES/vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'ajh17/VimCompletesMe'
 Plug 'artnez/vim-wipeout'
 Plug 'benekastah/neomake'
 Plug 'bronson/vim-crosshairs'
@@ -20,11 +21,10 @@ Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-fnr'
+Plug 'junegunn/vim-fnr' | Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-oblique' | Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-peekaboo'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'luochen1990/rainbow'
 Plug 'matze/vim-move'
 Plug 'mhinz/vim-startify'
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
@@ -33,7 +33,6 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'peterhorne/tabline.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Raimondi/delimitMate'
-Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sjl/gundo.vim'
 Plug 'syngan/vim-vimlint' | Plug 'ynkdir/vim-vimlparser'
@@ -59,7 +58,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme hybrid
 set guifont=Inconsolata
-let g:airline_theme='hybridline'
+let g:airline_theme='dark'
 
 " More frequent updates for, e.g. signs.
 set updatetime=750
@@ -121,7 +120,7 @@ set splitright
 set splitbelow
 
 " Number of lines to show around cursor
-set scrolloff=10
+set scrolloff=20
 
 " Hide current mode in command bar
 set noshowmode
@@ -200,18 +199,17 @@ endfun
 
 nnoremap <Leader>: :FzfCommands<cr>
 nnoremap <Leader>a :FzfAg<tab>
-nnoremap <Leader>b :FzfBuffers<cr>
-nnoremap <Leader>ff :exe 'FzfFiles ' . <SID>fzf_root()<CR>
+nnoremap <Leader>fb :FzfBuffers<cr>
 nnoremap <Leader>fc :FzfColors<cr>
-nnoremap <Leader>fl :FzfLocate<tab>
-nnoremap <Leader>gf :FzfGitFiles<cr>
-nnoremap <Leader>gc :FzfCommits<cr>
-nnoremap <Leader>hh :FzfHistory<cr>
+nnoremap <Leader>ff :exe 'FzfFiles ' . <SID>fzf_root()<CR>
+nnoremap <Leader>fg :FzfGitFiles<cr>
+nnoremap <Leader>fh :FzfHelptags<cr>
+nnoremap <Leader>fl :FzfLines<cr>
+nnoremap <Leader>fo :FzfCommits<cr>
+nnoremap <Leader>ft :FzfTags<tab>
 nnoremap <Leader>hc :FzfHistory:<cr>
+nnoremap <Leader>hh :FzfHistory<cr>
 nnoremap <Leader>hs :FzfHistory/<cr>
-nnoremap <Leader>ht :FzfHelptags<cr>
-nnoremap <Leader>l :FzfLines<cr>
-nnoremap <Leader>t :FzfTags<tab>
 
 " JSX
 let g:jsx_ext_required = 0
@@ -228,10 +226,10 @@ nmap <C-o> <Plug>MoveLineDown
 nmap <C-p> <Plug>MoveLineUp
 
 " Deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#max_list = 5
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#max_list = 5
 
-call deoplete#custom#set('_', 'matchers', ['matcher_head'])
+" call deoplete#custom#set('_', 'matchers', ['matcher_head'])
 
 " vim-test
 let test#ruby#bundle_exec = 0
@@ -275,5 +273,3 @@ let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']
 
 let g:startify_custom_header = map(split(system('fortune -s | cowsay'), '\n'), '"   ". v:val') + ['','']
 
-" Rainbow
-let g:rainbow_active = 1
