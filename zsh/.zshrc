@@ -12,6 +12,7 @@ source ~/.zplug/zplug
 
 zplug "djui/alias-tips", nice:11
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/z", from:oh-my-zsh
 zplug "willghatch/zsh-saneopt"
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "zsh-users/zsh-completions", nice:11
