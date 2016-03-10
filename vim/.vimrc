@@ -268,7 +268,7 @@ autocmd BufWinEnter,WinEnter term://* startinsert
 nnoremap <Leader>u :GundoToggle<cr>
 
 " Startify
-let g:startify_session_dir = "$PRIVATE_DOTFILES/vim/sessions"
+let g:startify_session_dir = "$HOME/icloud/docs/work/vim-sessions"
 let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']
 
 let g:startify_custom_header = map(split(system('fortune -s | cowsay'), '\n'), '"   ". v:val') + ['','']
