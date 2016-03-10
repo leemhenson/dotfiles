@@ -273,3 +273,5 @@ let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']
 
 let g:startify_custom_header = map(split(system('fortune -s | cowsay'), '\n'), '"   ". v:val') + ['','']
 
+" VimCompletesMe
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
