@@ -273,6 +273,8 @@ let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']
 
 let g:startify_custom_header = map(split(system('fortune -s | cowsay'), '\n'), '"   ". v:val') + ['','']
 
-" VimCompletesMe
-inoremap <expr><cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
+" VimCompleteMe
+" prevent conflict with endwise
+let g:endwise_no_mappings = 1
+imap <expr><cr> pumvisible() ? "\<c-y>" : "\<cr>\<Plug>DiscretionaryEnd"
 
