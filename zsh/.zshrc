@@ -11,6 +11,7 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 source ~/.zplug/zplug
 
 zplug "djui/alias-tips", nice:11
+zplug "hchbaw/zce.zsh"
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
 zplug "willghatch/zsh-saneopt"
@@ -33,6 +34,7 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+bindkey "^j" zce
 
 # aliases
 alias ls='ls -alh'
