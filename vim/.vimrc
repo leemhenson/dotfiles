@@ -27,6 +27,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'matze/vim-move'
 Plug 'mhinz/vim-startify'
+Plug 'mtth/scratch.vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
