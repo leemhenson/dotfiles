@@ -38,6 +38,7 @@ bindkey "^j" zce
 
 # aliases
 alias ls='ls -alh'
+alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
 alias gt='git tree'
