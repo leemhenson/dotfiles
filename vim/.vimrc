@@ -36,6 +36,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sjl/gundo.vim'
+Plug 'slim-template/vim-slim'
 Plug 'syngan/vim-vimlint' | Plug 'ynkdir/vim-vimlparser'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
