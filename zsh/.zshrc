@@ -4,6 +4,17 @@ KEYTIMEOUT=1
 SAVEHIST=1000
 unsetopt beep
 
+# Do not enter command lines into the history list if they are duplicates of a
+# previous event
+setopt hist_ignore_all_dups
+# Remove command lines from the history list when the first character on the
+# line is a space, or when one of the expanded aliases contains a leading space
+setopt hist_ignore_space
+# Remove superfluous blanks from each command line being added to the history list
+setopt hist_reduce_blanks
+# Share one history between zsh sessions
+setopt share_history
+
 export CLICOLOR=true
 export EDITOR=vim
 export LSCOLORS="exfxcxdxbxegedabagacad"
