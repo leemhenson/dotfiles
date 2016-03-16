@@ -5,7 +5,7 @@ SAVEHIST=1000
 unsetopt beep
 
 autoload -U compinit
-compinit
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 
 # Do not enter command lines into the history list if they are duplicates of a
 # previous event
@@ -77,3 +77,4 @@ if [[ -d $PRIVATE_DOTFILES ]]; then
   done
 fi
 
+compinit
