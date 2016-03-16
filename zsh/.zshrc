@@ -4,6 +4,9 @@ KEYTIMEOUT=1
 SAVEHIST=1000
 unsetopt beep
 
+autoload -U compinit
+compinit
+
 # Do not enter command lines into the history list if they are duplicates of a
 # previous event
 setopt hist_ignore_all_dups
@@ -24,6 +27,7 @@ source ~/.zplug/zplug
 zplug "djui/alias-tips", nice:11
 zplug "hchbaw/zce.zsh"
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/httpie", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
 zplug "willghatch/zsh-saneopt"
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
