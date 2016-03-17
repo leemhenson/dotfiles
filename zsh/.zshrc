@@ -78,3 +78,4 @@ if [[ -d $PRIVATE_DOTFILES ]]; then
 fi
 
 compinit
+
