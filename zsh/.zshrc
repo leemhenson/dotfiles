@@ -1,3 +1,4 @@
+DISABLE_AUTO_UPDATE=true
 HISTFILE=~/.dotfiles/zsh/.histfile
 HISTSIZE=1000
 KEYTIMEOUT=1
@@ -79,3 +80,4 @@ fi
 
 compinit
 
+chruby 2.3.0
