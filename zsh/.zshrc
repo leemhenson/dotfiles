@@ -86,4 +86,3 @@ fi
 
 compinit
 
-chruby 2.3.0
