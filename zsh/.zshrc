@@ -34,7 +34,6 @@ source ~/.zplug/zplug
 zplug "djui/alias-tips", nice:11
 zplug "felixr/docker-zsh-completion"
 zplug "hchbaw/zce.zsh"
-zplug "plugins/chruby", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/httpie", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
@@ -86,3 +85,4 @@ fi
 
 compinit
 
+eval "$(direnv hook zsh)"
