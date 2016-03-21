@@ -34,13 +34,13 @@ source ~/.zplug/zplug
 zplug "djui/alias-tips", nice:11
 zplug "felixr/docker-zsh-completion"
 zplug "hchbaw/zce.zsh"
+zplug "plugins/chruby", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/httpie", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
 zplug "willghatch/zsh-saneopt"
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
-zplug "$DOTFILES/zsh/plugins/chruby", from:local, of:chruby.zsh
 zplug "$DOTFILES/zsh/plugins/dirpersist", from:local, of:dirpersist.zsh
 zplug "$DOTFILES/zsh/plugins/editcommand", from:local, of:editcommand.zsh, nice:13
 zplug "$DOTFILES/zsh/plugins/fzf", from:local, of:fzf.zsh, nice:14
