@@ -3,7 +3,9 @@ HISTFILE=~/.dotfiles/zsh/.histfile
 HISTSIZE=1000
 KEYTIMEOUT=1
 SAVEHIST=1000
-unsetopt beep
+
+# Rename z to j
+_Z_CMD=j
 
 autoload -U compinit
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
@@ -20,6 +22,8 @@ setopt hist_ignore_space
 setopt hist_reduce_blanks
 # Share one history between zsh sessions
 setopt share_history
+# Shaddapayourface
+unsetopt beep
 
 export CLICOLOR=true
 export EDITOR=vim
