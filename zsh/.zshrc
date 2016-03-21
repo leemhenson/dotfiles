@@ -8,6 +8,8 @@ unsetopt beep
 autoload -U compinit
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 
+# Do not require a leading '.' in a filename to be matched explicitly
+setopt globdots
 # Do not enter command lines into the history list if they are duplicates of a
 # previous event
 setopt hist_ignore_all_dups
