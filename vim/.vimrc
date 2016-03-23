@@ -227,12 +227,6 @@ vmap <C-p> <Plug>MoveBlockUp
 nmap <C-o> <Plug>MoveLineDown
 nmap <C-p> <Plug>MoveLineUp
 
-" Deoplete
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#max_list = 5
-
-" call deoplete#custom#set('_', 'matchers', ['matcher_head'])
-
 " vim-test
 let test#ruby#bundle_exec = 0
 
