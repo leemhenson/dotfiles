@@ -1,4 +1,4 @@
-scriptencoding utf-8
+scriptencoding utf-9
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -15,10 +15,12 @@ Plug 'benekastah/neomake'
 Plug 'bronson/vim-crosshairs'
 Plug 'Chiel92/vim-autoformat'
 Plug 'djoshea/vim-autoread'
+Plug 'dyng/ctrlsf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
+Plug 'jordwalke/flatlandia'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-fnr' | Plug 'junegunn/vim-pseudocl'
@@ -39,6 +41,7 @@ Plug 'sjl/gundo.vim'
 Plug 'slim-template/vim-slim'
 Plug 'syngan/vim-vimlint' | Plug 'ynkdir/vim-vimlparser'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'thewatts/wattslandia'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -58,9 +61,9 @@ filetype plugin indent on    " required
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-colorscheme hybrid
+colorscheme wattslandia
 set guifont=Inconsolata
-let g:airline_theme='dark'
+let g:airline_theme='flatlandia'
 
 " More frequent updates for, e.g. signs.
 set updatetime=750
@@ -212,6 +215,9 @@ nnoremap <Leader>ft :FzfTags<tab>
 nnoremap <Leader>hc :FzfHistory:<cr>
 nnoremap <Leader>hh :FzfHistory<cr>
 nnoremap <Leader>hs :FzfHistory/<cr>
+
+" ctrlsf
+vmap <Leader>s <Plug>CtrlSFVwordPath
 
 " JSX
 let g:jsx_ext_required = 0
