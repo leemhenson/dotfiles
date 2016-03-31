@@ -8,10 +8,7 @@ use_ruby() {
     ver=$(cat .ruby-version)
   fi
 
-  if [[ -z $ver ]]; then
-    echo Unknown ruby version
-    exit 1
+  if [[ ! -z $ver ]]; then
+    chruby $ver
   fi
-
-  chruby $ver
 }
