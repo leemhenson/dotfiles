@@ -37,6 +37,7 @@ zplug "hchbaw/zce.zsh"
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/httpie", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
+zplug "supercrabtree/k"
 zplug "willghatch/zsh-saneopt"
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
@@ -58,7 +59,7 @@ zplug load
 bindkey "^j" zce
 
 # aliases
-alias ls='ls -alh'
+alias ls='k -ah --no-vcs'
 alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
