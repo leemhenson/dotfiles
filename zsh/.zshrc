@@ -59,7 +59,6 @@ zplug load
 bindkey "^j" zce
 
 # aliases
-alias ls='k -ah --no-vcs'
 alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
@@ -76,6 +75,7 @@ alias hrbs='hrb -r staging "$@"'
 alias hrc='heroku run rails console "$@"'
 alias hrcp='hrc -r production "$@"'
 alias hrcs='hrc -r staging "$@"'
+alias ls='k -ah --no-vcs'
 
 # source private scripts
 if [[ -d $PRIVATE_DOTFILES ]]; then
