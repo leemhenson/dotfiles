@@ -78,6 +78,8 @@ alias hrcp='hrc -r production "$@"'
 alias hrcs='hrc -r staging "$@"'
 alias ls='k -ah --no-vcs'
 
+git config --global core.excludesfile "$DOTFILES/git/global.gitignore"
+
 # source private scripts
 if [[ -d $PRIVATE_DOTFILES ]]; then
   for file in $PRIVATE_DOTFILES/zsh/*.zsh; do

@@ -14,8 +14,8 @@
   interactive = auto
 
 [core]
-  excludesfile = $DOTFILES/git/global.gitignore
   editor       = vim
+	excludesfile = /Users/leemhenson/.dotfiles/git/global.gitignore
 
 [diff]
   tool = Kaleidoscope
