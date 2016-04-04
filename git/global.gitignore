@@ -2,4 +2,6 @@
 .DS_Store
 /.envrc
 /tags
+/tags.lock
+/tags.temp
 /vendor
