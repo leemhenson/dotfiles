@@ -27,7 +27,6 @@ unsetopt beep
 
 export CLICOLOR=true
 export EDITOR=vim
-export LSCOLORS="exfxcxdxbxegedabagacad"
 export DEFAULT_CHEAT_DIR="$DOTFILES/cheatsheets"
 export CHEATCOLORS=true
 
