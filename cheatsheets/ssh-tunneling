@@ -1,0 +1,3 @@
+# open tunnel to remote port via ssh session on intermediate
+
+ssh -L <local-port>:<remote-host>:<remote-port> <user>@<intermediate-host>
