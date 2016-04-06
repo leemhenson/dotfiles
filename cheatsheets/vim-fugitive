@@ -1,0 +1,32 @@
+# show help
+g?
+
+# stage/unstage file
+-
+
+# next file
+<ctrl-n>
+
+# previous file
+<ctrl-p>
+
+# commit
+cc
+
+# commit --amend
+ca
+
+# diff (patch style)
+dp
+
+# add/rm --patch on file under cursor
+p
+
+# quit
+q
+
+# refresh
+r
+
+# discard all changes to file
+U

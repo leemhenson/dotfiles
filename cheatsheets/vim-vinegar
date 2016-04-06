@@ -1,0 +1,20 @@
+# open netrw at current file
+-
+
+# create new file
+%
+
+# create a directory
+d
+
+# delete file under cursor
+D
+
+# rename file under cursor
+R
+
+# open in horizontal split
+o
+
+# open in vertical split
+v

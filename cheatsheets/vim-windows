@@ -1,0 +1,8 @@
+# navigate around windows
+<ctrl-h/j/k/l>
+
+# rotate windows
+<ctrl-w>r
+
+# close all windows except current
+<ctrl-w>o

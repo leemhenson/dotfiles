@@ -1,0 +1,45 @@
+# forward to next <char>
+t<char>
+
+# backward to next <char>
+T<char>
+
+# forward over next <char>
+f<char>
+
+# backward over next <char>
+F<char>
+
+# words forward
+w
+
+# words backwards
+b
+
+# end of words forward
+e
+
+# end of words backwards
+ge
+
+# sentences forward
+)
+
+# sentences backwards
+(
+
+# paragraphs forward
+}
+
+# paragraphs backwards
+{
+
+# start of line
+^
+
+# end of line
+$
+
+# to line <number>
+:<number>
+

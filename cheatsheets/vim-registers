@@ -1,0 +1,26 @@
+# system clipboard
+"* or "+
+
+# black hole register
+"_
+
+# last yanked text
+"0
+
+# last yanked or changed text
+"1
+
+# last search
+"/
+
+# last command
+":
+
+# last file
+"%
+
+# yank current line to register <reg>
+"<reg>yy
+
+# paste from register <reg>
+"<reg>p

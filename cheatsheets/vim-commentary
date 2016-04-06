@@ -1,0 +1,5 @@
+# toggle block comment (in visual mode)
+gc
+
+# toggle block comment (in normal mode)
+gc<motion>

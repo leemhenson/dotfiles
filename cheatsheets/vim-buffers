@@ -1,0 +1,5 @@
+# wipe current buffer (leaving window open)
+:BW
+
+# wipe all buffers except those currently in windows
+:Wipeout

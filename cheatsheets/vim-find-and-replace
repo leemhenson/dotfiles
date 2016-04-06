@@ -1,0 +1,30 @@
+Finding
+=======
+
+# metacharacters
+. * \ [ ^ $
+
+# special functions (when escaped)
++ ? | & { ( ) /
+
+\t = tab
+\s = whitespace
+\n = newline
+\r = carriage return
+
+# repetition
+\{#}
+
+e.g. a\{2} matches aa
+
+# backreferences
+\(foo\)
+
+Replacing
+=========
+
+\r = newline
+\n = null byte (0x00)
+\& = ampersand
+\0 = inserts the text matched by the entire pattern
+\1 = inserts the text matched by the first backreference (\2 etc)

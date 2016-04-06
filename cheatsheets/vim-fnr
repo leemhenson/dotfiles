@@ -1,0 +1,11 @@
+# replace word under cursor in range (normal mode)
+,r<motion>
+
+# replace word under cursor in buffer (normal mode)
+,R
+
+# replace word under cursor in selection (visual mode)
+,r
+
+# replace selected text in buffer (visual mode)
+,R

@@ -1,0 +1,8 @@
+# To edit previous commit message
+git commit --amend
+
+# To "undo" the previous commit, leaving changes staged.
+git reset --soft HEAD^
+
+# To unstage all changes
+git reset

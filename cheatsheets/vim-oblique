@@ -1,0 +1,17 @@
+# forward search
+/
+
+# backward search
+?
+
+# forward fuzzy search
+z/
+
+# backward fuzzy search
+z?
+
+# repeat last search
+n
+
+# repeat last search in opposite direction
+N

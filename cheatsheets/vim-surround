@@ -1,0 +1,12 @@
+# surround current selection with quotes (visual mode)
+S'
+
+# delete surrounding double-quotes
+ds"
+
+# surround current word with square brackets
+ysiw]
+
+# surround current word with parentheses with whitespace inside
+ysiw(
+
