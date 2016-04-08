@@ -6,3 +6,10 @@
 
 # close all windows except current
 <ctrl-w>o
+
+# horizontal split to vertical split
+<ctrl-H>
+
+# vertical split to horizontal split
+<ctrl-K>
+
