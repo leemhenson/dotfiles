@@ -1,22 +1,22 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */Users/leemhenson/.fzf/bin* ]]; then
-  export PATH="$PATH:/Users/leemhenson/.fzf/bin"
+if [[ ! "$PATH" == "*$HOME/.fzf/bin*" ]]; then
+  export PATH="$PATH:$HOME/.fzf/bin"
 fi
 
 # Man path
 # --------
-if [[ ! "$MANPATH" == */Users/leemhenson/.fzf/man* && -d "/Users/leemhenson/.fzf/man" ]]; then
-  export MANPATH="$MANPATH:/Users/leemhenson/.fzf/man"
+if [[ ! "$MANPATH" == "*$HOME/.fzf/man*" && -d "$HOME/.fzf/man" ]]; then
+  export MANPATH="$MANPATH:$HOME/.fzf/man"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/Users/leemhenson/.fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "/Users/leemhenson/.fzf/shell/key-bindings.zsh"
+source "$HOME/.fzf/shell/key-bindings.zsh"
 
 fbranch() {
   local branches branch
