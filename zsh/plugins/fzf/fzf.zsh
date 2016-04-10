@@ -29,15 +29,6 @@ ffind() {
   find * -type f | fzf | tr -d '\n'
 }
 
-fkill() {
-  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-
-  if [ "x$pid" != "x" ]
-  then
-    kill -${1:-9} $pid
-  fi
-}
-
 flog() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
