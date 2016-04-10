@@ -1,0 +1,14 @@
+# switch git branches
+fbranch
+
+# search for files in the current directory tree
+ffind
+
+# show a git log
+flog
+
+# autocomplete for various things
+cd **<tab>
+ls **<tab>
+kill -9 <tab>
+unset **<tab>
