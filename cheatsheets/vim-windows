@@ -8,8 +8,8 @@
 <ctrl-w>o
 
 # horizontal split to vertical split
-<ctrl-H>
+<ctrl-w>H
 
 # vertical split to horizontal split
-<ctrl-K>
+<ctrl-w>K
 
