@@ -25,6 +25,10 @@ fbranch() {
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
+ffind() {
+  find * -type f | fzf | tr -d '\n'
+}
+
 fkill() {
   pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
