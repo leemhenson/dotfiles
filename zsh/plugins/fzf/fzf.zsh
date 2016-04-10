@@ -34,13 +34,6 @@ fbr() {
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
-fcoc() {
-  local commits commit
-  commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
-  commit=$(echo "$commits" | fzf --tac +s +m -e) &&
-  git checkout $(echo "$commit" | sed "s/ .*//")
-}
-
 fshow() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
@@ -52,11 +45,3 @@ fshow() {
 FZF-EOF"
 }
 
-unalias z 2> /dev/null
-z() {
-  if [[ -z "$*" ]]; then
-    cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"
-  else
-    _z "$@"
-  fi
-}
