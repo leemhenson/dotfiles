@@ -18,6 +18,13 @@ fi
 # ------------
 source "/Users/leemhenson/.fzf/shell/key-bindings.zsh"
 
+fbranch() {
+  local branches branch
+  branches=$(git branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
 fkill() {
   pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
@@ -25,13 +32,6 @@ fkill() {
   then
     kill -${1:-9} $pid
   fi
-}
-
-fbr() {
-  local branches branch
-  branches=$(git branch -vv) &&
-  branch=$(echo "$branches" | fzf +m) &&
-  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
 fshow() {
