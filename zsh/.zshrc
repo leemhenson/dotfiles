@@ -7,9 +7,6 @@ SAVEHIST=1000
 # Rename z to j
 _Z_CMD=j
 
-autoload -U compinit
-zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
-
 # Do not require a leading '.' in a filename to be matched explicitly
 setopt globdots
 # Do not enter command lines into the history list if they are duplicates of a
@@ -57,6 +54,9 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+
 bindkey "^j" zce
 
 # aliases
@@ -88,6 +88,5 @@ if [[ -d $PRIVATE_DOTFILES ]]; then
   done
 fi
 
-compinit
 
 eval "$(direnv hook zsh)"
