@@ -1,6 +1,7 @@
 *~
 .DS_Store
 /.envrc
+/npm-debug.log*
 /tags
 /tags.lock
 /tags.temp
