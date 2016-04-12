@@ -63,6 +63,7 @@ bindkey "^j" zce
 alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
+alias galc='git reset --soft HEAD^'
 alias grhard='git reset --hard'
 alias gt='git tree'
 alias hc='heroku config "$@"'
