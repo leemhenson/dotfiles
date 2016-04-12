@@ -204,13 +204,13 @@ endfun
 
 nnoremap <Leader>: :FzfCommands<cr>
 nnoremap <Leader>a :FzfAg<tab>
+nnoremap <Leader>cb :FzfBCommits<cr>
+nnoremap <Leader>cr :FzfCommits<cr>
 nnoremap <Leader>fb :FzfBuffers<cr>
-nnoremap <Leader>fc :FzfColors<cr>
 nnoremap <Leader>ff :exe 'FzfFiles ' . <SID>fzf_root()<CR>
 nnoremap <Leader>fg :FzfGitFiles<cr>
 nnoremap <Leader>fh :FzfHelptags<cr>
 nnoremap <Leader>fl :FzfLines<cr>
-nnoremap <Leader>fo :FzfCommits<cr>
 nnoremap <Leader>ft :FzfTags<tab>
 nnoremap <Leader>hc :FzfHistory:<cr>
 nnoremap <Leader>hh :FzfHistory<cr>
