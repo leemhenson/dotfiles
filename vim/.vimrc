@@ -236,10 +236,11 @@ nmap <C-p> <Plug>MoveLineUp
 " vim-test
 let test#ruby#bundle_exec = 0
 
-nmap <silent> <leader>tF :TestFile<CR>
-nmap <silent> <leader>tf :sp term://ruby\ %<CR><CR>
-nmap <silent> <leader>ts :TestSuite<CR>
+nnoremap <Leader>tf :sp term://ruby\ %\ \&\&\ read<CR>
+nnoremap <Leader>tF :vsp term://ruby\ %\ \&\&\ read<CR>
 nnoremap <Leader>tl :sp term://mtest\ %:<C-r>=line('.')<CR><CR>
+nnoremap <Leader>tL :vsp term://mtest\ %:<C-r>=line('.')<CR><CR>
+nnoremap <Leader>ts :TestSuite<CR>
 
 " remain in visual mode while indenting
 vnoremap < <gv
