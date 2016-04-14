@@ -236,7 +236,8 @@ nmap <C-p> <Plug>MoveLineUp
 " vim-test
 let test#ruby#bundle_exec = 0
 
-nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>tF :TestFile<CR>
+nmap <silent> <leader>tf :sp term://ruby\ %<CR><CR>
 nmap <silent> <leader>ts :TestSuite<CR>
 nnoremap <Leader>tl :sp term://mtest\ %:<C-r>=line('.')<CR><CR>
 
