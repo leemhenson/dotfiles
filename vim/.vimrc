@@ -64,6 +64,7 @@ set background=dark
 colorscheme wattslandia
 set guifont=Inconsolata
 let g:airline_theme='flatlandia'
+set shell=~/.dotfiles/zsh/bin/zsh
 
 " More frequent updates for, e.g. signs.
 set updatetime=750
