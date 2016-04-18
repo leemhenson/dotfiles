@@ -15,3 +15,9 @@ n
 
 # repeat last search in opposite direction
 N
+
+# forward search with selected text
+*
+
+# backward search with selected text
+#
