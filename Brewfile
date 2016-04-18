@@ -3,6 +3,7 @@ tap 'homebrew/dupes'
 tap 'homebrew/versions'
 tap 'neovim/neovim'
 
+cask 'graphiql'
 cask 'java'
 
 brew 'ack'
