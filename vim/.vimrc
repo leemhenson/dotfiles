@@ -36,6 +36,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'peterhorne/tabline.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Raimondi/delimitMate'
+Plug 'rking/ag.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sjl/gundo.vim'
 Plug 'slim-template/vim-slim'
