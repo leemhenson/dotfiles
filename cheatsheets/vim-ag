@@ -1,0 +1,20 @@
+# open file
+<enter> (or o)
+
+# open file and close quickfix
+e
+
+# open file but maintain focus in quickfix
+go
+
+# open file in a new tab
+t
+
+# open file in a horizontal split
+h
+
+# open file in a vertical split
+v
+
+# to close the quickfix
+q
