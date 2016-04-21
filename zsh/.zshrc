@@ -28,6 +28,10 @@ export DEFAULT_CHEAT_DIR="$DOTFILES/cheatsheets"
 export CHEATCOLORS=true
 export FZF_DEFAULT_SORT=100000
 
+LESSPIPE=`which src-hilite-lesspipe.sh`
+export LESSOPEN="| ${LESSPIPE} %s"
+export LESS=' -R -X -F '
+
 source ~/.zplug/zplug
 
 zplug "djui/alias-tips", nice:11
