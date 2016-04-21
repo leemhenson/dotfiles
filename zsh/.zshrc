@@ -26,6 +26,7 @@ export CLICOLOR=true
 export EDITOR=vim
 export DEFAULT_CHEAT_DIR="$DOTFILES/cheatsheets"
 export CHEATCOLORS=true
+export FZF_DEFAULT_SORT=100000
 
 source ~/.zplug/zplug
 
