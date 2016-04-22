@@ -17,6 +17,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'djoshea/vim-autoread'
 Plug 'dyng/ctrlsf.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'esneider/YUNOcommit.vim'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
