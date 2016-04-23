@@ -68,6 +68,7 @@ bindkey "^j" zce
 alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
+alias ccat='source-highlight --failsafe --out-format=esc -o STDOUT -i'
 alias galc='git reset --soft HEAD^'
 alias gap='git add --patch'
 alias gdc='git diff --cached'
