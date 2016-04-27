@@ -1,0 +1,12 @@
+# Connection
+
+A 1-to-many relationship that provides pagination functionality.
+
+# Edge
+
+An individual element in a connection.
+
+# Node
+
+The model reached by traversing each edge in the connection.
+
