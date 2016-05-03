@@ -9,7 +9,6 @@ set rtp^=$DOTFILES/vim
 call plug#begin('$DOTFILES/vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'ajh17/VimCompletesMe'
 Plug 'artnez/vim-wipeout'
 Plug 'benekastah/neomake'
 Plug 'bronson/vim-crosshairs'
@@ -51,6 +50,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
