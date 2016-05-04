@@ -98,5 +98,3 @@ if [[ -d $PRIVATE_DOTFILES ]]; then
   done
 fi
 
-
-eval "$(direnv hook zsh)"

@@ -9,7 +9,10 @@ typeset -U path
 path[1,0]="$DOTFILES/zsh/bin"
 path[1,0]="/usr/local/heroku/bin"
 path[1,0]="/usr/local/share/npm/bin"
+path[1,0]="./node_modules/.bin"
 path[1,0]="/Applications/Postgres.app/Contents/Versions/9.5/bin"
+
+eval "$(direnv hook zsh)"
 
 if [ -f /usr/local/share/chruby/chruby.sh ]; then
   source /usr/local/share/chruby/chruby.sh
