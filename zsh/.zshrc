@@ -91,6 +91,9 @@ alias ls='k -ah --no-vcs'
 
 git config --global core.excludesfile "$DOTFILES/git/global.gitignore"
 
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
+
 # source private scripts
 if [[ -d $PRIVATE_DOTFILES ]]; then
   for file in $PRIVATE_DOTFILES/zsh/*.zsh; do
