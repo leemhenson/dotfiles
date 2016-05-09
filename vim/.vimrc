@@ -10,7 +10,7 @@ call plug#begin('$DOTFILES/vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'artnez/vim-wipeout'
-Plug 'benekastah/neomake'
+Plug 'neomake/neomake'
 Plug 'bronson/vim-crosshairs'
 Plug 'Chiel92/vim-autoformat'
 Plug 'djoshea/vim-autoread'
