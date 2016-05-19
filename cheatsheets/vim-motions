@@ -43,3 +43,5 @@ $
 # to line <number>
 :<number>
 
+# select a range of lines (e.g. lines 12 thru 65)
+12GV65G
