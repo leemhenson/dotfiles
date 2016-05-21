@@ -20,6 +20,7 @@ Plug 'esneider/YUNOcommit.vim'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
+Plug 'jceb/vim-orgmode'
 Plug 'jordwalke/flatlandia'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
