@@ -1,0 +1,14 @@
+# open the scratch window and enter insert mode (from normal mode)
+gs
+
+# open the scratch window, clear it, and enter insert mode (from normal mode)
+gS
+
+# open the scratch buffer and prefil it with the highlight text (from visual mode)
+gs
+
+# open the scratch buffer, clear it, and prefil it with the highlight text (from visual mode)
+gS
+
+# open the scratch buffer
+:Scratch

@@ -1,3 +1,15 @@
+# create a new split window with an unnamed buffer
+:new
+
+# create a new unnamed buffer in the current window
+:enew
+
+# create a new unnamed buffer in a vsplit
+:vnew
+
+# create a new unnamed buffer in a new tab
+:tabnew
+
 # wipe current buffer (leaving window open)
 :BW
 
