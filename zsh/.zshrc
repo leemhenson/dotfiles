@@ -22,12 +22,13 @@ setopt share_history
 # Shaddapayourface
 unsetopt beep
 
-export CLICOLOR=true
-export EDITOR=vim
-export DEFAULT_CHEAT_DIR="$DOTFILES/cheatsheets"
 export CHEATCOLORS=true
+export CLICOLOR=true
+export DEFAULT_CHEAT_DIR="$DOTFILES/cheatsheets"
+export EDITOR=vim
 export FZF_DEFAULT_OPTS="-e"
 export FZF_DEFAULT_SORT=100000
+export SPACEMACSDIR="$DOTFILES/spacemacs"
 
 LESSPIPE=`which src-hilite-lesspipe.sh`
 export LESSOPEN="| ${LESSPIPE} %s"
