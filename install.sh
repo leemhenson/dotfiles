@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
-ln -s "$DOTFILES/tern/.tern-project" "$HOME/.tern-project"
+ln -sf "$DOTFILES/jsbeautifier/.jsbeautifyrc" "$HOME/.jsbeautifyrc"
+ln -sf "$DOTFILES/tern/.tern-project" "$HOME/.tern-project"
