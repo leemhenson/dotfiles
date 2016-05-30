@@ -254,24 +254,24 @@ you should place your code here."
     web-mode-markup-indent-offset 2
     web-mode-css-indent-offset 2
     web-mode-code-indent-offset 2
-    web-mode-attr-indent-offset 2
-  )
+    web-mode-attr-indent-offset 2)
 
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
-  )
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+
+  (spacemacs/set-leader-keys "SPC" 'avy-goto-char-timer)
 
   (custom-set-faces
     ;; custom-set-faces was added by Custom.
     ;; If you edit it by hand, you could mess it up, so be careful.
     ;; Your init file should contain only one such instance.
     ;; If there is more than one, they won't work right.
-    '(magit-diff-added ((t (:background "black" :foreground "green3"))))
-    '(magit-diff-removed ((t (:background "black" :foreground "red3"))))
-  )
-)
+    '(magit-diff-added ((t (:background "black" :foreground "green4"))))
+    '(magit-diff-added-highlight ((t (:background "black" :foreground "green3"))))
+    '(magit-diff-removed ((t (:background "black" :foreground "red4"))))
+    '(magit-diff-removed-highlight ((t (:background "black" :foreground "red3"))))))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
