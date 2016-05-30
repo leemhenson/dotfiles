@@ -52,6 +52,7 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(base16-theme
+                                      dockerfile-mode
                                       git-gutter
                                       gitconfig-mode
                                       gitignore-mode
