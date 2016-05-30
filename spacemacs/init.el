@@ -26,7 +26,10 @@ values."
      auto-completion
      ;; better-defaults
      emacs-lisp
+     eyebrowse
      git
+     html
+     javascript
      markdown
      ;; org
      osx
@@ -35,16 +38,26 @@ values."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
+     shell-scripts
      ;; spell-checking
+     sql
      ;; syntax-checking
+     terraform
      ;; themes-megapack
      ;; version-control
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(base16-theme)
+   dotspacemacs-additional-packages '(base16-theme
+                                      git-gutter
+                                      gitconfig-mode
+                                      gitignore-mode
+                                      json-mode
+                                      sass-mode
+                                      scss-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
