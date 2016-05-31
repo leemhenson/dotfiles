@@ -26,7 +26,6 @@ values."
      auto-completion
      ;; better-defaults
      emacs-lisp
-     eyebrowse
      git
      html
      javascript
