@@ -22,10 +22,11 @@ setopt share_history
 # Shaddapayourface
 unsetopt beep
 
+
 export CHEATCOLORS=true
 export CLICOLOR=true
 export DEFAULT_CHEAT_DIR="$DOTFILES/cheatsheets"
-export EDITOR=vim
+export EDITOR="emacs -nw --no-splash"
 export FZF_DEFAULT_OPTS="-e"
 export FZF_DEFAULT_SORT=100000
 export SPACEMACSDIR="$DOTFILES/spacemacs"
@@ -71,7 +72,7 @@ alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
 alias ccat='source-highlight --failsafe --out-format=esc -o STDOUT -i'
-alias emacs='emacs -nw'
+alias emacs="$EDITOR"
 alias galc='git reset --soft HEAD^'
 alias gap='git add --patch'
 alias gcom='git checkout master'
