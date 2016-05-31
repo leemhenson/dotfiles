@@ -266,6 +266,7 @@ you should place your code here."
   (setq-default
     ;; js2-mode
     js2-basic-offset 2
+    js2-strict-trailing-comma-warning nil
     ;; web-mode
     css-indent-offset 2
     web-mode-markup-indent-offset 2
