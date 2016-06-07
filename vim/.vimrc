@@ -26,6 +26,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-fnr' | Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-oblique' | Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-peekaboo'
+Plug 'justinmk/vim-dirvish'
 Plug 'matze/vim-move'
 Plug 'mhinz/vim-startify'
 Plug 'mtth/scratch.vim'
@@ -44,7 +45,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
@@ -167,12 +167,6 @@ autocmd BufNewFile,BufReadPost *.es6 set filetype=javascript
 set wildignore+=*/cache/*
 set wildignore+=*/vendor/*
 
-" Enable smartcase for easymotion
-let g:EasyMotion_smartcase = 1
-
-" Use easymotion prefix search by default: ,,<char>
-nmap <Leader><Leader> <Plug>(easymotion-sn)
-
 " Remove airline seperators (arrows)
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -290,3 +284,9 @@ imap <expr><cr> pumvisible() ? "\<c-y>" : "\<cr>\<Plug>DiscretionaryEnd"
 " ChooseWin
 nmap  <Leader>- <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
+
+" Enable smartcase for easymotion
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+
+map <Leader><Leader> <Plug>(easymotion-sn)
