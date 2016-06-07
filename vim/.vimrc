@@ -171,7 +171,7 @@ set wildignore+=*/vendor/*
 let g:EasyMotion_smartcase = 1
 
 " Use easymotion prefix search by default: ,,<char>
-map <Leader><Leader> <Plug>(easymotion-sn)
+nmap <Leader><Leader> <Plug>(easymotion-sn)
 
 " Remove airline seperators (arrows)
 let g:airline_left_sep=''
@@ -185,17 +185,9 @@ let g:blockle_mapping="∫"
 " fzf
 let g:fzf_command_prefix = 'Fzf'
 
-imap <Leader>m <plug>(fzf-maps-i)
 nmap <Leader>m <plug>(fzf-maps-n)
 omap <Leader>m <plug>(fzf-maps-o)
 xmap <Leader>m <plug>(fzf-maps-x)
-
-imap <Leader>cb <plug>(fzf-complete-buffer-line)
-imap <Leader>cf <plug>(fzf-complete-file)
-imap <Leader>cg <plug>(fzf-complete-file-ag)
-imap <Leader>cl <plug>(fzf-complete-line)
-imap <Leader>cp <plug>(fzf-complete-path)
-imap <Leader>cw <plug>(fzf-complete-word)
 
 fun! s:fzf_root()
   let path = finddir(".git", expand("%:p:h").";")
@@ -288,7 +280,6 @@ nnoremap <Leader>u :GundoToggle<cr>
 " Startify
 let g:startify_session_dir = "$HOME/icloud/docs/work/vim-sessions"
 let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']
-
 let g:startify_custom_header = map(split(system('fortune -s | cowsay'), '\n'), '"   ". v:val') + ['','']
 
 " VimCompleteMe
@@ -297,5 +288,5 @@ let g:endwise_no_mappings = 1
 imap <expr><cr> pumvisible() ? "\<c-y>" : "\<cr>\<Plug>DiscretionaryEnd"
 
 " ChooseWin
-nmap  <Leader>-  <Plug>(choosewin)
+nmap  <Leader>- <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
