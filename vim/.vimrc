@@ -63,6 +63,7 @@ syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme tender
+let g:airline_theme='term'
 set guifont=Inconsolata
 set shell=~/.dotfiles/zsh/bin/zsh
 
@@ -275,7 +276,6 @@ nnoremap <Leader>u :GundoToggle<cr>
 " Startify
 let g:startify_session_dir = "$HOME/icloud/docs/work/vim-sessions"
 let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']
-let g:startify_custom_header = map(split(system('fortune -s | cowsay'), '\n'), '"   ". v:val') + ['','']
 
 " VimCompleteMe
 " prevent conflict with endwise
