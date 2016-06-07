@@ -2,7 +2,7 @@ scriptencoding utf-9
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
-let g:mapleader = ","
+let g:mapleader = "\<Space>"
 
 set rtp^=$DOTFILES/vim
 
@@ -18,22 +18,20 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'esneider/YUNOcommit.vim'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+Plug 'jacoborus/tender'
 Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
-Plug 'jordwalke/flatlandia'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-fnr' | Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-oblique' | Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-peekaboo'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'matze/vim-move'
 Plug 'mhinz/vim-startify'
 Plug 'mtth/scratch.vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'peterhorne/tabline.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Raimondi/delimitMate'
 Plug 'rking/ag.vim'
@@ -41,8 +39,8 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sjl/gundo.vim'
 Plug 'slim-template/vim-slim'
 Plug 'syngan/vim-vimlint' | Plug 'ynkdir/vim-vimlparser'
+Plug 't9md/vim-choosewin'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'thewatts/wattslandia'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -54,7 +52,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'w0ng/vim-hybrid'
+Plug 'webdevel/tabulous'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -63,9 +61,8 @@ filetype plugin indent on    " required
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-colorscheme wattslandia
+colorscheme tender
 set guifont=Inconsolata
-let g:airline_theme='flatlandia'
 set shell=~/.dotfiles/zsh/bin/zsh
 
 " More frequent updates for, e.g. signs.
@@ -174,7 +171,7 @@ set wildignore+=*/vendor/*
 let g:EasyMotion_smartcase = 1
 
 " Use easymotion prefix search by default: ,,<char>
-map <Leader>; <Plug>(easymotion-s)
+map <Leader><Leader> <Plug>(easymotion-sn)
 
 " Remove airline seperators (arrows)
 let g:airline_left_sep=''
@@ -218,6 +215,20 @@ nnoremap <Leader>ft :FzfTags<tab>
 nnoremap <Leader>hc :FzfHistory:<cr>
 nnoremap <Leader>hh :FzfHistory<cr>
 nnoremap <Leader>hs :FzfHistory/<cr>
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " ctrlsf
 vmap <Leader>s <Plug>CtrlSFVwordPath
@@ -285,3 +296,6 @@ let g:startify_custom_header = map(split(system('fortune -s | cowsay'), '\n'), '
 let g:endwise_no_mappings = 1
 imap <expr><cr> pumvisible() ? "\<c-y>" : "\<cr>\<Plug>DiscretionaryEnd"
 
+" ChooseWin
+nmap  <Leader>-  <Plug>(choosewin)
+let g:choosewin_overlay_enable = 1
