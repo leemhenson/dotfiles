@@ -117,9 +117,6 @@ set ignorecase " Ignore case when using a search pattern
 set smartcase  " Override 'ignorecase' when pattern
                " has upper case character
 
-" Toggle highlighted search results
-noremap <leader>h :set hlsearch! hlsearch?<CR>
-
 " Fix backspace
 set backspace=indent,eol,start
 
@@ -133,13 +130,6 @@ set scrolloff=30
 " Hide current mode in command bar
 set noshowmode
 
-" navigate splits with ctrl-jklh
-noremap <c-j> <c-w>j
-noremap <c-k> <c-w>k
-noremap <c-l> <c-w>l
-noremap <c-h> <c-w>h
-noremap <c-w>s :sp<CR>
-
 " Neomake
 let g:neomake_error_sign = { 'text': '✗' }
 let g:neomake_warning_sign = { 'text': '⚠' }
@@ -150,12 +140,6 @@ autocmd! BufWritePost * Neomake
 
 " strip whitespace on save
 autocmd BufWritePre * StripWhitespace
-
-" Navigate tabs (alt-t new, alt-q close, alt-j/k navigate)
-noremap ˙ gT
-noremap ¬ gt
-noremap † :tabnew<CR>
-noremap œ :tabclose<CR>
 
 " Map to trigger sudo prompt
 cmap w!! %!sudo tee > /dev/null %
@@ -168,6 +152,9 @@ autocmd BufNewFile,BufReadPost *.es6 set filetype=javascript
 
 " Ignore common files/dirs
 set wildignore+=*/cache/*
+set wildignore+=*/log/*
+set wildignore+=*/node_modules/*
+set wildignore+=*/tmp/*
 set wildignore+=*/vendor/*
 
 " Remove airline seperators (arrows)
@@ -179,31 +166,16 @@ let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', ''''
 " Blockle
 let g:blockle_mapping="∫"
 
+" Bufkill
+let g:BufKillCreateMappings=0
+
 " fzf
 let g:fzf_command_prefix = 'Fzf'
-
-nmap <Leader>m <plug>(fzf-maps-n)
-omap <Leader>m <plug>(fzf-maps-o)
-xmap <Leader>m <plug>(fzf-maps-x)
 
 fun! s:fzf_root()
   let path = finddir(".git", expand("%:p:h").";")
   return fnamemodify(substitute(path, ".git", "", ""), ":p:h")
 endfun
-
-nnoremap <Leader>: :FzfCommands<cr>
-nnoremap <Leader>a :FzfAg<tab>
-nnoremap <Leader>cb :FzfBCommits<cr>
-nnoremap <Leader>cr :FzfCommits<cr>
-nnoremap <Leader>fb :FzfBuffers<cr>
-nnoremap <Leader>ff :exe 'FzfFiles ' . <SID>fzf_root()<CR>
-nnoremap <Leader>fg :FzfGitFiles<cr>
-nnoremap <Leader>fh :FzfHelptags<cr>
-nnoremap <Leader>fl :FzfLines<cr>
-nnoremap <Leader>ft :FzfTags<tab>
-nnoremap <Leader>hc :FzfHistory:<cr>
-nnoremap <Leader>hh :FzfHistory<cr>
-nnoremap <Leader>hs :FzfHistory/<cr>
 
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
@@ -219,9 +191,6 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
-" ctrlsf
-vmap <Leader>s <Plug>CtrlSFVwordPath
-
 " JSX
 let g:jsx_ext_required = 0
 
@@ -231,45 +200,17 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " vim-move
 let g:move_map_keys = 0
 
-vmap <C-o> <Plug>MoveBlockDown
-vmap <C-p> <Plug>MoveBlockUp
-nmap <C-o> <Plug>MoveLineDown
-nmap <C-p> <Plug>MoveLineUp
-
 " vim-test
 let test#ruby#bundle_exec = 0
-
-nnoremap <Leader>tF :sp term://ruby\ %\ \&\&\ read<CR>
-nnoremap <Leader>tf :vsp term://ruby\ %\ \&\&\ read<CR>
-nnoremap <Leader>tL :sp term://mtest\ %:<C-r>=line('.')<CR><CR>
-nnoremap <Leader>tl :vsp term://mtest\ %:<C-r>=line('.')<CR><CR>
-nnoremap <Leader>ts :TestSuite<CR>
-
-" remain in visual mode while indenting
-vnoremap < <gv
-vnoremap > >gv
 
 " ag.vim
 let g:ag_working_path_mode="r"
 
-" magit
-nnoremap <C-g> :Magit<cr>
-
 " pgformatter
 au FileType sql setl formatprg=/usr/local/bin/pg_format\ -
 
-" Navigate splits when in NeoVim's :terminal
-tnoremap <ESC> <c-\><c-n>
-tnoremap <c-j> <c-\><c-n><c-w>j
-tnoremap <c-k> <c-\><c-n><c-w>k
-tnoremap <c-l> <c-\><c-n><c-w>l
-tnoremap <c-h> <c-\><c-n><c-w>h
-
 " automatically switch to insert mode when navigating to a terminal window
 autocmd BufWinEnter,WinEnter term://* startinsert
-
-" Gundo
-nnoremap <Leader>u :GundoToggle<cr>
 
 " Startify
 let g:startify_session_dir = "$HOME/icloud/docs/work/vim-sessions"
@@ -281,11 +222,81 @@ let g:endwise_no_mappings = 1
 imap <expr><cr> pumvisible() ? "\<c-y>" : "\<cr>\<Plug>DiscretionaryEnd"
 
 " ChooseWin
-nmap  <Leader>- <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
 
-" Enable smartcase for easymotion
+" Easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 
-map <Leader><Leader> <Plug>(easymotion-sn)
+" ================
+" Mappings
+" ================
+
+" 1 Buffers
+nmap <Leader>b :FzfBuffers<cr>
+
+" 2 Editing
+nmap <Leader>f :Autoformat
+nmap <Leader>u :GundoToggle<cr>
+nmap <C-o> <Plug>MoveLineDown
+nmap <C-p> <Plug>MoveLineUp
+vmap <C-o> <Plug>MoveBlockDown
+vmap <C-p> <Plug>MoveBlockUp
+
+  " 2.1 Remain in visual mode while indenting
+  vmap < <gv
+  vmap > >gv
+
+" 3 Git
+nmap <Leader>g :Magit<cr>
+
+" 4 Help
+nmap <Leader>h: :FzfCommands<cr>
+nmap <Leader>hm <plug>(fzf-maps-n)
+nmap <Leader>ht :FzfHelptags<cr>
+omap <Leader>hm <plug>(fzf-maps-o)
+xmap <Leader>hm <plug>(fzf-maps-x)
+
+" 5 Motions
+nmap <Leader><Leader> <Plug>(easymotion-sn)
+
+" 6 Search
+nmap <Leader>sf :FzfGitFiles<cr>
+nmap <Leader>sF :exe 'FzfFiles ' . <SID>fzf_root()<CR>
+nmap <Leader>st :FzfAg<cr>
+vmap <Leader>s <Plug>CtrlSFVwordPath
+
+  " 6.1 Toggle highlighted search results
+  map <leader>h :set hlsearch! hlsearch?<CR>
+
+
+" 7 Testing
+nmap <Leader>tf :vsp term://ruby\ %\ \&\&\ read<CR>
+nmap <Leader>tF :sp term://ruby\ %\ \&\&\ read<CR>
+nmap <Leader>tl :vsp term://mtest\ %:<C-r>=line('.')<CR><CR>
+nmap <Leader>tL :sp term://mtest\ %:<C-r>=line('.')<CR><CR>
+nmap <Leader>ts :TestSuite<CR>
+
+" 8 Tabs (alt-t new, alt-q close, alt-j/k navigate)
+map ˙ gT
+map ¬ gt
+map † :tabnew<CR>
+map œ :tabclose<CR>
+
+" 9 Windows
+nmap  <Leader>w <Plug>(choosewin)
+
+  " 9.1 Navigate splits with ctrl-jklh
+  map <c-j> <c-w>j
+  map <c-k> <c-w>k
+  map <c-l> <c-w>l
+  map <c-h> <c-w>h
+  map <c-w>s :sp<CR>
+
+  " 9.2 Navigate windows from neovim terminal
+  tmap <ESC> <c-\><c-n>
+  tmap <c-j> <c-\><c-n><c-w>j
+  tmap <c-k> <c-\><c-n><c-w>k
+  tmap <c-l> <c-\><c-n><c-w>l
+  tmap <c-h> <c-\><c-n><c-w>h
+
