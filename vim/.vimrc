@@ -21,6 +21,7 @@ Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'jacoborus/tender'
 Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
+Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-fnr' | Plug 'junegunn/vim-pseudocl'
@@ -251,8 +252,8 @@ vnoremap > >gv
 " ag.vim
 let g:ag_working_path_mode="r"
 
-" fugitive
-nnoremap <C-g> :Gstatus<cr>
+" magit
+nnoremap <C-g> :Magit<cr>
 
 " pgformatter
 au FileType sql setl formatprg=/usr/local/bin/pg_format\ -
