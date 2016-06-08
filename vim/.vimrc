@@ -128,7 +128,7 @@ set splitright
 set splitbelow
 
 " Number of lines to show around cursor
-set scrolloff=20
+set scrolloff=30
 
 " Hide current mode in command bar
 set noshowmode
