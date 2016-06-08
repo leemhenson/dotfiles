@@ -64,6 +64,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme tender
 let g:airline_theme='term'
+let g:airline#extensions#hunks#enabled=0
 set guifont=Inconsolata
 set shell=~/.dotfiles/zsh/bin/zsh
 
