@@ -47,7 +47,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
@@ -248,9 +247,6 @@ nnoremap <Leader>ts :TestSuite<CR>
 " remain in visual mode while indenting
 vnoremap < <gv
 vnoremap > >gv
-
-" vim-vinegar
-nmap - <Plug>VinegarSplitUp
 
 " ag.vim
 let g:ag_working_path_mode="r"
