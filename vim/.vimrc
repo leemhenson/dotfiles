@@ -161,7 +161,7 @@ set wildignore+=*/vendor/*
 " Remove airline seperators (arrows)
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_section_z=''
+let g:airline_section_b=''
 let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
 
 " Blockle
