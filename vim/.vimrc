@@ -264,10 +264,10 @@ nmap <Leader><Leader> <Plug>(easymotion-sn)
 nmap <Leader>sf :FzfGitFiles<cr>
 nmap <Leader>sF :exe 'FzfFiles ' . <SID>fzf_root()<CR>
 nmap <Leader>st :FzfAg<cr>
-vmap <Leader>s <Plug>CtrlSFVwordPath
+vmap <Leader>S <Plug>CtrlSFVwordPath
 
   " 6.1 Toggle highlighted search results
-  map <leader>h :set hlsearch! hlsearch?<CR>
+  map <leader>sh :set hlsearch! hlsearch?<CR>
 
 
 " 7 Testing
