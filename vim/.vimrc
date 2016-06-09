@@ -17,6 +17,7 @@ Plug 'djoshea/vim-autoread'
 Plug 'dyng/ctrlsf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'esneider/YUNOcommit.vim'
+Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'jacoborus/tender'
 Plug 'janko-m/vim-test'
@@ -246,6 +247,8 @@ nmap <C-o> <Plug>MoveLineDown
 nmap <C-p> <Plug>MoveLineUp
 vmap <C-o> <Plug>MoveBlockDown
 vmap <C-p> <Plug>MoveBlockUp
+imap <C-j> <Plug>snipMateNextOrTrigger
+smap <C-j> <Plug>snipMateNextOrTrigger
 
   " 2.1 Remain in visual mode while indenting
   vmap < <gv
@@ -258,8 +261,6 @@ nmap <Leader>g :Magit<cr>
 nmap <Leader>h: :FzfCommands<cr>
 nmap <Leader>hm <plug>(fzf-maps-n)
 nmap <Leader>ht :FzfHelptags<cr>
-omap <Leader>hm <plug>(fzf-maps-o)
-xmap <Leader>hm <plug>(fzf-maps-x)
 
 " 5 Motions
 nmap <Leader><Leader> <Plug>(easymotion-sn)
