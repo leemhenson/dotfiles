@@ -218,10 +218,12 @@ autocmd BufWinEnter,WinEnter term://* startinsert
 let g:startify_session_dir = "$HOME/icloud/docs/work/vim-sessions"
 let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']
 
-" VimCompleteMe
+" YouCompleteMe
 " prevent conflict with endwise
 let g:endwise_no_mappings = 1
 imap <expr><cr> pumvisible() ? "\<c-y>" : "\<cr>\<Plug>DiscretionaryEnd"
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
 
 " ChooseWin
 let g:choosewin_overlay_enable = 1
@@ -247,8 +249,8 @@ nmap <C-o> <Plug>MoveLineDown
 nmap <C-p> <Plug>MoveLineUp
 vmap <C-o> <Plug>MoveBlockDown
 vmap <C-p> <Plug>MoveBlockUp
-imap <C-j> <Plug>snipMateNextOrTrigger
-smap <C-j> <Plug>snipMateNextOrTrigger
+imap <Tab> <Plug>snipMateNextOrTrigger
+smap <Tab> <Plug>snipMateNextOrTrigger
 
   " 2.1 Remain in visual mode while indenting
   vmap < <gv
