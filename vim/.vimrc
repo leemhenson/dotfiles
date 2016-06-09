@@ -47,6 +47,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe'
@@ -227,6 +228,9 @@ let g:choosewin_overlay_enable = 1
 " Easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
+
+" Fugitive
+let g:fugitive_no_maps=1
 
 " ================
 " Mappings
