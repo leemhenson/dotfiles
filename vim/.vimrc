@@ -242,7 +242,7 @@ let g:fugitive_no_maps=1
 nmap <Leader>b :FzfBuffers<cr>
 
 " 2 Editing
-nmap <Leader>f :Autoformat
+nmap <Leader>f :Autoformat<cr>
 nmap <Leader>u :GundoToggle<cr>
 nmap <C-o> <Plug>MoveLineDown
 nmap <C-p> <Plug>MoveLineUp
