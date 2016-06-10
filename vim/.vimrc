@@ -98,16 +98,15 @@ set clipboard+=unnamedplus
 " Use spaces instead of tabs
 set expandtab
 
-" Default indent (2 spaces)
-set shiftwidth=2
-set tabstop=2
+" Indenting
 set shiftround
-
-set autoindent
+set shiftwidth=2
 set smartindent
+set tabstop=2
+set cinoptions=j1,J1,(0,W2
 
+" Line wrapping
 set wrap
-set breakindent
 
 " Turn backup off
 set nobackup
