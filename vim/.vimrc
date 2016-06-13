@@ -9,6 +9,7 @@ set rtp^=$DOTFILES/vim
 call plug#begin('$DOTFILES/vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'albfan/ag.vim'
 Plug 'artnez/vim-wipeout'
 Plug 'neomake/neomake'
 Plug 'bronson/vim-crosshairs'
@@ -37,7 +38,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'qpkorr/vim-bufkill'
 Plug 'Raimondi/delimitMate'
-Plug 'rking/ag.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sjl/gundo.vim'
 Plug 'slim-template/vim-slim'
