@@ -103,7 +103,7 @@ set shiftround
 set shiftwidth=2
 set smartindent
 set tabstop=2
-set cinoptions=j1,J1,(0,W2
+set cinoptions=j1,J1,(2,W2
 
 " Line wrapping
 set wrap
