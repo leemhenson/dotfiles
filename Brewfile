@@ -1,8 +1,6 @@
 tap 'caskroom/cask'
 tap 'homebrew/dupes'
 tap 'homebrew/versions'
-
-tap 'd12frosted/emacs-plus'
 tap 'neovim/neovim'
 
 cask 'graphiql'
@@ -20,7 +18,7 @@ brew 'curl'
 brew 'diff-so-fancy'
 brew 'direnv'
 brew 'dnsmasq'
-brew 'emacs-plus', args: ['with-cocoa', 'with-gnutls', 'with-librsvg', 'with-imagemagick', 'with-spacemacs-icon']
+brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg', 'with-imagemagick', 'devel']
 brew 'fortune'
 brew 'gcc'
 brew 'git'
