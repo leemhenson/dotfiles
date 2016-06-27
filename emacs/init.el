@@ -29,10 +29,6 @@
  whitespace-style       '(face lines-tail))
 (add-hook 'prog-mode-hook #'whitespace-mode)
 
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-items 25)
-
 ;; Bootstrap 'use-package'.
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -58,7 +54,7 @@
     (evil-leader/set-key
       "!"   'shell-command
       "fd"  'dired
-      "bkt" 'kill-buffer
+      "bkt" 'kill-this-buffer
       "bko" 'kill-other-buffers
       "wdt" 'delete-window
       "wdo" 'delete-other-windows
@@ -82,6 +78,7 @@
 ;; Other packages
 (use-package ag
   :ensure t
+  :defer 1
   :commands (ag-project
              ag-project-files
              ag-project-regexp)
@@ -99,6 +96,7 @@
 
 (use-package avy
   :ensure t
+  :defer 1
   :commands avy-goto-char-timer
   :init
   (evil-leader/set-key
@@ -106,25 +104,18 @@
 
 (use-package counsel
   :ensure t
+  :defer 1
   :config
   (evil-leader/set-key
     "bs" 'ivy-switch-buffer
     "fp" 'counsel-git
     "hb" 'counsel-descbinds
+    "hf" 'counsel-describe-function
     "hx" 'counsel-M-x))
-
-(use-package desktop+
-  :ensure t
-  :init
-  (desktop-save-mode)
-  :config
-  (evil-leader/set-key
-    "dc" 'desktop+-create
-    "dl" 'desktop+-load)
-  (setq desktop-restore-forces-onscreen nil))
 
 (use-package dired-details
   :ensure t
+  :defer 1
   :config
   (setq-default dired-details-hidden-string "")
   (dired-details-install))
@@ -139,6 +130,7 @@
 
 (use-package flycheck
   :ensure t
+  :defer 1
   :config
   (add-hook 'js2-mode-hook 'flycheck-mode)
   (add-hook 'json-mode-hook 'flycheck-mode))
@@ -157,6 +149,7 @@
 
 (use-package js2-mode
   :ensure t
+  :defer 1
   :config
   (setq js-indent-level 2)
   (setq js2-basic-offset 2)
@@ -165,10 +158,12 @@
   (setq js2-strict-trailing-comma-warning nil))
 
 (use-package json-mode
-  :ensure t)
+  :ensure t
+  :defer 1)
 
 (use-package magit
   :ensure t
+  :defer 1
   :commands magit-status
   :init
   (evil-leader/set-key "gs" 'magit-status)
@@ -188,8 +183,16 @@
   :config
   (turn-on-pbcopy))
 
+(use-package projectile
+  :ensure t
+  :defer 1
+  :config
+  (projectile-global-mode)
+  (setq projectile-completion-system 'ivy))
+
 (use-package smooth-scrolling
   :ensure t
+  :defer 1
   :config
   (smooth-scrolling-mode)
   (setq smooth-scroll-margin 25))
@@ -219,6 +222,7 @@
 
 (use-package undo-tree
   :ensure t
+  :defer 1
   :config
   (global-undo-tree-mode))
 
@@ -247,3 +251,17 @@
 
 (advice-add 'evil-scroll-page-down :after (lambda (&rest args) (recenter)))
 (advice-add 'evil-scroll-page-up :after (lambda (&rest args) (recenter)))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (window-numbering spaceline smooth-scrolling pbcopy magit json-mode js2-mode hl-todo highlight-parentheses flycheck exec-path-from-shell dired-details desktop+ counsel avy auto-complete ag evil-surround evil-nerd-commenter evil-leader evil base16-theme use-package))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
