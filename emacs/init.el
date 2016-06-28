@@ -1,5 +1,7 @@
 ;; Initialize package system.
 ;; Use :package-refresh-contents if local package cache seems to be out of date.
+(defconst emacs-start-time (current-time))
+
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -23,18 +25,13 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
-;; Mark text past the 120th column
-(setq-default
- whitespace-line-column 120
- whitespace-style       '(face lines-tail))
-(add-hook 'prog-mode-hook #'whitespace-mode)
-
 ;; Bootstrap 'use-package'.
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
 
 ;; Make use-package available.
+(defvar use-package-verbose t)
 (require 'use-package)
 
 ;; Theming.
@@ -42,7 +39,10 @@
 (load-theme 'base16-twilight-dark t)
 (global-hl-line-mode +1)
 
-;; Load evil before other stuff
+;; Load these packages before other stuff
+(use-package diminish
+  :ensure t)
+
 (use-package evil
   :ensure t
   :init
@@ -62,14 +62,12 @@
       "wsr" 'split-window-right)
     (use-package evil-nerd-commenter
       :ensure t
-      :defer 1
       :config
       (evil-leader/set-key
         "ci" 'evilnc-comment-or-uncomment-lines
         "cr" 'comment-or-uncomment-region))
     (use-package evil-surround
       :ensure t
-      :defer 1
       :config
       (global-evil-surround-mode)))
   :config
@@ -78,7 +76,6 @@
 ;; Other packages
 (use-package ag
   :ensure t
-  :defer 1
   :commands (ag-project
              ag-project-files
              ag-project-regexp)
@@ -90,13 +87,11 @@
 
 (use-package auto-complete
   :ensure t
-  :defer 1
   :config
   (ac-config-default))
 
 (use-package avy
   :ensure t
-  :defer 1
   :commands avy-goto-char-timer
   :init
   (evil-leader/set-key
@@ -104,8 +99,12 @@
 
 (use-package counsel
   :ensure t
-  :defer 1
-  :config
+  :commands (ivy-switch-buffer
+             counsel-git
+             counsel-descbinds
+             counsel-describe-function
+             counsel-M-x)
+  :init
   (evil-leader/set-key
     "bs" 'ivy-switch-buffer
     "fp" 'counsel-git
@@ -115,41 +114,42 @@
 
 (use-package dired-details
   :ensure t
-  :defer 1
   :config
   (setq-default dired-details-hidden-string "")
   (dired-details-install))
 
-(use-package exec-path-from-shell
-  :ensure t
-  :defer 1
-  :init
-  (setq exec-path-from-shell-check-startup-files nil)
-  :config
-  (exec-path-from-shell-initialize))
+;; (use-package exec-path-from-shell
+;;   :ensure t
+;;   :init
+;;   (setq exec-path-from-shell-check-startup-files nil)
+;;   :config
+;;   (exec-path-from-shell-initialize))
 
 (use-package flycheck
   :ensure t
-  :defer 1
+  :mode (("\\.js$" . js2-mode)
+         ("\\.jsx$" . js2-mode))
   :config
   (add-hook 'js2-mode-hook 'flycheck-mode)
   (add-hook 'json-mode-hook 'flycheck-mode))
 
 (use-package highlight-parentheses
   :ensure t
-  :defer 1
+  :diminish highlight-parentheses-mode
   :config
   (global-highlight-parentheses-mode))
 
 (use-package hl-todo
   :ensure t
-  :defer 1
+  :diminish 'global-hl-todo-mode
   :config
   (global-hl-todo-mode))
 
 (use-package js2-mode
   :ensure t
-  :defer 1
+  :mode (("\\.js$" . js2-mode)
+         ("\\.jsx$" . js2-mode))
+  :commands (js2-mode)
   :config
   (setq js-indent-level 2)
   (setq js2-basic-offset 2)
@@ -159,11 +159,11 @@
 
 (use-package json-mode
   :ensure t
-  :defer 1)
+  :mode (("\\.json$" . json-mode))
+  :commands (json-mode))
 
 (use-package magit
   :ensure t
-  :defer 1
   :commands magit-status
   :init
   (evil-leader/set-key "gs" 'magit-status)
@@ -179,20 +179,19 @@
 
 (use-package pbcopy
   :ensure t
-  :defer 1
   :config
   (turn-on-pbcopy))
 
 (use-package projectile
   :ensure t
-  :defer 1
+  :diminish projectile-mode
   :config
   (projectile-global-mode)
   (setq projectile-completion-system 'ivy))
 
 (use-package smooth-scrolling
   :ensure t
-  :defer 1
+  :diminish smooth-scrolling-mode
   :config
   (smooth-scrolling-mode)
   (setq smooth-scroll-margin 25))
@@ -222,9 +221,17 @@
 
 (use-package undo-tree
   :ensure t
-  :defer 1
+  :diminish undo-tree-mode
   :config
   (global-undo-tree-mode))
+
+(use-package whitespace
+  :ensure t
+  :diminish whitespace-mode
+  :config
+  (setq whitespace-line-column 120
+        whitespace-style '(face lines-tail))
+  (add-hook 'prog-mode-hook 'whitespace-mode))
 
 (defun kill-other-buffers ()
   "Kill all buffers but the current one. Doesn't mess with special buffers."
@@ -251,6 +258,14 @@
 
 (advice-add 'evil-scroll-page-down :after (lambda (&rest args) (recenter)))
 (advice-add 'evil-scroll-page-up :after (lambda (&rest args) (recenter)))
+
+(add-hook 'after-init-hook
+          `(lambda ()
+             (let ((elapsed (float-time (time-subtract (current-time) emacs-start-time))))
+               (message "Loading %s...done (%.3fs) [after-init]"
+                        ,load-file-name elapsed)))
+          t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
