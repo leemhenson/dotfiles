@@ -22,14 +22,12 @@ setopt share_history
 # Shaddapayourface
 unsetopt beep
 
-
 export CHEATCOLORS=true
 export CLICOLOR=true
 export DEFAULT_CHEAT_DIR="$DOTFILES/cheatsheets"
 export EDITOR="vim"
 export FZF_DEFAULT_OPTS="-e"
 export FZF_DEFAULT_SORT=100000
-export SPACEMACSDIR="$DOTFILES/spacemacs"
 
 LESSPIPE=`which src-hilite-lesspipe.sh`
 export LESSOPEN="| ${LESSPIPE} %s"
@@ -101,10 +99,12 @@ alias hrcp='hrc -r production "$@"'
 alias hrcs='hrc -r staging "$@"'
 alias ls='k -ah --no-vcs'
 
-git config --global core.excludesfile "$DOTFILES/git/global.gitignore"
-
-export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
+# nvm is slow to start (2+ seconds) so
+# don't load it unless I need it
+function load-nvm () {
+  export NVM_DIR="$HOME/.nvm"
+  source "$(brew --prefix nvm)/nvm.sh"
+}
 
 # source private scripts
 if [[ -d $PRIVATE_DOTFILES ]]; then
@@ -112,4 +112,3 @@ if [[ -d $PRIVATE_DOTFILES ]]; then
     source "$file"
   done
 fi
-

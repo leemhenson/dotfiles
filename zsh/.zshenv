@@ -12,6 +12,8 @@ path[1,0]="/usr/local/share/npm/bin"
 path[1,0]="./node_modules/.bin"
 path[1,0]="/Applications/Postgres.app/Contents/Versions/9.5/bin"
 
+git config --global core.excludesfile "$DOTFILES/git/global.gitignore"
+
 eval "$(direnv hook zsh)"
 
 if [ -f /usr/local/share/chruby/chruby.sh ]; then
