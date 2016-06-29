@@ -41,7 +41,6 @@ zplug "hchbaw/zce.zsh"
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/httpie", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
-zplug "supercrabtree/k"
 zplug "willghatch/zsh-saneopt"
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
@@ -97,7 +96,7 @@ alias hrc='heroku run rails console "$@"'
 alias hrcd='hrc -r development "$@"'
 alias hrcp='hrc -r production "$@"'
 alias hrcs='hrc -r staging "$@"'
-alias ls='k -ah --no-vcs'
+alias ls='ls -alh'
 
 # nvm is slow to start (2+ seconds) so
 # don't load it unless I need it
