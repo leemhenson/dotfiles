@@ -3,25 +3,23 @@
 <Space>!       # shell-command
 <Space>1-9     # select-window-(1-9)
 <Space><Space> # avy-goto-char-timer
-<Space>af      # ag-project-files       (deprecate)
-<Space>ag      # ag-project
-<Space>ar      # ag-project-regexp      (deprecate)
-<Space>bko     # kill-other-buffers
-<Space>bkt     # kill-this-buffer
+<Space>bk      # kill-this-buffer
 <Space>bs      # ivy-switch-buffer
 <Space>ci      # evilnc-comment-or-uncomment-lines
 <Space>cr      # comment-or-uncomment-region
-<Space>fd      # dired
-<Space>fp      # counsel-git
 <Space>gs      # magit-status
 <Space>hb      # counsel-descbinds
 <Space>hf      # counsel-describe-function
 <Space>hx      # counsel-M-x
-<Space>wdo     # delete-other-windows
-<Space>wdt     # delete-window
+<Space>pd      # projectile-dired
+<Space>sf      # counsel-find-file
+<Space>sg      # counsel-git
+<Space>sp      # counsel-projectile
+<Space>st      # projectile-ag
+<Space>wk      # delete-window
 <Space>wsb     # split-window-right
 <Space>wsr     # split-window-below
 
 # Visual mode
-<Shift><down>  # move selected lines down
-<Shift><up>    # move selected lines up
+<Ctrl-o>       # move selected lines down
+<Ctrl-p>       # move selected lines up

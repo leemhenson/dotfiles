@@ -53,11 +53,8 @@
     (global-evil-leader-mode)
     (evil-leader/set-key
       "!"   'shell-command
-      "fd"  'dired
-      "bkt" 'kill-this-buffer
-      "bko" 'kill-other-buffers
-      "wdt" 'delete-window
-      "wdo" 'delete-other-windows
+      "bk"  'kill-this-buffer
+      "wk"  'delete-window
       "wsb" 'split-window-below
       "wsr" 'split-window-right)
     (use-package evil-nerd-commenter
@@ -75,15 +72,7 @@
 
 ;; Other packages
 (use-package ag
-  :ensure t
-  :commands (ag-project
-             ag-project-files
-             ag-project-regexp)
-  :init
-  (evil-leader/set-key
-    "ag" 'ag-project
-    "ar" 'ag-project-regexp
-    "af" 'ag-project-files))
+  :ensure t)
 
 (use-package auto-complete
   :ensure t
@@ -101,6 +90,7 @@
 (use-package counsel
   :ensure t
   :commands (ivy-switch-buffer
+             counsel-find-file
              counsel-git
              counsel-descbinds
              counsel-describe-function
@@ -108,7 +98,8 @@
   :init
   (evil-leader/set-key
     "bs" 'ivy-switch-buffer
-    "fp" 'counsel-git
+    "sf" 'counsel-find-file
+    "sg" 'counsel-git
     "hb" 'counsel-descbinds
     "hf" 'counsel-describe-function
     "hx" 'counsel-M-x))
@@ -159,6 +150,21 @@
   (setq js2-mode-show-strict-warnings nil)
   (setq js2-strict-trailing-comma-warning nil))
 
+(use-package projectile
+  :ensure t
+  :diminish projectile-mode
+  :config
+  (projectile-global-mode)
+  (setq projectile-completion-system 'ivy)
+  (evil-leader/set-key
+    "pd" 'projectile-dired
+    "st" 'projectile-ag)
+  (use-package counsel-projectile
+    :ensure t
+    :commands counsel-projectile
+    :init
+    (evil-leader/set-key "sp" 'counsel-projectile)))
+
 (use-package json-mode
   :ensure t
   :mode (("\\.json$" . json-mode))
@@ -183,13 +189,6 @@
   :ensure t
   :config
   (turn-on-pbcopy))
-
-(use-package projectile
-  :ensure t
-  :diminish projectile-mode
-  :config
-  (projectile-global-mode)
-  (setq projectile-completion-system 'ivy))
 
 (use-package smooth-scrolling
   :ensure t
@@ -243,19 +242,19 @@
      #'kill-buffer
      (delete (current-buffer) (seq-filter #'buffer-file-name (buffer-list))))))
 
-(defun dired-git ()
-  "Open dired at the root of the local git repo."
-  (interactive)
-  (dired
-   (expand-file-name
-    (locate-dominating-file default-directory ".git"))))
+(global-set-key (kbd "C-h") 'windmove-left)
+(global-set-key (kbd "C-l") 'windmove-right)
+(global-set-key (kbd "C-k") 'windmove-up)
+(global-set-key (kbd "C-j") 'windmove-down)
+
+(define-key evil-normal-state-map (kbd "-") 'dired-jump)
 
 (define-key evil-visual-state-map
-  (kbd "S-<down>")
+  (kbd "C-o")
   (concat ":m '>+1" (kbd "RET") "gv=gv"))
 
 (define-key evil-visual-state-map
-  (kbd "S-<up>")
+  (kbd "C-p")
   (concat ":m '<-2" (kbd "RET") "gv=gv"))
 
 (advice-add 'evil-scroll-page-down :after (lambda (&rest args) (recenter)))
