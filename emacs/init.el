@@ -2,6 +2,7 @@
 ;; Use :package-refresh-contents if local package cache seems to be out of date.
 (defconst emacs-start-time (current-time))
 
+(require 'cl)
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -35,9 +36,14 @@
 (require 'use-package)
 
 ;; Theming.
-(use-package base16-theme :ensure t :defer t)
+(use-package base16-theme
+  :ensure t)
 (load-theme 'base16-twilight-dark t)
 (global-hl-line-mode +1)
+
+;; (use-package planet-theme
+;;   :ensure t)
+;; (load-theme 'planet t)
 
 ;; Load these packages before other stuff
 (use-package diminish
@@ -198,28 +204,28 @@
   (smooth-scrolling-mode)
   (setq smooth-scroll-margin 25))
 
-(use-package spaceline
-  :ensure t
-  :config
-  (require 'spaceline-config)
-  (spaceline-spacemacs-theme)
-  (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
-  (use-package window-numbering
-    :ensure t
-    :config
-    (defun window-numbering-install-mode-line (&optional position)
-      "Do nothing, the display is handled by spaceline.")
-    (window-numbering-mode)
-    (evil-leader/set-key
-      "1" 'select-window-1
-      "2" 'select-window-2
-      "3" 'select-window-3
-      "4" 'select-window-4
-      "5" 'select-window-5
-      "6" 'select-window-6
-      "7" 'select-window-7
-      "8" 'select-window-8
-      "9" 'select-window-9)))
+;; (use-package spaceline
+;;   :ensure t
+;;   :config
+;;   (require 'spaceline-config)
+;;   (spaceline-spacemacs-theme)
+;;   (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+;;   (use-package window-numbering
+;;     :ensure t
+;;     :config
+;;     (defun window-numbering-install-mode-line (&optional position)
+;;       "Do nothing, the display is handled by spaceline.")
+;;     (window-numbering-mode)
+;;     (evil-leader/set-key
+;;       "1" 'select-window-1
+;;       "2" 'select-window-2
+;;       "3" 'select-window-3
+;;       "4" 'select-window-4
+;;       "5" 'select-window-5
+;;       "6" 'select-window-6
+;;       "7" 'select-window-7
+;;       "8" 'select-window-8
+;;       "9" 'select-window-9)))
 
 (use-package undo-tree
   :ensure t
@@ -234,6 +240,16 @@
   (setq whitespace-line-column 120
         whitespace-style '(face lines-tail))
   (add-hook 'prog-mode-hook 'whitespace-mode))
+
+(use-package powerline
+  :ensure t
+  :init
+  (setq powerline-default-separator 'nil)
+  :config
+  (use-package powerline-evil
+    :ensure t
+    :config
+    (powerline-evil-vim-color-theme)))
 
 (defun kill-other-buffers ()
   "Kill all buffers but the current one. Doesn't mess with special buffers."
@@ -273,6 +289,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("d1a42ed39a15a843cccadf107ee0242b5f78bfbb5b70ba3ce19f3ea9fda8f52d" "6d8d8af130783e4e91bfcda284ad3271e598e9e78374f5ad406ab63243e75982" "2a5be663818e1e23fd2175cc8dac8a2015dcde6b2e07536712451b14658bbf68" "b869a1353d39ab81b19eb79de40ff3e7bb6eaad705e61f7e4dbdcb183f08c5a6" "e87a2bd5abc8448f8676365692e908b709b93f2d3869c42a4371223aab7d9cf8" default)))
  '(package-selected-packages
    (quote
     (window-numbering spaceline smooth-scrolling pbcopy magit json-mode js2-mode hl-todo highlight-parentheses flycheck exec-path-from-shell dired-details desktop+ counsel avy auto-complete ag evil-surround evil-nerd-commenter evil-leader evil base16-theme use-package))))
