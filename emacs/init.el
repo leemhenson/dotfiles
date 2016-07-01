@@ -100,6 +100,7 @@
     "bs" 'ivy-switch-buffer
     "sf" 'counsel-find-file
     "sg" 'counsel-git
+    "sy" 'counsel-yank-pop
     "hb" 'counsel-descbinds
     "hf" 'counsel-describe-function
     "hx" 'counsel-M-x))
