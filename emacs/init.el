@@ -204,29 +204,6 @@
   (smooth-scrolling-mode)
   (setq smooth-scroll-margin 25))
 
-;; (use-package spaceline
-;;   :ensure t
-;;   :config
-;;   (require 'spaceline-config)
-;;   (spaceline-spacemacs-theme)
-;;   (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
-;;   (use-package window-numbering
-;;     :ensure t
-;;     :config
-;;     (defun window-numbering-install-mode-line (&optional position)
-;;       "Do nothing, the display is handled by spaceline.")
-;;     (window-numbering-mode)
-;;     (evil-leader/set-key
-;;       "1" 'select-window-1
-;;       "2" 'select-window-2
-;;       "3" 'select-window-3
-;;       "4" 'select-window-4
-;;       "5" 'select-window-5
-;;       "6" 'select-window-6
-;;       "7" 'select-window-7
-;;       "8" 'select-window-8
-;;       "9" 'select-window-9)))
-
 (use-package undo-tree
   :ensure t
   :diminish undo-tree-mode
