@@ -218,6 +218,20 @@
         whitespace-style '(face lines-tail))
   (add-hook 'prog-mode-hook 'whitespace-mode))
 
+(use-package whitespace-cleanup-mode
+  :ensure t
+  :diminish whitespace-cleanup-mode)
+
+(use-package yasnippet
+  :ensure t
+  ;; :commands yas-minor-mode
+  ;; :diminish yas-minor-mode
+  ;; :init
+  ;; (progn (add-hook 'prog-mode-hook #'yas-minor-mode))
+  :config
+  (setq yas-snippet-dirs '("/Users/leemhenson/.dotfiles/emacs/snippets"))
+  (progn (yas-reload-all)))
+
 (use-package powerline
   :ensure t
   :init
@@ -242,6 +256,7 @@
 (global-set-key (kbd "C-j") 'windmove-down)
 
 (define-key evil-normal-state-map (kbd "-") 'dired-jump)
+(define-key dired-mode-map "c" 'find-file)
 
 (define-key evil-visual-state-map
   (kbd "C-o")
@@ -254,7 +269,6 @@
 (advice-add 'evil-scroll-page-down :after (lambda (&rest args) (recenter)))
 (advice-add 'evil-scroll-page-up :after (lambda (&rest args) (recenter)))
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'after-init-hook
           `(lambda ()
              (let ((elapsed (float-time (time-subtract (current-time) emacs-start-time))))

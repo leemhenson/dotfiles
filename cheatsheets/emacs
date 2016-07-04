@@ -23,3 +23,9 @@
 # Visual mode
 <Ctrl-o>       # move selected lines down
 <Ctrl-p>       # move selected lines up
+
+# Dired
+^              # go to parent directory
++              # create directory
+c              # find-file
+R              # rename file
