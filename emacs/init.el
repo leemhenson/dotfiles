@@ -106,10 +106,10 @@
     "bs" 'ivy-switch-buffer
     "sf" 'counsel-find-file
     "sg" 'counsel-git
+    "sx" 'counsel-M-x
     "sy" 'counsel-yank-pop
     "hb" 'counsel-descbinds
-    "hf" 'counsel-describe-function
-    "hx" 'counsel-M-x))
+    "hf" 'counsel-describe-function))
 
 (use-package dired-details
   :ensure t
