@@ -254,6 +254,7 @@
 (advice-add 'evil-scroll-page-down :after (lambda (&rest args) (recenter)))
 (advice-add 'evil-scroll-page-up :after (lambda (&rest args) (recenter)))
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'after-init-hook
           `(lambda ()
              (let ((elapsed (float-time (time-subtract (current-time) emacs-start-time))))
