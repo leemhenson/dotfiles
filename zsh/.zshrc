@@ -98,13 +98,6 @@ alias hrcp='hrc -r production "$@"'
 alias hrcs='hrc -r staging "$@"'
 alias ls='ls -alh'
 
-# nvm is slow to start (2+ seconds) so
-# don't load it unless I need it
-function load-nvm () {
-  export NVM_DIR="$HOME/.nvm"
-  source "$(brew --prefix nvm)/nvm.sh"
-}
-
 # source private scripts
 if [[ -d $PRIVATE_DOTFILES ]]; then
   for file in $PRIVATE_DOTFILES/zsh/*.zsh; do
