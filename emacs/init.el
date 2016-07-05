@@ -90,7 +90,11 @@
     (use-package evil-surround
       :ensure t
       :config
-      (global-evil-surround-mode)))
+      (global-evil-surround-mode))
+    (use-package evil-visualstar
+      :ensure t
+      :config
+      (global-evil-visualstar-mode)))
   :config
   (evil-mode))
 
