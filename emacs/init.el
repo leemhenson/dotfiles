@@ -1,12 +1,30 @@
-;; Initialize package system.
-;; Use :package-refresh-contents if local package cache seems to be out of date.
+;; Cached start time for benchmarking emacs boot time
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (defconst emacs-start-time (current-time))
 
-(require 'cl)
-(require 'package)
-(setq package-enable-at-startup nil)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(package-initialize)
+;; Bootstrap 
+(require 'cl-lib)
+
+(defun build-config-path (file)
+  (locate-user-emacs-file
+    (concat
+      (concat "config/" file)
+      ".el")))
+
+(defun load-config-file (file)
+  (load (build-config-path file)))
+
+(load-config-file "package")
+
+;; custom-set-variables, custom-safe-themes, custom-set-faces etc
+(setq custom-file (build-config-path "custom"))
+(load custom-file)
 
 ;; Miscellaneous.
 (global-linum-mode t)
@@ -145,32 +163,7 @@
   :config
   (global-hl-todo-mode))
 
-(use-package js2-mode
-  :ensure t
-  :mode (("\\.js$" . js2-mode)
-         ("\\.jsx$" . js2-mode))
-  :commands (js2-mode)
-  :config
-  (setq js-indent-level 2)
-  (setq js2-basic-offset 2)
-  (setq js2-mode-show-parse-errors nil)
-  (setq js2-mode-show-strict-warnings nil)
-  (setq js2-strict-trailing-comma-warning nil))
-
-(use-package projectile
-  :ensure t
-  :diminish projectile-mode
-  :config
-  (projectile-global-mode)
-  (setq projectile-completion-system 'ivy)
-  (evil-leader/set-key
-    "pd" 'projectile-dired
-    "st" 'projectile-ag)
-  (use-package counsel-projectile
-    :ensure t
-    :commands counsel-projectile
-    :init
-    (evil-leader/set-key "sp" 'counsel-projectile)))
+(load-config-file "javascript")
 
 (use-package json-mode
   :ensure t
@@ -196,6 +189,21 @@
   :ensure t
   :config
   (turn-on-pbcopy))
+
+(use-package projectile
+  :ensure t
+  :diminish projectile-mode
+  :config
+  (projectile-global-mode)
+  (setq projectile-completion-system 'ivy)
+  (evil-leader/set-key
+    "pd" 'projectile-dired
+    "st" 'projectile-ag)
+  (use-package counsel-projectile
+    :ensure t
+    :commands counsel-projectile
+    :init
+    (evil-leader/set-key "sp" 'counsel-projectile)))
 
 (use-package smooth-scrolling
   :ensure t
@@ -276,20 +284,3 @@
                         ,load-file-name elapsed)))
           t)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("b6db49cec08652adf1ff2341ce32c7303be313b0de38c621676122f255ee46db" "d1a42ed39a15a843cccadf107ee0242b5f78bfbb5b70ba3ce19f3ea9fda8f52d" "6d8d8af130783e4e91bfcda284ad3271e598e9e78374f5ad406ab63243e75982" "2a5be663818e1e23fd2175cc8dac8a2015dcde6b2e07536712451b14658bbf68" "b869a1353d39ab81b19eb79de40ff3e7bb6eaad705e61f7e4dbdcb183f08c5a6" "e87a2bd5abc8448f8676365692e908b709b93f2d3869c42a4371223aab7d9cf8" default)))
- '(package-selected-packages
-   (quote
-    (window-numbering spaceline smooth-scrolling pbcopy magit json-mode js2-mode hl-todo highlight-parentheses flycheck exec-path-from-shell dired-details desktop+ counsel avy auto-complete ag evil-surround evil-nerd-commenter evil-leader evil base16-theme use-package))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
