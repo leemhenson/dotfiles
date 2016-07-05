@@ -267,8 +267,8 @@ nmap <Leader>ht :FzfHelptags<cr>
 nmap <Leader><Leader> <Plug>(easymotion-sn)
 
 " 6 Search
-nmap <Leader>sf :FzfGitFiles<cr>
-nmap <Leader>sF :exe 'FzfFiles ' . <SID>fzf_root()<CR>
+nmap <Leader>sg :FzfGitFiles<cr>
+nmap <Leader>sf :exe 'FzfFiles ' . <SID>fzf_root()<CR>
 nmap <Leader>st :FzfAg<cr>
 vmap <Leader>S <Plug>CtrlSFVwordPath
 
