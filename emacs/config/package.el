@@ -13,3 +13,7 @@
 ;; Make use-package available.
 (defvar use-package-verbose t)
 (require 'use-package)
+
+;; Load initial set of packages
+(use-package diminish
+  :ensure t)

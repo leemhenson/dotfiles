@@ -14,3 +14,16 @@
         js2-strict-trailing-comma-warning nil
         sgml-basic-offset js-indent-level
         sgml-attribute-offset js-indent-level))
+
+(use-package json-mode
+  :ensure t
+  :mode (("\\.json$" . json-mode))
+  :commands (json-mode))
+
+(use-package flycheck
+  :ensure t
+  :mode (("\\.js$" . js2-mode)
+         ("\\.jsx$" . js2-mode))
+  :config
+  (add-hook 'js2-mode-hook 'flycheck-mode)
+  (add-hook 'json-mode-hook 'flycheck-mode))
