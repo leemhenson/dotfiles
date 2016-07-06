@@ -1,5 +1,8 @@
 (global-linum-mode t)
-(menu-bar-mode -1)
+
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq gc-cons-threshold (* 10 1024 1024)) ;; Only GC every 10MB
