@@ -10,3 +10,4 @@
   :config
   (global-hl-todo-mode))
 
+(global-hl-line-mode)

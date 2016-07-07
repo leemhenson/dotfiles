@@ -20,5 +20,4 @@
                     :height 140
                     :family "Inconsolata")
 
-(global-hl-line-mode +1)
 
