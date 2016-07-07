@@ -1,4 +1,3 @@
-(use-package smooth-scrolling
-  :ensure t
-  :diminish (smooth-scrolling-mode)
-  :config (smooth-scrolling-mode))
+(setq scroll-conservatively 101
+      scroll-margin 5
+      scroll-preserve-screen-position 't)
