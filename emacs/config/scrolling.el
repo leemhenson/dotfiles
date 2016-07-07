@@ -1,4 +1,5 @@
 (use-package centered-cursor-mode
   :ensure t
-  :diminish centered-cursor-mode
+  :diminish (centered-cursor-mode
+             global-centered-cursor-mode)
   :config (global-centered-cursor-mode))
