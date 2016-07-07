@@ -1,8 +1,7 @@
-(use-package highlight-parentheses
+(use-package hl-anything
   :ensure t
-  :diminish highlight-parentheses-mode
   :config
-  (global-highlight-parentheses-mode))
+  (add-hook 'prog-mode-hook #'hl-paren-mode))
 
 (use-package hl-todo
   :ensure t
