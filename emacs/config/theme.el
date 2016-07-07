@@ -15,9 +15,9 @@
   :ensure t
   :config
   (load-theme 'planet t)
-  (setq hl-inward-paren-bg-color 'planet-bg)
+  (setq hl-inward-paren-bg-color "#192129")
   (setq hl-inward-paren-fg-color "LimeGreen")
-  (setq hl-outward-paren-bg-colors '(planet-bg))
+  (setq hl-outward-paren-bg-colors '("#192129"))
   (setq hl-outward-paren-fg-colors '("gold"
                                      "chocolate"
                                      "SteelBlue1"
