@@ -8,5 +8,7 @@
 
 (use-package whitespace-cleanup-mode
   :ensure t
-  :diminish whitespace-cleanup-mode)
+  :diminish whitespace-cleanup-mode
+  :config
+  (global-whitespace-cleanup-mode))
 
