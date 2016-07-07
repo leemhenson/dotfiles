@@ -1,5 +1,4 @@
-(use-package centered-cursor-mode
+(use-package smooth-scrolling
   :ensure t
-  :diminish (centered-cursor-mode
-             global-centered-cursor-mode)
-  :config (global-centered-cursor-mode))
+  :diminish (smooth-scrolling-mode)
+  :config (smooth-scrolling-mode))
