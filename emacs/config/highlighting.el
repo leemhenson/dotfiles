@@ -1,5 +1,6 @@
 (use-package hl-anything
   :ensure t
+  :diminish 'hl-paren-mode
   :config
   (add-hook 'prog-mode-hook #'hl-paren-mode))
 
