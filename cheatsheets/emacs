@@ -29,3 +29,13 @@
 +              # create directory
 c              # find-file
 R              # rename file
+d              # mark files for deletion
+x              # commit deletion of marked files
+
+# Ag
+n              # next match
+p              # previous match
+g              # refresh results
+q              # close buffer
+k              # kill buffer
+<C-c><C-f>     # activate next-error-follow-minor-mode
