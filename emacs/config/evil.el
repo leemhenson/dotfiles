@@ -1,6 +1,7 @@
 (use-package evil
   :ensure t
   :init
+
   (use-package evil-leader ;; must be loaded before evil
     :ensure t
     :config
@@ -12,8 +13,48 @@
       "wk"  'delete-window
       "wsb" 'split-window-below
       "wsr" 'split-window-right))
+
   :config
   (evil-mode)
+
+  ;; http://eugeii.com/posts/bypassing-the-clipboard-in-emacs-evil-mode/
+  
+  (defmacro without-evil-mode (&rest do-this)
+    ;; Check if evil-mode is on, and disable it temporarily
+    `(let ((evil-mode-is-on (evil-mode?)))
+       (if evil-mode-is-on
+           (disable-evil-mode))
+       (ignore-errors
+         ,@do-this)
+       (if evil-mode-is-on
+           (enable-evil-mode))))
+
+  (defmacro evil-mode? ()
+    "Checks if evil-mode is active. Uses Evil's state to check."
+    `evil-state)
+
+  (defmacro disable-evil-mode ()
+    "Disable evil-mode with visual cues."
+    `(progn (evil-mode 0)))
+
+  (defmacro enable-evil-mode ()
+    "Enable evil-mode with visual cues."
+    `(progn (evil-mode 1)))
+
+  (defun evil-destroy-paste-before ()
+    (interactive)
+    (without-evil-mode
+     (delete-region (point) (mark))
+     (evil-paste-before 1)))
+
+  (defun evil-destroy-paste-after ()
+    (interactive)
+    (without-evil-mode
+     (delete-region (point) (mark))
+     (evil-paste-after 1)))
+
+  (define-key evil-visual-state-map "P" 'evil-destroy-paste-before)
+  (define-key evil-visual-state-map "p" 'evil-destroy-paste-after)
 
   (use-package evil-nerd-commenter
     :ensure t
@@ -41,3 +82,4 @@
   (define-key evil-visual-state-map
     (kbd "C-p")
     (concat ":m '<-2" (kbd "RET") "gv=gv")))
+
