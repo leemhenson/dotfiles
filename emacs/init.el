@@ -29,6 +29,7 @@
 
 (load-config-file "ag")
 (load-config-file "auto-complete")
+(load-config-file "buffers")
 (load-config-file "dired")
 (load-config-file "highlighting")
 (load-config-file "javascript")
@@ -43,20 +44,6 @@
 ;; custom-set-variables, custom-safe-themes, custom-set-faces etc
 (setq custom-file (build-config-path "custom"))
 (load custom-file)
-
-;; Other packages
-(defun kill-other-buffers ()
-  "Kill all buffers but the current one. Doesn't mess with special buffers."
-  (interactive)
-  (when (y-or-n-p "Are you sure you want to kill all buffers but the current one? ")
-    (seq-each
-     #'kill-buffer
-     (delete (current-buffer) (seq-filter #'buffer-file-name (buffer-list))))))
-
-(global-set-key (kbd "C-h") 'windmove-left)
-(global-set-key (kbd "C-l") 'windmove-right)
-(global-set-key (kbd "C-k") 'windmove-up)
-(global-set-key (kbd "C-j") 'windmove-down)
 
 (advice-add 'evil-scroll-page-down :after (lambda (&rest args) (recenter)))
 (advice-add 'evil-scroll-page-up :after (lambda (&rest args) (recenter)))
