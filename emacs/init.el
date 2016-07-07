@@ -58,14 +58,6 @@
 (global-set-key (kbd "C-k") 'windmove-up)
 (global-set-key (kbd "C-j") 'windmove-down)
 
-(define-key evil-visual-state-map
-  (kbd "C-o")
-  (concat ":m '>+1" (kbd "RET") "gv=gv"))
-
-(define-key evil-visual-state-map
-  (kbd "C-p")
-  (concat ":m '<-2" (kbd "RET") "gv=gv"))
-
 (advice-add 'evil-scroll-page-down :after (lambda (&rest args) (recenter)))
 (advice-add 'evil-scroll-page-up :after (lambda (&rest args) (recenter)))
 
