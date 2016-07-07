@@ -45,9 +45,6 @@
 (setq custom-file (build-config-path "custom"))
 (load custom-file)
 
-(advice-add 'evil-scroll-page-down :after (lambda (&rest args) (recenter)))
-(advice-add 'evil-scroll-page-up :after (lambda (&rest args) (recenter)))
-
 (add-hook 'after-init-hook
           `(lambda ()
              (let ((elapsed (float-time (time-subtract (current-time) emacs-start-time))))

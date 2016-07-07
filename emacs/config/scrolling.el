@@ -1,7 +1,4 @@
-(use-package smooth-scrolling
+(use-package centered-cursor-mode
   :ensure t
-  :diminish smooth-scrolling-mode
-  :config
-  (smooth-scrolling-mode)
-  (setq smooth-scroll-margin 25))
-
+  :diminish centered-cursor-mode
+  :config (global-centered-cursor-mode))
