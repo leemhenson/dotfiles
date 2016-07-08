@@ -1,3 +1,9 @@
+(use-package anzu
+  :ensure t
+  :diminish global-anzu-mode
+  :config
+  (global-anzu-mode))
+
 (defun kill-other-buffers ()
   "Kill all buffers but the current one. Doesn't mess with special buffers."
   (interactive)
