@@ -2,4 +2,4 @@
 # name: console.dir
 # key: dir
 # --
-console.dir({ $1 }, { depth: ${1:null}, colors: true });$0
+console.dir({ $1 }, { depth: ${2:null}, colors: true });$0
