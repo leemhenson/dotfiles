@@ -34,7 +34,6 @@
 (load-config-file "highlighting")
 (load-config-file "javascript")
 (load-config-file "magit")
-(load-config-file "powerline")
 (load-config-file "projectile")
 (load-config-file "scrolling")
 (load-config-file "undo")
