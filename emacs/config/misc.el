@@ -18,3 +18,6 @@
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
+
+;; Make is possible for me to enter a # symbol via Alt-3
+(global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
