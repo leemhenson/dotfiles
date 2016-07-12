@@ -5,9 +5,3 @@
   (setq exec-path-from-shell-check-startup-files nil)
   :config
   (exec-path-from-shell-initialize))
-
-;;(use-package pbcopy
-;;  :ensure t
-;;  :config
-;;  (turn-on-pbcopy))
-
