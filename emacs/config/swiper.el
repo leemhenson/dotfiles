@@ -15,7 +15,7 @@
              counsel-M-x)
   :init
   (evil-leader/set-key
-    "bs" 'ivy-switch-buffer
+    "sb" 'ivy-switch-buffer
     "sf" 'counsel-find-file
     "sg" 'counsel-git
     "sx" 'counsel-M-x
