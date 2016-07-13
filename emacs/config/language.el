@@ -34,3 +34,8 @@
   :config
   (add-hook 'js2-mode-hook 'flycheck-mode)
   (add-hook 'json-mode-hook 'flycheck-mode))
+
+(use-package scss-mode
+  :ensure t
+  :mode (("\\.scss$" . scss-mode))
+  :commands (scss-mode))
