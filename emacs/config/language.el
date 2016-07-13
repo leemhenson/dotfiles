@@ -23,7 +23,9 @@
 (use-package lua-mode
   :ensure t
   :mode ("\\.lua$" . lua-mode)
-  :commands lua-mode)
+  :commands lua-mode
+  :config
+  (setq lua-indent-level 2))
 
 (use-package flycheck
   :ensure t
