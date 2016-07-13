@@ -20,6 +20,11 @@
   :mode (("\\.json$" . json-mode))
   :commands (json-mode))
 
+(use-package lua-mode
+  :ensure t
+  :mode ("\\.lua$" . lua-mode)
+  :commands lua-mode)
+
 (use-package flycheck
   :ensure t
   :mode (("\\.js$" . js2-mode)
