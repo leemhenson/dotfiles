@@ -17,6 +17,10 @@
       (concat "config/" file)
       ".el")))
 
+;; custom-set-variables, custom-safe-themes, custom-set-faces etc
+(setq custom-file (build-config-path "custom"))
+(load custom-file)
+
 (defun load-config-file (file)
   (load (build-config-path file)))
 
@@ -39,10 +43,6 @@
 (load-config-file "undo")
 (load-config-file "whitespace")
 (load-config-file "yasnippet")
-
-;; custom-set-variables, custom-safe-themes, custom-set-faces etc
-(setq custom-file (build-config-path "custom"))
-(load custom-file)
 
 (add-hook 'after-init-hook
           `(lambda ()
