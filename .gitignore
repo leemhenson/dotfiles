@@ -1,3 +1,15 @@
 /configstore
+/direnv/allow
+/emacs/*.dat
+/emacs/desktops
+/emacs/elpa
 /emacs/projectile-bookmarks.eld
+/emacs/recentf
+/git/gitk
+/iterm/settings
 /tags
+/vim/.netrwhist
+/vim/plugged
+/zsh/.histfile
+/zsh/.zcompdump*
+
