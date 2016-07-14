@@ -1,6 +1,5 @@
-(use-package auto-complete
+(use-package company
   :ensure t
-  :diminish auto-complete-mode
+  :diminish company-mode
   :config
-  (ac-config-default))
-
+  (global-company-mode))
