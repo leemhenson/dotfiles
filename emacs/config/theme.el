@@ -27,4 +27,5 @@
   :ensure t
   :config
   (setq sml/theme 'dark)
-  (sml/setup))
+  (sml/setup)
+  (column-number-mode))
