@@ -27,6 +27,15 @@
   :config
   (setq lua-indent-level 2))
 
+(use-package markdown-mode
+  :ensure t
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :commands (markdown-mode
+             gfm-mode)
+  :init (setq markdown-command "multimarkdown"))
+
 (use-package flycheck
   :ensure t
   :mode (("\\.js$" . js2-mode)
