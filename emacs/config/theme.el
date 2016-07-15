@@ -30,3 +30,8 @@
   (setq sml/theme 'dark)
   (sml/setup)
   (column-number-mode))
+
+(use-package mode-icons
+  :ensure t
+  :config
+  (mode-icons-mode))
