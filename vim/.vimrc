@@ -239,7 +239,7 @@ let g:fugitive_no_maps=1
 " ================
 
 " 1 Buffers
-nmap <Leader>b :FzfBuffers<cr>
+nmap <Leader>sb :FzfBuffers<cr>
 
 " 2 Editing
 nmap <Leader>f :Autoformat<cr>
@@ -256,7 +256,7 @@ smap <Tab> <Plug>snipMateNextOrTrigger
   vmap > >gv
 
 " 3 Git
-nmap <Leader>g :Magit<cr>
+nmap <Leader>gs :Magit<cr>
 
 " 4 Help
 nmap <Leader>h: :FzfCommands<cr>
