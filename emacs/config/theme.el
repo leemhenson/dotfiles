@@ -35,3 +35,8 @@
   :ensure t
   :config
   (mode-icons-mode))
+
+(use-package git-gutter
+  :ensure t
+  :config
+  (global-git-gutter-mode))
