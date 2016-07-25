@@ -48,3 +48,8 @@
   :ensure t
   :mode (("\\.scss$" . scss-mode))
   :commands (scss-mode))
+
+(use-package terraform-mode
+  :ensure t
+  :mode (("\\.tf$" . terraform-mode))
+  :commands (terraform-mode))
