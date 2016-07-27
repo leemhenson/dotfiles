@@ -98,6 +98,9 @@ alias hrcp='hrc -r production "$@"'
 alias hrcs='hrc -r staging "$@"'
 alias ls='ls -alh'
 
+# source other scripts
+source /usr/local/share/zsh/site-functions/_aws
+
 # source private scripts
 if [[ -d $PRIVATE_DOTFILES ]]; then
   for file in $PRIVATE_DOTFILES/zsh/*.zsh; do
