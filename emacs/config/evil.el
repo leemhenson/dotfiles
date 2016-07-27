@@ -81,5 +81,14 @@
 
   (define-key evil-visual-state-map
     (kbd "C-p")
-    (concat ":m '<-2" (kbd "RET") "gv=gv")))
+    (concat ":m '<-2" (kbd "RET") "gv=gv"))
+
+  (use-package anzu
+    :ensure t
+    :diminish anzu-mode
+    :config
+    (global-anzu-mode)
+    :init
+    (evil-leader/set-key
+      "r" 'anzu-replace-at-cursor-thing)))
 

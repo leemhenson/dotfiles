@@ -1,9 +1,3 @@
-(use-package anzu
-  :ensure t
-  :diminish anzu-mode
-  :config
-  (global-anzu-mode))
-
 (use-package buffer-move
   :ensure t
   :bind
