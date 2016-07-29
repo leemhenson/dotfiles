@@ -21,7 +21,10 @@
   :ensure t
   :mode (("\\.json$" . json-mode))
   :commands (json-mode)
+  :init
   :config
+  (setq js-indent-level 2)
+  (setq json-reformat:indent-width 2)
   (add-hook 'json-mode-hook 'flycheck-mode))
 
 (use-package lua-mode
@@ -53,3 +56,9 @@
   :ensure t
   :mode (("\\.tf$" . terraform-mode))
   :commands (terraform-mode))
+
+(use-package yaml-mode
+  :ensure t
+  :mode (("\\.yaml$" . yaml-mode)
+         ("``.yml$" . yaml-mode))
+  :commands (yaml-mode))
