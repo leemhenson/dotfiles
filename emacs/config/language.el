@@ -5,6 +5,8 @@
   :commands (js2-mode
              js2-jsx-mode)
   :config
+  (add-hook 'js2-mode-hook 'flycheck-mode)
+  (add-hook 'js2-jsx-mode-hook 'flycheck-mode)
   (defvar sgml-basic-offset)
   (defvar sgml-attribute-offset)
   (setq js-indent-level 2)
@@ -18,7 +20,9 @@
 (use-package json-mode
   :ensure t
   :mode (("\\.json$" . json-mode))
-  :commands (json-mode))
+  :commands (json-mode)
+  :config
+  (add-hook 'json-mode-hook 'flycheck-mode))
 
 (use-package lua-mode
   :ensure t
@@ -38,11 +42,7 @@
 
 (use-package flycheck
   :ensure t
-  :mode (("\\.js$" . js2-mode)
-         ("\\.jsx$" . js2-mode))
-  :config
-  (add-hook 'js2-mode-hook 'flycheck-mode)
-  (add-hook 'json-mode-hook 'flycheck-mode))
+  :diminish flycheck-mode)
 
 (use-package scss-mode
   :ensure t
