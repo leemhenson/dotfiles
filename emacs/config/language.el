@@ -21,7 +21,6 @@
   :ensure t
   :mode (("\\.json$" . json-mode))
   :commands (json-mode)
-  :init
   :config
   (setq js-indent-level 2)
   (setq json-reformat:indent-width 2)
@@ -43,9 +42,13 @@
              gfm-mode)
   :init (setq markdown-command "multimarkdown"))
 
-(use-package flycheck
+(use-package php-mode
   :ensure t
-  :diminish flycheck-mode)
+  :mode ("\\.php$\\'" . php-mode)
+  :commands php-mode
+  :config
+  (setq tab-width 2)
+  (setq c-basic-offset 2))
 
 (use-package scss-mode
   :ensure t
@@ -62,3 +65,7 @@
   :mode (("\\.yaml$" . yaml-mode)
          ("``.yml$" . yaml-mode))
   :commands (yaml-mode))
+
+(use-package flycheck
+  :ensure t
+  :diminish flycheck-mode)
