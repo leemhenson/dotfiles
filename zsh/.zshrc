@@ -22,7 +22,6 @@ setopt share_history
 # Shaddapayourface
 unsetopt beep
 
-export ANSIBLE_NOCOWS=1
 export CHEATCOLORS=true
 export CLICOLOR=true
 export DEFAULT_CHEAT_DIR="$DOTFILES/cheatsheets"
