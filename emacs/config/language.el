@@ -55,6 +55,11 @@
   :mode (("\\.scss$" . scss-mode))
   :commands (scss-mode))
 
+(use-package slim-mode
+  :ensure t
+  :mode ("\\.slim$" . slim-mode)
+  :commands slim-mode)
+
 (use-package terraform-mode
   :ensure t
   :mode (("\\.tf$" . terraform-mode))
