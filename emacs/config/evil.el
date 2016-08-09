@@ -10,6 +10,7 @@
     (evil-leader/set-key
       "!"   'shell-command
       "bk"  'kill-this-buffer
+      "bK"  'kill-other-buffers
       "wk"  'delete-window
       "wsb" 'split-window-below
       "wsr" 'split-window-right))
