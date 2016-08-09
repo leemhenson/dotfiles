@@ -22,10 +22,11 @@ setopt share_history
 # Shaddapayourface
 unsetopt beep
 
+export ALTERNATE_EDITOR=""
 export CHEATCOLORS=true
 export CLICOLOR=true
 export DEFAULT_CHEAT_DIR="$DOTFILES/cheatsheets"
-export EDITOR="vim"
+export EDITOR="emacsclient -c -nw"
 export FZF_DEFAULT_OPTS="-e"
 export FZF_DEFAULT_SORT=100000
 
