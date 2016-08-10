@@ -5,3 +5,8 @@
   (setq exec-path-from-shell-check-startup-files nil)
   :config
   (exec-path-from-shell-initialize))
+
+(use-package osx-clipboard
+  :ensure t
+  :init
+  (osx-clipboard-mode))
