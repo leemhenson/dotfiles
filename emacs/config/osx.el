@@ -8,5 +8,6 @@
 
 (use-package osx-clipboard
   :ensure t
+  :diminish osx-clipboard-mode
   :init
   (osx-clipboard-mode))
