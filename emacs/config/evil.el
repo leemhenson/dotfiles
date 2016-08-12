@@ -91,5 +91,5 @@
     (global-anzu-mode)
     :init
     (evil-leader/set-key
-      "r" 'anzu-replace-at-cursor-thing)))
+      "r" 'anzu-query-replace-at-cursor)))
 
