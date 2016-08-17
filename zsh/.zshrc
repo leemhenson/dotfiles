@@ -71,8 +71,7 @@ alias bi='bundle install'
 alias bu='bundle update'
 alias ccat='source-highlight --failsafe --out-format=esc -o STDOUT -i'
 alias emacs="$EDITOR"
-alias start-emacs-server="/usr/local/Cellar/emacs/25.1-rc1/bin/emacs --daemon $1 >/dev/null 2>&1 &"
-alias stop-emacs-server="emacsclient -e \"(kill-emacs)\""
+alias stop-emacs-daemon="emacsclient -e \"(kill-emacs)\""
 alias galc='git reset --soft HEAD^'
 alias gap='git add --patch'
 alias gcom='git checkout master'
