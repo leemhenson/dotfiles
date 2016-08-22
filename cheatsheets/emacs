@@ -22,10 +22,10 @@ SPC-bs      # ivy-switch-buffer
 SPC-ci      # evilnc-comment-or-uncomment-lines
 SPC-cr      # comment-or-uncomment-region
 SPC-gs      # magit-status
+SPC-pd      # projectile-dired
 SPC-hb      # counsel-descbinds
 SPC-hf      # counsel-describe-function
-SPC-hx      # counsel-M-x
-SPC-pd      # projectile-dired
+SPC-mx      # counsel-M-x
 SPC-sf      # counsel-find-file
 SPC-sg      # counsel-git
 SPC-sp      # counsel-projectile

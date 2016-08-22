@@ -2,6 +2,7 @@
   :ensure t
   :commands avy-goto-char-timer
   :init
+  (setq avy-timeout-seconds 0.8)
   (evil-leader/set-key
     "<SPC>" 'avy-goto-char-timer))
 
@@ -15,11 +16,12 @@
              counsel-M-x)
   :init
   (evil-leader/set-key
+    "hb" 'counsel-descbinds
+    "hf" 'counsel-describe-function
+    "mx" 'counsel-M-x
     "sb" 'ivy-switch-buffer
     "sf" 'counsel-find-file
     "sg" 'counsel-git
-    "sx" 'counsel-M-x
     "sy" 'counsel-yank-pop
-    "hb" 'counsel-descbinds
-    "hf" 'counsel-describe-function))
+    ))
 
