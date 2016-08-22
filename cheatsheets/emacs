@@ -20,21 +20,21 @@ SPC-wsb     # split-window-right
 SPC-wsr     # split-window-below
 
 # Visual mode
-<Ctrl-o>       # move selected lines down
-<Ctrl-p>       # move selected lines up
+C-o         # move selected lines down
+C-p         # move selected lines up
 
 # Dired
-^              # go to parent directory
-+              # create directory
-c              # find-file
-R              # rename file
-d              # mark files for deletion
-x              # commit deletion of marked files
+^           # go to parent directory
++           # create directory
+c           # find-file
+R           # rename file
+d           # mark files for deletion
+x           # commit deletion of marked files
 
 # Ag
-n              # next match
-p              # previous match
-g              # refresh results
-q              # close buffer
-k              # kill buffer
-<C-c><C-f>     # activate next-error-follow-minor-mode
+n           # next match
+p           # previous match
+g           # refresh results
+q           # close buffer
+k           # kill buffer
+C-c C-f     # activate next-error-follow-minor-mode
