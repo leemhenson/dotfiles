@@ -1,3 +1,18 @@
+# Moving point
+
+C-f         # forward-char
+C-b         # backward-char
+C-n         # next-line
+C-p         # previous-line
+C-a         # move-beginning-of-line
+C-e         # move-end-of-line
+M-f         # forward-word
+M-b         # backward-word
+M-<         # beginning-of-buffer
+M->         # end-of-buffer
+C-v         # scroll-up-command
+M-v         # scroll-down-command
+
 # Keyboard mappings
 
 SPC-SPC     # avy-goto-char-timer
