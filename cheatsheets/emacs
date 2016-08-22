@@ -1,24 +1,23 @@
 # Keyboard mappings
 
-<Space>!       # shell-command
-<Space>1-9     # select-window-(1-9)
-<Space><Space> # avy-goto-char-timer
-<Space>bk      # kill-this-buffer
-<Space>bs      # ivy-switch-buffer
-<Space>ci      # evilnc-comment-or-uncomment-lines
-<Space>cr      # comment-or-uncomment-region
-<Space>gs      # magit-status
-<Space>hb      # counsel-descbinds
-<Space>hf      # counsel-describe-function
-<Space>hx      # counsel-M-x
-<Space>pd      # projectile-dired
-<Space>sf      # counsel-find-file
-<Space>sg      # counsel-git
-<Space>sp      # counsel-projectile
-<Space>st      # projectile-ag
-<Space>wk      # delete-window
-<Space>wsb     # split-window-right
-<Space>wsr     # split-window-below
+SPC-SPC     # avy-goto-char-timer
+SPC-bk      # kill-this-buffer
+SPC-bK      # kill-other-buffers
+SPC-bs      # ivy-switch-buffer
+SPC-ci      # evilnc-comment-or-uncomment-lines
+SPC-cr      # comment-or-uncomment-region
+SPC-gs      # magit-status
+SPC-hb      # counsel-descbinds
+SPC-hf      # counsel-describe-function
+SPC-hx      # counsel-M-x
+SPC-pd      # projectile-dired
+SPC-sf      # counsel-find-file
+SPC-sg      # counsel-git
+SPC-sp      # counsel-projectile
+SPC-st      # projectile-ag
+SPC-wk      # delete-window
+SPC-wsb     # split-window-right
+SPC-wsr     # split-window-below
 
 # Visual mode
 <Ctrl-o>       # move selected lines down
