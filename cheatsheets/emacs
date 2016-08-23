@@ -13,6 +13,13 @@ M->         # end-of-buffer
 C-v         # scroll-up-command
 M-v         # scroll-down-command
 
+# Erasing text
+
+C-d         # delete-char
+C-k         # kill-line
+M-d         # kill-word
+M-DEL       # backward-kill-word
+
 # Keyboard mappings
 
 SPC-SPC     # avy-goto-char-timer
