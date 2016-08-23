@@ -10,6 +10,7 @@
 (setq large-file-warning-threshold 100000000) ;; Warn when opening files bigger than 100MB
 (setq inhibit-startup-screen t)
 (setq require-final-newline t)
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
