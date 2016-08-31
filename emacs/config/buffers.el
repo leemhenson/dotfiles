@@ -6,6 +6,9 @@
   ("C-S-<left>" . buf-move-left)
   ("C-S-<right>" . buf-move-right))
 
+(use-package unkillable-scratch
+  :ensure t)
+
 (defun kill-other-buffers ()
   "Kill all other buffers."
   (interactive)
