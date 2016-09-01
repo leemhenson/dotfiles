@@ -4,18 +4,20 @@
          ("\\.jsx$" . js2-jsx-mode))
   :commands (js2-mode
              js2-jsx-mode)
-  :config
-  (add-hook 'js2-mode-hook 'flycheck-mode)
-  (add-hook 'js2-jsx-mode-hook 'flycheck-mode)
-  (defvar sgml-basic-offset)
-  (defvar sgml-attribute-offset)
+  :init
+  (setq js2-bounce-indent-p t)
   (setq js-indent-level 2)
   (setq js2-basic-offset js-indent-level
         js2-mode-show-parse-errors nil
         js2-mode-show-strict-warnings nil
         js2-strict-trailing-comma-warning nil
         sgml-basic-offset js-indent-level
-        sgml-attribute-offset js-indent-level))
+        sgml-attribute-offset js-indent-level)
+  (defvar sgml-basic-offset)
+  (defvar sgml-attribute-offset)
+  :config
+  (add-hook 'js2-mode-hook 'flycheck-mode)
+  (add-hook 'js2-jsx-mode-hook 'flycheck-mode))
 
 (use-package json-mode
   :ensure t
