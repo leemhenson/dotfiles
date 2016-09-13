@@ -1,3 +1,9 @@
+(use-package haskell-mode
+  :ensure t
+  :mode (("\\.hs$" . haskell-mode)
+         ("\\.lhs" . haskell-mode))
+  :commands (haskell-mode))
+
 (use-package js2-mode
   :ensure t
   :mode (("\\.js$" . js2-mode)
