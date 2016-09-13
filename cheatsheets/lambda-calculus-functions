@@ -1,0 +1,32 @@
+# Terminology
+
+Domain: the set of possible input values
+Codomain: the set of possible output values (and is considered part of the function definition)
+Range: the set of actual output values (and is therefore a subset of the codomain)
+
+# Why both codomain and range?
+
+Sometimes we don't know the exact range (because the function may be complicated or not fully known), but we know the set it lies in (such as all integers or reals). So we define the codomain and move on.
+
+# Referential transparency
+
+Given an input, the same output must always be returned, and a single output can be shared across many inputs. E.g.
+
+f(1) = A
+f(2) = B
+f(3) = C
+
+and
+
+f(1) = A
+f(2) = A
+f(3) = A
+
+are valid functions, but
+
+f(1) = A
+f(1) = B
+f(1) = C
+
+is not.
+
