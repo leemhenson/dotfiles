@@ -4,7 +4,7 @@ Can be either variables, abstractions or combinations of both.
 
 # Variables
 
-Names for potential inputs to a function.
+Names for potential inputs to a function. Free variables are those that are not bound by an abstraction.
 
 # Abstractions
 
@@ -25,3 +25,15 @@ Refers to the fact that the variable names in an abstraction are meaningless, so
 # Beta reduction
 
 The process of binding values to variables in the abstraction's head, and the substituting the occurrences of those variable names with those values in the body. The reduced form is the final substituted body.
+
+# Beta normal form
+
+When no more beta reduction can be applied to an expression, it is said to be in beta normal form.
+
+# Combinators
+
+A combinator is a lambda with no free variables, and serve only to combine their inputs without injecting new values or random data.
+
+# Divergence
+
+Not all lambdas can be reduced (aka converge) to a beta normal form, e.g. (λx.xx)(λx.xx), and these are referred to as divergent because the reduction process never ends.
