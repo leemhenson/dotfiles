@@ -63,6 +63,12 @@
   :mode (("\\.scss$" . scss-mode))
   :commands (scss-mode))
 
+(use-package sh-script
+  :ensure t
+  :init
+  (setq-default sh-indentation 2
+                sh-basic-offset 2))
+
 (use-package slim-mode
   :ensure t
   :mode ("\\.slim$" . slim-mode)
