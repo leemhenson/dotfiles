@@ -4,6 +4,7 @@ tap 'homebrew/versions'
 tap 'neovim/neovim'
 
 cask 'graphiql'
+cask 'haskell-platform'
 cask 'java'
 
 brew 'ack'
