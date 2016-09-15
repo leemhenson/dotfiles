@@ -9,6 +9,7 @@ typeset -U path
 path[1,0]="$DOTFILES/zsh/bin"
 path[1,0]="/usr/local/heroku/bin"
 path[1,0]="/usr/local/share/npm/bin"
+path[1,0]="$GOPATH/bin"
 path[1,0]="./node_modules/.bin"
 path[1,0]="/Applications/Postgres.app/Contents/Versions/9.5/bin"
 
