@@ -38,7 +38,6 @@
 (load-config-file "highlighting")
 (load-config-file "language")
 (load-config-file "magit")
-(load-config-file "projectile")
 (load-config-file "scrolling")
 (load-config-file "undo")
 (load-config-file "whitespace")
