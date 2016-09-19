@@ -2,7 +2,11 @@
   :ensure t
   :mode (("\\.hs$" . haskell-mode)
          ("\\.lhs" . haskell-mode))
-  :commands (haskell-mode))
+  :commands (haskell-mode)
+  :config
+  (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+  (add-hook 'haskell-mode-hook 'flycheck-haskell-setup)
+  (add-hook 'haskell-mode-hook 'flycheck-mode))
 
 (use-package js2-mode
   :ensure t
@@ -88,3 +92,7 @@
 (use-package flycheck
   :ensure t
   :diminish flycheck-mode)
+
+(use-package flycheck-haskell
+  :ensure t
+  :commands flycheck-haskell-setup)
