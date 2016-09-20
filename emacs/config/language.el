@@ -15,9 +15,9 @@
   :commands (js2-mode
              js2-jsx-mode)
   :init
-  (setq js2-bounce-indent-p t)
-  (setq js-indent-level 2)
-  (setq js2-basic-offset js-indent-level
+  (setq-default js2-bounce-indent-p t)
+  (setq-default js-indent-level 2)
+  (setq-default js2-basic-offset js-indent-level
         js2-mode-show-parse-errors nil
         js2-mode-show-strict-warnings nil
         js2-strict-trailing-comma-warning nil
@@ -34,8 +34,8 @@
   :mode (("\\.json$" . json-mode))
   :commands (json-mode)
   :config
-  (setq js-indent-level 2)
-  (setq json-reformat:indent-width 2)
+  (setq-default js-indent-level 2)
+  (setq-default json-reformat:indent-width 2)
   (add-hook 'json-mode-hook 'flycheck-mode))
 
 (use-package lua-mode
@@ -43,24 +43,25 @@
   :mode ("\\.lua$" . lua-mode)
   :commands lua-mode
   :config
-  (setq lua-indent-level 2))
+  (setq-default lua-indent-level 2))
 
 (use-package markdown-mode
   :ensure t
-  :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode))
+  :mode (("README\\.md$" . gfm-mode)
+         ("\\.md$" . markdown-mode)
+         ("\\.markdown$" . markdown-mode))
   :commands (markdown-mode
              gfm-mode)
-  :init (setq markdown-command "multimarkdown"))
+  :init
+  (setq-default markdown-command "multimarkdown"))
 
 (use-package php-mode
   :ensure t
   :mode ("\\.php$\\'" . php-mode)
   :commands php-mode
   :config
-  (setq tab-width 2)
-  (setq c-basic-offset 2))
+  (setq-default tab-width 2)
+  (setq-default c-basic-offset 2))
 
 (use-package scss-mode
   :ensure t
@@ -82,6 +83,13 @@
   :ensure t
   :mode (("\\.tf$" . terraform-mode))
   :commands (terraform-mode))
+
+(use-package web-mode
+  :ensure t
+  :mode ("\\.html$" . web-mode)
+  :commands (web-mode)
+  :config
+  (setq-default web-mode-markup-indent-offset 2))
 
 (use-package yaml-mode
   :ensure t
