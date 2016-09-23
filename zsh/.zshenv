@@ -7,6 +7,7 @@ export XDG_CONFIG_HOME="$DOTFILES"
 typeset -U path
 
 path[1,0]="$DOTFILES/zsh/bin"
+path[1,0]="/usr/local/sbin"
 path[1,0]="/usr/local/heroku/bin"
 path[1,0]="/usr/local/share/npm/bin"
 path[1,0]="$GOPATH/bin"
