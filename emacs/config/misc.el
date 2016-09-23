@@ -11,6 +11,7 @@
 (setq inhibit-startup-screen t)
 (setq require-final-newline t)
 (setq backup-directory-alist '(("~/.emacs.d/backups")))
+(setq create-lockfiles nil)
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
