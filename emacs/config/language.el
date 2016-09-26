@@ -79,6 +79,11 @@
   :mode ("\\.slim$" . slim-mode)
   :commands slim-mode)
 
+(use-package sql-indent
+  :ensure t
+  :init
+  (setq-default sql-indent-offset 2))
+
 (use-package terraform-mode
   :ensure t
   :mode (("\\.tf$" . terraform-mode))

@@ -3,7 +3,7 @@
   :diminish whitespace-mode
   :config
   (setq whitespace-line-column 120
-        whitespace-style '(face lines-tail))
+        whitespace-style '(face lines-tail trailing))
   (add-hook 'prog-mode-hook 'whitespace-mode))
 
 (use-package whitespace-cleanup-mode
