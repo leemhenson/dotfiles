@@ -10,7 +10,6 @@
 (setq large-file-warning-threshold 100000000) ;; Warn when opening files bigger than 100MB
 (setq inhibit-startup-screen t)
 (setq require-final-newline t)
-(setq backup-directory-alist '(("~/.emacs.d/backups")))
 (setq create-lockfiles nil)
 
 (setq-default indent-tabs-mode nil)
@@ -23,3 +22,18 @@
 
 ;; Make is possible for me to enter a # symbol via Alt-3
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
+
+(defun my-backup-file-name (fpath)
+  "Return a new file path of a given file path.
+If the new path's directories does not exist, create them."
+  (let* (
+        (backupRootDir "~/.emacs.d/backups/")
+        (filePath (replace-regexp-in-string "[A-Za-z]:" "" fpath )) ; remove Windows driver letter in path, ➢ for example: “C:”
+        (backupFilePath (replace-regexp-in-string "//" "/" (concat backupRootDir filePath "~") ))
+        )
+    (make-directory (file-name-directory backupFilePath) (file-name-directory backupFilePath))
+    backupFilePath
+  )
+)
+
+(setq make-backup-file-name-function 'my-backup-file-name)
