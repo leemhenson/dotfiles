@@ -6,6 +6,23 @@
   ("C-S-<left>" . buf-move-left)
   ("C-S-<right>" . buf-move-right))
 
+(use-package eyebrowse
+  :ensure t
+  :commands (eyebrowse-create-window-config
+             eyebrowse-last-window-config
+             eyebrowse-next-window-config
+             eyebrowse-prev-window-config
+             eyebrowse-rename-window-config
+             eyebrowse-switch-to-window-config)
+  :init
+    (evil-leader/set-key
+      "wc" 'eyebrowse-create-window-config
+      "wl" 'eyebrowse-last-window-config
+      "wn" 'eyebrowse-next-window-config
+      "wp" 'eyebrowse-prev-window-config
+      "wr" 'eyebrowse-rename-window-config
+      "ww" 'eyebrowse-switch-to-window-config))
+
 (use-package unkillable-scratch
   :ensure t)
 
