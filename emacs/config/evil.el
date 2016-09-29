@@ -19,7 +19,7 @@
   (evil-mode)
 
   ;; http://eugeii.com/posts/bypassing-the-clipboard-in-emacs-evil-mode/
-  
+
   (defmacro without-evil-mode (&rest do-this)
     ;; Check if evil-mode is on, and disable it temporarily
     `(let ((evil-mode-is-on (evil-mode?)))
