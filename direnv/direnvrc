@@ -1,6 +1,6 @@
 # use ruby [version]
 use_ruby() {
-  source /usr/local/share/chruby/chruby.sh
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
 
   local ver=$1
 
