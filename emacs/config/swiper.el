@@ -13,31 +13,34 @@
   (projectile-global-mode)
   (setq projectile-completion-system 'ivy)
   (evil-leader/set-key
-    "pd" 'projectile-dired
-    "st" 'projectile-ag))
+    "pd" 'projectile-dired))
 
 (use-package counsel
   :ensure t
   :commands (ivy-switch-buffer
+             counsel-ag
              counsel-find-file
              counsel-git
              counsel-descbinds
              counsel-describe-function
-             counsel-M-x)
+             counsel-M-x
+             swiper)
   :init
   (evil-leader/set-key
-    "hb" 'counsel-descbinds
-    "hf" 'counsel-describe-function
-    "mx" 'counsel-M-x
-    "sb" 'ivy-switch-buffer
-    "sf" 'counsel-find-file
-    "sg" 'counsel-git
-    "sy" 'counsel-yank-pop
+    "ca" 'counsel-ag
+    "cb" 'ivy-switch-buffer
+    "cd" 'counsel-descbinds
+    "cD" 'counsel-describe-function
+    "cf" 'counsel-git
+    "cF" 'counsel-find-file
+    "cy" 'counsel-yank-pop
+    "cx" 'counsel-M-x
+    "s"  'swiper
     ))
 
 (use-package counsel-projectile
   :ensure t
   :commands counsel-projectile
   :init
-  (evil-leader/set-key "sp" 'counsel-projectile-switch-project))
+  (evil-leader/set-key "cp" 'counsel-projectile-switch-project))
 
