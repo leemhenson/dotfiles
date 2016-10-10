@@ -16,6 +16,11 @@
     "pd" 'projectile-dired
     "pa" 'projectile-ag))
 
+(defun counsel-ag-advice (args)
+  "Make counsel-ag aware of project root directory,
+modify INITIAL-DIRECTORY to projectile-project-root."
+  (list nil (projectile-project-root)))
+
 (use-package counsel
   :ensure t
   :commands (ivy-switch-buffer
@@ -27,13 +32,6 @@
              counsel-M-x
              swiper)
   :init
-  (defun counsel-ag-advice (args)
-    "Make counsel-ag aware of project root directory,
-modify INITIAL-DIRECTORY to projectile-project-root."
-    (setcar (nthcdr 1 args) projectile-project-root))
-
-  (advice-add 'counsel-ag :filter-args #'counsel-ag-advice)
-
   (evil-leader/set-key
     "ca" 'counsel-ag
     "cb" 'ivy-switch-buffer
@@ -43,8 +41,10 @@ modify INITIAL-DIRECTORY to projectile-project-root."
     "cF" 'counsel-find-file
     "cy" 'counsel-yank-pop
     "cx" 'counsel-M-x
-    "s"  'swiper
-    ))
+    "s"  'swiper)
+
+  (advice-add 'counsel-ag :filter-args #'counsel-ag-advice)
+)
 
 (use-package counsel-projectile
   :ensure t
