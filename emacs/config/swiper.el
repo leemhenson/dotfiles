@@ -30,7 +30,8 @@ modify INITIAL-DIRECTORY to projectile-project-root."
              counsel-descbinds
              counsel-describe-function
              counsel-M-x
-             swiper)
+             swiper
+             swiper-all)
   :init
   (evil-leader/set-key
     "ca" 'counsel-ag
@@ -41,7 +42,8 @@ modify INITIAL-DIRECTORY to projectile-project-root."
     "cF" 'counsel-find-file
     "cy" 'counsel-yank-pop
     "cx" 'counsel-M-x
-    "s"  'swiper)
+    "s"  'swiper
+    "S"  'swiper-all)
 
   (advice-add 'counsel-ag :filter-args #'counsel-ag-advice)
 )
