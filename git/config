@@ -1,7 +1,7 @@
 [alias]
   co                = checkout
   count             = !git shortlog -sn
-  tree              = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+  tree              = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit --date-order
 
 [apply]
   whitespace = nowarn
