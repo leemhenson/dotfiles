@@ -104,3 +104,6 @@
 (use-package flycheck-haskell
   :ensure t
   :commands flycheck-haskell-setup)
+
+(use-package flycheck-flow
+  :ensure t)
