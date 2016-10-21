@@ -25,6 +25,15 @@
     "wr" 'eyebrowse-rename-window-config
     "ww" 'eyebrowse-switch-to-window-config))
 
+(use-package transpose-frame
+  :ensure t
+  :commands (transpose-frame
+             rotate-frame-clockwise)
+  :init
+  (evil-leader/set-key
+    "wtf" 'transpose-frame
+    "wtr" 'rotate-frame-clockwise))
+
 (use-package unkillable-scratch
   :ensure t)
 
