@@ -101,9 +101,11 @@
   :ensure t
   :diminish flycheck-mode)
 
+(use-package flycheck-flow
+  :ensure t
+  :config
+  (flycheck-add-next-checker 'javascript-flow 'javascript-eslint))
+
 (use-package flycheck-haskell
   :ensure t
   :commands flycheck-haskell-setup)
-
-(use-package flycheck-flow
-  :ensure t)
