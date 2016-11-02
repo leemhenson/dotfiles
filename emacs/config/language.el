@@ -114,7 +114,7 @@ Intended for use in PROJECTILE-AFTER-SWITCH-PROJECT-HOOK."
   (let ((local-eslintrc (expand-file-name (concat (projectile-project-root) ".eslintrc.json"))))
     (message "local-eslintrc: %s" local-eslintrc)
     (setq flycheck-eslint-rules-directories
-          (and (file-exists-p local-eslintrc) (file-name-directory local-eslintrc)))))
+          (and (file-exists-p local-eslintrc) (list (file-name-directory local-eslintrc))))))
 
 (use-package flycheck
   :ensure t
