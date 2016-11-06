@@ -131,3 +131,18 @@ Intended for use in PROJECTILE-AFTER-SWITCH-PROJECT-HOOK."
 (use-package flycheck-haskell
   :ensure t
   :commands flycheck-haskell-setup)
+
+(add-to-list 'package-archives
+             '("emacs-pe" . "https://emacs-pe.github.io/packages/"))
+
+(use-package purescript-mode
+  :ensure t
+  :mode (("\\.purs$" . purescript-mode))
+  :commands purescript-mode
+  :pin emacs-pe)
+
+(use-package psci
+  :ensure t
+  :mode (("\\.purs$" . psc-ide-mode))
+  :commands psc-ide-mode
+  :pin emacs-pe)
