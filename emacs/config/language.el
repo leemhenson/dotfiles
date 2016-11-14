@@ -143,6 +143,12 @@ Intended for use in PROJECTILE-AFTER-SWITCH-PROJECT-HOOK."
 
 (use-package psci
   :ensure t
-  :mode (("\\.purs$" . psc-ide-mode))
-  :commands psc-ide-mode
-  :pin emacs-pe)
+  :after purescript-mode
+  :pin emacs-pe
+  :config
+  (add-hook 'purescript-mode-hook
+            (lambda ()
+              (psc-ide-mode)
+              (company-mode)
+              (flycheck-mode)
+              (turn-on-purescript-indentation))))
