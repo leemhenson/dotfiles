@@ -123,6 +123,7 @@ Intended for use in PROJECTILE-FIND-FILE-HOOK."
 (use-package flycheck-flow
   :ensure t
   :config
+  (setq flycheck-javascript-flow-args "--respect-pragma")
   (flycheck-add-next-checker 'javascript-flow 'javascript-eslint))
 
 (use-package flycheck-haskell
