@@ -99,20 +99,17 @@
 
 (defun feltnerm/setup-local-eslint ()
   "If ESLint found in node_modules directory - use that for flycheck.
-Intended for use in PROJECTILE-AFTER-SWITCH-PROJECT-HOOK."
+Intended for use in PROJECTILE-FIND-FILE-HOOK."
   (interactive)
-  (message "---> eslint")
   (let ((local-eslint (expand-file-name (concat (projectile-project-root) "node_modules/.bin/eslint"))))
     (setq flycheck-javascript-eslint-executable
           (and (file-exists-p local-eslint) local-eslint))))
 
 (defun feltnerm/setup-local-eslintrc ()
   "If .eslintrc.json found in node_modules directory - use that for flycheck.
-    Intended for use in PROJECTILE-AFTER-SWITCH-PROJECT-HOOK."
+    Intended for use in PROJECTILE-FIND-FILE-HOOK."
   (interactive)
-  (message "---> eslintrc")
   (let ((local-eslintrc (expand-file-name (concat (projectile-project-root) ".eslintrc.json"))))
-    (message "local-eslintrc: %s" local-eslintrc)
     (setq flycheck-eslint-rules-directories
           (and (file-exists-p local-eslintrc) (list (file-name-directory local-eslintrc))))))
 
@@ -120,8 +117,8 @@ Intended for use in PROJECTILE-AFTER-SWITCH-PROJECT-HOOK."
   :ensure t
   :diminish flycheck-mode
   :config
-  (add-hook 'projectile-after-switch-project-hook 'feltnerm/setup-local-eslintrc)
-  (add-hook 'projectile-after-switch-project-hook 'feltnerm/setup-local-eslint))
+  (add-hook 'projectile-find-file-hook 'feltnerm/setup-local-eslintrc)
+  (add-hook 'projectile-find-file-hook 'feltnerm/setup-local-eslint))
 
 (use-package flycheck-flow
   :ensure t
