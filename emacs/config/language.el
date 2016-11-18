@@ -97,28 +97,50 @@
          ("``.yml$" . yaml-mode))
   :commands (yaml-mode))
 
-(defun feltnerm/setup-local-eslint ()
-  "If ESLint found in node_modules directory - use that for flycheck.
-Intended for use in PROJECTILE-FIND-FILE-HOOK."
+(defun find-eslint-for-flycheck ()
+  "If ESLint found in node_modules directory - use that for flycheck."
   (interactive)
-  (let ((local-eslint (expand-file-name (concat (projectile-project-root) "node_modules/.bin/eslint"))))
-    (setq flycheck-javascript-eslint-executable
-          (and (file-exists-p local-eslint) local-eslint))))
+  (message "find-eslint-for-flycheck: buffer-file-name = %s" buffer-file-name)
+  (let ((ext (downcase (file-name-extension buffer-file-name)))
+        (executable "node_modules/.bin/eslint"))
+    (message "find-eslint-for-flycheck: ext = %s" ext)
+    (when (string= ext "js")
+      (let ((local-eslint-dir (locate-dominating-file buffer-file-name executable)))
+        (message "find-eslint-for-flycheck: local-eslint-dir = %s" local-eslint-dir)
+        (when local-eslint-dir
+          (let ((local-eslint (concat local-eslint-dir executable)))
+            (message "find-eslint-for-flycheck: local-eslint = %s" local-eslint)
+            (setq flycheck-javascript-eslint-executable local-eslint)
+          )
+        )
+      )
+    )
+  )
+)
 
-(defun feltnerm/setup-local-eslintrc ()
-  "If .eslintrc.json found in node_modules directory - use that for flycheck.
-    Intended for use in PROJECTILE-FIND-FILE-HOOK."
+(defun find-eslint-config-for-flycheck ()
+  "If .eslintrc.json found in node_modules directory - use that for flycheck."
   (interactive)
-  (let ((local-eslintrc (expand-file-name (concat (projectile-project-root) ".eslintrc.json"))))
-    (setq flycheck-eslint-rules-directories
-          (and (file-exists-p local-eslintrc) (list (file-name-directory local-eslintrc))))))
+  (message "find-eslint-config-for-flycheck: %s" buffer-file-name)
+  (let ((ext (downcase (file-name-extension buffer-file-name)))
+        (config-file ".eslintrc.json"))
+    (when (string= ext "js")
+      (let ((local-eslintrc-dir (locate-dominating-file buffer-file-name config-file)))
+        (when local-eslintrc-dir
+          (message "find-eslint-config-for-flycheck: local-eslintrc-dir = %s" local-eslintrc-dir)
+          (setq flycheck-eslint-rules-directories (list (expand-file-name local-eslintrc-dir)))
+        )
+      )
+    )
+  )
+)
 
 (use-package flycheck
   :ensure t
   :diminish flycheck-mode
   :config
-  (add-hook 'projectile-find-file-hook 'feltnerm/setup-local-eslintrc)
-  (add-hook 'projectile-find-file-hook 'feltnerm/setup-local-eslint))
+  (add-hook 'find-file-hook 'find-eslint-config-for-flycheck)
+  (add-hook 'find-file-hook 'find-eslint-for-flycheck))
 
 (use-package flycheck-flow
   :ensure t
