@@ -101,7 +101,7 @@
   "If ESLint found in node_modules directory - use that for flycheck."
   (interactive)
   (message "find-eslint-for-flycheck: buffer-file-name = %s" buffer-file-name)
-  (let ((ext (downcase (file-name-extension buffer-file-name)))
+  (let ((ext (downcase (concat "" (file-name-extension buffer-file-name))))
         (executable "node_modules/.bin/eslint"))
     (message "find-eslint-for-flycheck: ext = %s" ext)
     (when (string= ext "js")
@@ -119,10 +119,10 @@
 )
 
 (defun find-eslint-config-for-flycheck ()
-  "If .eslintrc.json found in node_modules directory - use that for flycheck."
+  "If dominating .eslintrc.json found - use that for flycheck."
   (interactive)
   (message "find-eslint-config-for-flycheck: %s" buffer-file-name)
-  (let ((ext (downcase (file-name-extension buffer-file-name)))
+  (let ((ext (downcase (concat "" (file-name-extension buffer-file-name))))
         (config-file ".eslintrc.json"))
     (when (string= ext "js")
       (let ((local-eslintrc-dir (locate-dominating-file buffer-file-name config-file)))
