@@ -21,7 +21,7 @@
 
 (set-face-attribute 'default nil
                     :height 120
-                    :family "InconsolataDzfp"
+                    :family "Inconsolata"
                     :background "gray8")
 
 (use-package smart-mode-line
