@@ -48,7 +48,7 @@ zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
 zplug "$DOTFILES/zsh/plugins/dirpersist", from:local, use:dirpersist.zsh
 zplug "$DOTFILES/zsh/plugins/editcommand", from:local, use:editcommand.zsh, nice:13
-zplug "$DOTFILES/zsh/plugins/fzf", from:local, use:"$HOME/.fzf.zsh", nice:14
+zplug "$DOTFILES/zsh/plugins/fzf", from:local, use:fzf.zsh, nice:14
 zplug "$DOTFILES/zsh/plugins/vi-mode", from:local, use:"vi-mode.zsh", nice:12
 zplug "$DOTFILES/zsh/themes", from:local, use:"garyblessington.zsh-theme"
 
