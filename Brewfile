@@ -21,6 +21,7 @@ brew 'direnv'
 brew 'dnsmasq'
 brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg', 'with-imagemagick', 'devel']
 brew 'fortune'
+brew 'fzf
 brew 'gcc'
 brew 'git'
 brew 'git-flow'
@@ -44,4 +45,5 @@ brew 'source-highlight'
 brew 'sqlite'
 brew 'the_silver_searcher'
 brew 'wget'
+brew 'zplug'
 brew 'zsh'
