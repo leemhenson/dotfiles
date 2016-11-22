@@ -29,12 +29,13 @@ export DEFAULT_CHEAT_DIR="$DOTFILES/cheatsheets"
 export EDITOR="emacsclient -c -nw"
 export FZF_DEFAULT_OPTS="-e"
 export FZF_DEFAULT_SORT=100000
+export ZPLUG_HOME=/usr/local/opt/zplug
 
 LESSPIPE=`which src-hilite-lesspipe.sh`
 export LESSOPEN="| ${LESSPIPE} %s"
 export LESS=' -R -X -F '
 
-source ~/.zplug/zplug
+source $ZPLUG_HOME/init.zsh
 
 zplug "djui/alias-tips", nice:11
 zplug "felixr/docker-zsh-completion"
@@ -45,11 +46,11 @@ zplug "plugins/z", from:oh-my-zsh
 zplug "willghatch/zsh-saneopt"
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
-zplug "$DOTFILES/zsh/plugins/dirpersist", from:local, of:dirpersist.zsh
-zplug "$DOTFILES/zsh/plugins/editcommand", from:local, of:editcommand.zsh, nice:13
-zplug "$DOTFILES/zsh/plugins/fzf", from:local, of:fzf.zsh, nice:14
-zplug "$DOTFILES/zsh/plugins/vi-mode", from:local, of:"vi-mode.zsh", nice:12
-zplug "$DOTFILES/zsh/themes", from:local, of:"garyblessington.zsh-theme"
+zplug "$DOTFILES/zsh/plugins/dirpersist", from:local, use:dirpersist.zsh
+zplug "$DOTFILES/zsh/plugins/editcommand", from:local, use:editcommand.zsh, nice:13
+zplug "$DOTFILES/zsh/plugins/fzf", from:local, use:"$HOME/.fzf.zsh", nice:14
+zplug "$DOTFILES/zsh/plugins/vi-mode", from:local, use:"vi-mode.zsh", nice:12
+zplug "$DOTFILES/zsh/themes", from:local, use:"garyblessington.zsh-theme"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
