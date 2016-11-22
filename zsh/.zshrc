@@ -37,6 +37,7 @@ export LESS=' -R -X -F '
 
 source $ZPLUG_HOME/init.zsh
 
+zplug "lib/completion", from:oh-my-zsh, nice:-10
 zplug "lib/key-bindings", from:oh-my-zsh, nice:-10
 zplug "djui/alias-tips", nice:11
 zplug "felixr/docker-zsh-completion"
