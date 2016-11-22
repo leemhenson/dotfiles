@@ -19,9 +19,9 @@ brew 'curl'
 brew 'diff-so-fancy'
 brew 'direnv'
 brew 'dnsmasq'
-brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg', 'with-imagemagick', 'devel']
+brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg', 'with-imagemagick']
 brew 'fortune'
-brew 'fzf
+brew 'fzf'
 brew 'gcc'
 brew 'git'
 brew 'git-flow'
