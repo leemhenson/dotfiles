@@ -102,6 +102,7 @@ alias hrc='heroku run rails console "$@"'
 alias hrcd='hrc -r development "$@"'
 alias hrcp='hrc -r production "$@"'
 alias hrcs='hrc -r staging "$@"'
+alias j=z
 alias ls='ls -alh'
 
 # source other scripts
