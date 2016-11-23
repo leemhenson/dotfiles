@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
-ln -sf "$DOTFILES/emacs" "$HOME/.emacs.d"
+ln -snf "$DOTFILES/emacs" "$HOME/.emacs.d"
 ln -sf "$DOTFILES/emacs/daemon.plist" "$HOME/Library/LaunchAgents/emacs-deamon.plist"
 ln -sf "$DOTFILES/git/config" "$HOME/.gitconfig"
 ln -sf "$DOTFILES/js-beautify/.jsbeautifyrc" "$HOME/.jsbeautifyrc"
-ln -sf "$DOTFILES/karabiner-elements" "$HOME/.karabiner.d"
-ln -sf "$DOTFILES/kwm" "$HOME/.kwm"
+ln -snf "$DOTFILES/karabiner-elements" "$HOME/.karabiner.d"
+ln -snf "$DOTFILES/kwm" "$HOME/.kwm"
 ln -sf "$DOTFILES/tern/.tern-project" "$HOME/.tern-project"
 
 other="$HOME/src/other"
