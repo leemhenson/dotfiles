@@ -5,6 +5,7 @@ ln -sf "$DOTFILES/emacs/daemon.plist" "$HOME/Library/LaunchAgents/emacs-deamon.p
 ln -sf "$DOTFILES/git/config" "$HOME/.gitconfig"
 ln -sf "$DOTFILES/js-beautify/.jsbeautifyrc" "$HOME/.jsbeautifyrc"
 ln -snf "$DOTFILES/karabiner-elements" "$HOME/.karabiner.d"
+ln -sf "$DOTFILES/khdrc" "$HOME/.khdrc"
 ln -snf "$DOTFILES/kwm" "$HOME/.kwm"
 ln -sf "$DOTFILES/tern/.tern-project" "$HOME/.tern-project"
 
