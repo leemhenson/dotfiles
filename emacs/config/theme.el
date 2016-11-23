@@ -20,7 +20,7 @@
 ;;   :ensure t)
 
 (set-face-attribute 'default nil
-                    :height 130
+                    :height 140
                     :family "Inconsolata"
                     :background "gray8")
 
