@@ -1,5 +1,5 @@
 DISABLE_AUTO_UPDATE=true
-HISTFILE=~/.dotfiles/zsh/.histfile
+HISTFILE=~/Documents/zsh/.histfile
 HISTSIZE=1000
 KEYTIMEOUT=1
 SAVEHIST=1000
@@ -17,6 +17,8 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 # Remove superfluous blanks from each command line being added to the history list
 setopt hist_reduce_blanks
+# immediately appends new commands to the histfile
+setopt inc_append_history
 # Share one history between zsh sessions
 setopt share_history
 # Shaddapayourface
