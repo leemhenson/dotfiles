@@ -128,18 +128,18 @@ swap + ctrl - f         :   khd -e "mode activate default"
 space + ctrl - f        :   khd -e "mode activate default"
 tree + ctrl - f         :   khd -e "mode activate default"
 
-switcher - a            :   khd -e "mode activate swap"
+switcher - i            :   khd -e "mode activate info"
 switcher - s            :   khd -e "mode activate space"
-switcher - d            :   khd -e "mode activate tree"
-switcher - q            :   khd -e "mode activate info"
+switcher - t            :   khd -e "mode activate tree"
+switcher - w            :   khd -e "mode activate swap"
 
 
 
 # switcher mode
 switcher - r            :   khd -e "reload" # reload config
 
-switcher - return       :   open -na /Applications/HyperTerm.app;\
-                            khd -e "mode activate default"
+# switcher - return       :   open -na /Applications/HyperTerm.app;\
+#                             khd -e "mode activate default"
 
 switcher - h            :   kwmc window -f west
 switcher - l            :   kwmc window -f east
@@ -148,22 +148,22 @@ switcher - k            :   kwmc window -f north
 switcher - n            :   kwmc window -fm prev
 switcher - m            :   kwmc window -fm next
 
-switcher - 1            :   kwmc space -fExperimental 1
-switcher - 2            :   kwmc space -fExperimental 2
-switcher - 3            :   kwmc space -fExperimental 3
-switcher - 4            :   kwmc space -fExperimental 4
-switcher - 5            :   kwmc space -fExperimental 5
-switcher - 6            :   kwmc space -fExperimental 6
+# switcher - 1            :   kwmc space -fExperimental 1
+# switcher - 2            :   kwmc space -fExperimental 2
+# switcher - 3            :   kwmc space -fExperimental 3
+# switcher - 4            :   kwmc space -fExperimental 4
+# switcher - 5            :   kwmc space -fExperimental 5
+# switcher - 6            :   kwmc space -fExperimental 6
 
-switcher - z            :   kwmc space -fExperimental left
-switcher - c            :   kwmc space -fExperimental right
-switcher - f            :   kwmc space -fExperimental previous
+# switcher - z            :   kwmc space -fExperimental left
+# switcher - c            :   kwmc space -fExperimental right
+# switcher - f            :   kwmc space -fExperimental previous
 
-switcher + shift - z    :   kwmc window -m space left;\
-                            kwmc space -fExperimental left
+# switcher + shift - z    :   kwmc window -m space left;\
+#                             kwmc space -fExperimental left
 
-switcher + shift - c    :   kwmc window -m space right;\
-                            kwmc space -fExperimental right
+# switcher + shift - c    :   kwmc window -m space right;\
+#                             kwmc space -fExperimental right
 
 switcher + shift - 1    :   kwmc display -f 0
 switcher + shift - 2    :   kwmc display -f 1
@@ -253,8 +253,8 @@ tree + shift - o        :   kwmc window -s next
 
 
 # default
-cmd + alt + ctrl - m    :   kwmc window -mk focused
-cmd + alt + ctrl - h    :   kwmc window -mk west wrap
-cmd + alt + ctrl - l    :   kwmc window -mk east wrap
-cmd + alt + ctrl - j    :   kwmc window -mk south wrap
-cmd + alt + ctrl - k    :   kwmc window -mk north wrap
+# cmd + alt + ctrl - m    :   kwmc window -mk focused
+# cmd + alt + ctrl - h    :   kwmc window -mk west wrap
+# cmd + alt + ctrl - l    :   kwmc window -mk east wrap
+# cmd + alt + ctrl - j    :   kwmc window -mk south wrap
+# cmd + alt + ctrl - k    :   kwmc window -mk north wrap

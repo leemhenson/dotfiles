@@ -1,0 +1,76 @@
+# in default mode
+
+ctrl-f  : activate switcher mode
+
+# in switcher mode
+
+ctrl-f  : activate default mode
+
+i       : activate info mode
+s       : activate space mode
+t       : activate tree mode
+w       : activate swap mode
+
+r       : reload config
+
+h       : focus window on left
+j       : focus window below
+k       : focus window above
+l       : focus window on right
+
+n       : focus next window
+m       : focus prev window
+
+shift-1 : focus display 1
+shift-2 : focus display 2
+shift-3 : focus display 3
+
+# in space mode
+
+x       : increase horizontal gap
+y       : increase vertical gap
+
+shift-x : decrease horizontal gap
+shift-y : decrease vertical gap
+
+bottom  : increase bottom padding
+left    : increase left padding
+right   : increase right padding
+top     : increase top padding
+p       : increase all padding
+
+shift-bottom  : decrease bottom padding
+shift-left    : decrease left padding
+shift-right   : decrease right padding
+shift-top     : decrease top padding
+shift-p       : decrease all padding
+
+# in swap mode
+
+h       : swap with window on left
+j       : swap with window below
+k       : swap with window above
+l       : swap with window on right
+
+# in tree mode
+
+d       : parent
+f       : fullscreen
+r       : rotate
+w       : focus
+
+c       : toggle container type (bsp/monocle)
+s       : toggle split mode
+
+h       : expand window left
+j       : expand window down
+k       : expand window up
+l       : expand window right
+
+shift-h : reduce window left
+shift-j : reduce window down
+shift-k : reduce window up
+shift-l : reduce window right
+
+o       : next window
+p       : prev window
