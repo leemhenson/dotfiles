@@ -18,3 +18,6 @@ if [ ! -d $ghci_color ]; then
   echo "${ghci_color}/ghci-color"
   ln -sf "${ghci_color}/ghci-color" /usr/local/bin/ghci-color
 fi
+
+npm install -g \
+    flow-bin
