@@ -20,4 +20,5 @@ if [ ! -d $ghci_color ]; then
 fi
 
 npm install -g \
-    flow-bin
+    flow-bin \
+    yarn
