@@ -8,7 +8,6 @@ tap 'ravenac95/sudolikeaboss'
 
 cask 'graphiql'
 cask 'haskell-platform'
-cask 'hyper'
 cask 'java'
 
 brew 'ack'
