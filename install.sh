@@ -20,5 +20,7 @@ if [ ! -d $ghci_color ]; then
 fi
 
 npm install -g \
+    bower \
     flow-bin \
+    pulp \
     yarn
