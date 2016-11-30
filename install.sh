@@ -19,8 +19,16 @@ if [ ! -d $ghci_color ]; then
   ln -sf "${ghci_color}/ghci-color" /usr/local/bin/ghci-color
 fi
 
+brew bundle
+
 npm install -g \
     bower \
     flow-bin \
     pulp \
     yarn
+
+pip2 install --upgrade pip
+pip3 install --upgrade pip
+
+pip2 install --upgrade neovim
+pip3 install --upgrade neovim
