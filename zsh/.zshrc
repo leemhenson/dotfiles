@@ -35,7 +35,7 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 
 LESSPIPE=`which src-hilite-lesspipe.sh`
 export LESSOPEN="| ${LESSPIPE} %s"
-export LESS=' -R -X -F '
+export LESS=' -R -X '
 
 source $ZPLUG_HOME/init.zsh
 
