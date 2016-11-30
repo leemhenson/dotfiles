@@ -69,6 +69,12 @@
 # [switcher,ytd] + ctrl - f : khd -e "mode activate default"
 
 
+# Remap weirdy plus-minus key (non_us_backslash) to escape
+- 0x0a : khd -p "- 0x35"
+
+# Remap capslock to ctrl
+- 0x39 : khd -p "ctrl"
+
 
 # vi-mode for non-terminal applications
 
@@ -122,11 +128,11 @@ khd mode info color 0xddcd950c       # darkish-orange
 
 
 # toggle between modes
-ctrl - f               ![Emacs]  :   khd -e "mode activate switcher"
-switcher + ctrl - f     :   khd -e "mode activate default"
-swap + ctrl - f         :   khd -e "mode activate default"
-space + ctrl - f        :   khd -e "mode activate default"
-tree + ctrl - f         :   khd -e "mode activate default"
+cmd - 0x0a              :   khd -e "mode activate switcher"
+switcher + cmd - 0x0a   :   khd -e "mode activate default"
+swap + cmd - 0x0a       :   khd -e "mode activate default"
+space + cmd - 0x0a      :   khd -e "mode activate default"
+tree + cmd - 0x0a       :   khd -e "mode activate default"
 
 switcher - i            :   khd -e "mode activate info"
 switcher - s            :   khd -e "mode activate space"
