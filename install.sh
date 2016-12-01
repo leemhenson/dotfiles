@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+sudo launchctl config user path /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
 ln -snf "$DOTFILES/emacs" "$HOME/.emacs.d"
 ln -sf "$DOTFILES/emacs/daemon.plist" "$HOME/Library/LaunchAgents/emacs-deamon.plist"
 ln -sf "$DOTFILES/git/config" "$HOME/.gitconfig"
