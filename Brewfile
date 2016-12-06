@@ -11,6 +11,7 @@ cask 'haskell-platform'
 cask 'java'
 
 brew 'ack'
+brew 'ansible'
 brew 'awscli'
 brew 'bash'
 brew 'cheat'
