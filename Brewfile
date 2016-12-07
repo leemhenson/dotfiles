@@ -23,7 +23,7 @@ brew 'curl'
 brew 'diff-so-fancy'
 brew 'direnv'
 brew 'dnsmasq'
-brew 'homebrew/versions/elasticsearch24'
+brew 'elasticsearch@2.4'
 brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg', 'with-imagemagick']
 brew 'fortune'
 brew 'fzf'
