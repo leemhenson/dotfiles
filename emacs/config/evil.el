@@ -104,5 +104,7 @@
     :init
     (evil-leader/set-key
       "r" 'anzu-replace-at-cursor-thing
-      "R" 'anzu-query-replace-at-cursor-thing)))
+      "R" 'anzu-query-replace-at-cursor-thing)
+    (use-package evil-anzu
+      :ensure t)))
 
