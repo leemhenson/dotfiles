@@ -27,6 +27,7 @@ brew bundle
 npm install -g \
     bower \
     flow-bin \
+    nodemon \
     pulp \
     yarn
 
