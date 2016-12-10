@@ -161,10 +161,9 @@
   :commands purescript-mode
   :pin emacs-pe)
 
-(use-package psci
+(use-package psc-ide
   :ensure t
   :after purescript-mode
-  :pin emacs-pe
   :config
   (add-hook 'purescript-mode-hook
             (lambda ()
