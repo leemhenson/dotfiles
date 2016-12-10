@@ -1,0 +1,41 @@
+# Map and Chain
+
+Map takes a value out of a box, applies a function to it, and the places the result back in the box.
+Chain takes a value out of a box, applies it to a function that returns a box, and passes that box on.
+
+# Lifting
+
+The act of placing a value inside a box, commonly implemented via a function called *of*. For example:
+
+Task.of('address')
+Either.of(xyz)
+Box.of(100)
+
+# Monad
+
+Any type that defines *of* and *chain* functions and obeys the _monad laws_.
+
+# Functor
+
+Any type that defines a *map* function, and obeys the _functor laws_.
+
+# Applicative Functor
+
+A functor that defines an *ap* function, and obeys the _applicative functor laws_.
+
+# Semigroup
+
+A type that defines a *concat* function, and is associative. For example:
+
+"a".concat("b").concat("c") => "abc"
+Sum(1).concat(Sum(2).concat(Sum(3))) => Sum(6)
+All(true).concat(All(false)) => All(False)
+First("foo").concat(First("bar")) => First("foo")
+
+# Monoid
+
+A Semigroup can be considered a Monoid if it can define an *empty* function that returns a "neutral" value that does change the result when used with *concat*. For example:
+
+Sum.empty = () => Sum(0)
+All.empty = () => All(true)
+
