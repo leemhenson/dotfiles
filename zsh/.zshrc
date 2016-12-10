@@ -39,21 +39,21 @@ export LESS=' -R -X '
 
 source $ZPLUG_HOME/init.zsh
 
-zplug "lib/completion", from:oh-my-zsh, nice:-10
-zplug "lib/key-bindings", from:oh-my-zsh, nice:-10
-zplug "djui/alias-tips", nice:11
+zplug "lib/completion", from:oh-my-zsh, defer:0
+zplug "lib/key-bindings", from:oh-my-zsh, defer:1
+zplug "djui/alias-tips", defer:2
 zplug "felixr/docker-zsh-completion"
 zplug "hchbaw/zce.zsh"
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/httpie", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
 zplug "willghatch/zsh-saneopt"
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 zplug "$DOTFILES/zsh/plugins/dirpersist", from:local, use:dirpersist.zsh
-zplug "$DOTFILES/zsh/plugins/editcommand", from:local, use:editcommand.zsh, nice:13
-zplug "$DOTFILES/zsh/plugins/fzf", from:local, use:fzf.zsh, nice:14
-zplug "$DOTFILES/zsh/plugins/vi-mode", from:local, use:"vi-mode.zsh", nice:12
+zplug "$DOTFILES/zsh/plugins/editcommand", from:local, use:editcommand.zsh, defer:3
+zplug "$DOTFILES/zsh/plugins/fzf", from:local, use:fzf.zsh, defer:3
+zplug "$DOTFILES/zsh/plugins/vi-mode", from:local, use:"vi-mode.zsh", defer:3
 zplug "$DOTFILES/zsh/themes", from:local, use:"garyblessington.zsh-theme"
 
 # Install plugins if there are plugins that have not been installed
