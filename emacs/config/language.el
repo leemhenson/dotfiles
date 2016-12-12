@@ -172,3 +172,8 @@
               (company-mode)
               (flycheck-mode)
               (turn-on-purescript-indentation))))
+
+(use-package graphql-mode
+  :ensure t
+  :mode (("\\.graphql$" . graphql-mode))
+  :commands graphql-mode)
