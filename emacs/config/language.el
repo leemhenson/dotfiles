@@ -86,7 +86,8 @@
 
 (use-package web-mode
   :ensure t
-  :mode ("\\.html$" . web-mode)
+  :mode (("\\.html$" . web-mode)
+         ("\\.liquid$" . web-mode))
   :commands (web-mode)
   :config
   (setq-default web-mode-markup-indent-offset 2))
