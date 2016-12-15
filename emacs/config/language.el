@@ -66,7 +66,10 @@
 (use-package scss-mode
   :ensure t
   :mode (("\\.scss$" . scss-mode))
-  :commands (scss-mode))
+  :commands (scss-mode)
+  :config
+  (setq-default css-indent-offset 2))
+
 
 (use-package sh-script
   :ensure t
