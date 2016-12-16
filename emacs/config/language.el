@@ -27,14 +27,11 @@
   (defvar sgml-attribute-offset)
   :config
   (add-hook 'js2-mode-hook 'flycheck-mode)
-  (add-hook 'js2-jsx-mode-hook 'flycheck-mode)
+  (add-hook 'js2-jsx-mode-hook 'flycheck-mode))
 
-  ;; This defun can be removed when the patch it includes is added to emacs core.
-  ;; https://github.com/mooz/js2-mode/issues/369
-  (defun js--multi-line-declaration-indentation ()
-  "Helper function for `js--proper-indentation'.
-Return the proper indentation of the current line if it belongs to a declaration
-statement spanning multiple lines; otherwise, return nil."
+;; This defun can be removed when the patch it includes is added to emacs core.
+;; https://github.com/mooz/js2-mode/issues/369
+(defun js--multi-line-declaration-indentation ()
   (let (forward-sexp-function ; use Lisp version even in js2-mode
         at-opening-bracket)
     (save-excursion
@@ -60,7 +57,7 @@ statement spanning multiple lines; otherwise, return nil."
             (scan-error (setq at-opening-bracket t))))
         (when (looking-at js--declaration-keyword-re)
           (goto-char (match-end 0))
-          (1+ (current-column))))))))
+          (1+ (current-column)))))))
 
 (use-package json-mode
   :ensure t
@@ -88,9 +85,19 @@ statement spanning multiple lines; otherwise, return nil."
   :init
   (setq-default markdown-command "multimarkdown"))
 
+(use-package parinfer
+  :ensure t
+  :init
+  (progn
+    (setq parinfer-extensions
+          '(defaults
+            pretty-parens
+            evil)))
+  (add-hook 'emacs-lisp-mode-hook #'parinfer-mode))
+
 (use-package php-mode
   :ensure t
-  :mode ("\\.php$\\'" . php-mode)
+  :mode ("\\.php$" . php-mode)
   :commands php-mode
   :config
   (setq-default tab-width 2)
@@ -137,40 +144,23 @@ statement spanning multiple lines; otherwise, return nil."
 (defun find-eslint-for-flycheck ()
   "If ESLint found in node_modules directory - use that for flycheck."
   (interactive)
-  ;; (message "find-eslint-for-flycheck: buffer-file-name = %s" buffer-file-name)
   (let ((ext (downcase (concat "" (file-name-extension buffer-file-name))))
         (executable "node_modules/.bin/eslint"))
-    ;; (message "find-eslint-for-flycheck: ext = %s" ext)
     (when (string= ext "js")
       (let ((local-eslint-dir (locate-dominating-file buffer-file-name executable)))
-        ;; (message "find-eslint-for-flycheck: local-eslint-dir = %s" local-eslint-dir)
         (when local-eslint-dir
           (let ((local-eslint (concat local-eslint-dir executable)))
-            ;; (message "find-eslint-for-flycheck: local-eslint = %s" local-eslint)
-            (setq flycheck-javascript-eslint-executable local-eslint)
-          )
-        )
-      )
-    )
-  )
-)
+            (setq flycheck-javascript-eslint-executable local-eslint)))))))
 
 (defun find-eslint-config-for-flycheck ()
   "If dominating .eslintrc.json found - use that for flycheck."
   (interactive)
-  ;; (message "find-eslint-config-for-flycheck: %s" buffer-file-name)
   (let ((ext (downcase (concat "" (file-name-extension buffer-file-name))))
         (config-file ".eslintrc.json"))
     (when (string= ext "js")
       (let ((local-eslintrc-dir (locate-dominating-file buffer-file-name config-file)))
         (when local-eslintrc-dir
-          ;; (message "find-eslint-config-for-flycheck: local-eslintrc-dir = %s" local-eslintrc-dir)
-          (setq flycheck-eslint-rules-directories (list (expand-file-name local-eslintrc-dir)))
-        )
-      )
-    )
-  )
-)
+          (setq flycheck-eslint-rules-directories (list (expand-file-name local-eslintrc-dir))))))))
 
 (use-package flycheck
   :ensure t
