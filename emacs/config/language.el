@@ -27,7 +27,40 @@
   (defvar sgml-attribute-offset)
   :config
   (add-hook 'js2-mode-hook 'flycheck-mode)
-  (add-hook 'js2-jsx-mode-hook 'flycheck-mode))
+  (add-hook 'js2-jsx-mode-hook 'flycheck-mode)
+
+  ;; This defun can be removed when the patch it includes is added to emacs core.
+  ;; https://github.com/mooz/js2-mode/issues/369
+  (defun js--multi-line-declaration-indentation ()
+  "Helper function for `js--proper-indentation'.
+Return the proper indentation of the current line if it belongs to a declaration
+statement spanning multiple lines; otherwise, return nil."
+  (let (forward-sexp-function ; use Lisp version even in js2-mode
+        at-opening-bracket)
+    (save-excursion
+      (back-to-indentation)
+      (when (not (looking-at js--declaration-keyword-re))
+        (when (looking-at js--indent-operator-re)
+          (goto-char (match-end 0)))
+        (while (and (not at-opening-bracket)
+                    (not (bobp))
+                    (let ((pos (point)))
+                      (save-excursion
+                        (js--backward-syntactic-ws)
+                        (or (eq (char-before) ?,)
+                            (and (not (eq (char-before) ?\;))
+                                 (prog2
+                                     (skip-syntax-backward ".")
+                                     (looking-at js--indent-operator-re)
+                                   (js--backward-syntactic-ws))
+                                 (not (eq (char-before) ?\;)))
+                            (js--same-line pos)))))
+          (condition-case nil
+              (backward-sexp)
+            (scan-error (setq at-opening-bracket t))))
+        (when (looking-at js--declaration-keyword-re)
+          (goto-char (match-end 0))
+          (1+ (current-column))))))))
 
 (use-package json-mode
   :ensure t
