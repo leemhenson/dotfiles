@@ -35,7 +35,9 @@
     "wtr" 'rotate-frame-clockwise))
 
 (use-package unkillable-scratch
-  :ensure t)
+  :ensure t
+  :init
+  (unkillable-scratch))
 
 (defun kill-other-buffers ()
   "Kill all other buffers."
