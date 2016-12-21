@@ -1,3 +1,8 @@
+(defun split-window-right-and-balance ()
+  (interactive)
+  (split-window-right)
+  (balance-windows))
+
 (use-package evil
   :ensure t
   :init
@@ -13,7 +18,7 @@
       "bK"  'kill-other-buffers
       "wk"  'delete-window
       "wsb" 'split-window-below
-      "wsr" 'split-window-right))
+      "wsr" 'split-window-right-and-balance))
 
   :config
   (evil-mode)
