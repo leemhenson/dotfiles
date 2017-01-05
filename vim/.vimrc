@@ -36,6 +36,7 @@ Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'qpkorr/vim-bufkill'
+Plug 'raichoo/purescript-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sjl/gundo.vim'
