@@ -15,7 +15,6 @@ Plug 'neomake/neomake'
 Plug 'bronson/vim-crosshairs'
 Plug 'Chiel92/vim-autoformat'
 Plug 'djoshea/vim-autoread'
-Plug 'dyng/ctrlsf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'esneider/YUNOcommit.vim'
 Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim'
@@ -239,7 +238,7 @@ let g:fugitive_no_maps=1
 " ================
 
 " 1 Buffers
-nmap <Leader>sb :FzfBuffers<cr>
+nmap <Leader>cb :FzfBuffers<cr>
 
 " 2 Editing
 nmap <Leader>f :Autoformat<cr>
@@ -258,48 +257,37 @@ smap <Tab> <Plug>snipMateNextOrTrigger
 " 3 Git
 nmap <Leader>gs :Magit<cr>
 
-" 4 Help
-nmap <Leader>h: :FzfCommands<cr>
-nmap <Leader>hm <plug>(fzf-maps-n)
-nmap <Leader>ht :FzfHelptags<cr>
+" 4 Search
+nmap <Leader>cx :FzfCommands<cr>
+nmap <Leader>cd <plug>(fzf-maps-n)
+nmap <Leader>cD :FzfHelptags<cr>
+nmap <Leader>ca :FzfAg<cr>
+nmap <Leader>cf :FzfGitFiles<cr>
+nmap <Leader>cF :exe 'FzfFiles ' . <SID>fzf_root()<CR>
+nmap <Leader>s :FzfLines<cr>
 
-" 5 Motions
 nmap <Leader><Leader> <Plug>(easymotion-sn)
 
-" 6 Search
-nmap <Leader>sg :FzfGitFiles<cr>
-nmap <Leader>sf :exe 'FzfFiles ' . <SID>fzf_root()<CR>
-nmap <Leader>st :FzfAg<cr>
-vmap <Leader>S <Plug>CtrlSFVwordPath
+  " 4.1 Toggle highlighted search results
+  map <Leader>H :set hlsearch! hlsearch?<CR>
 
-  " 6.1 Toggle highlighted search results
-  map <leader>sh :set hlsearch! hlsearch?<CR>
-
-
-" 7 Testing
-nmap <Leader>tf :vsp term://ruby\ %\ \&\&\ read<CR>
-nmap <Leader>tF :sp term://ruby\ %\ \&\&\ read<CR>
-nmap <Leader>tl :vsp term://mtest\ %:<C-r>=line('.')<CR><CR>
-nmap <Leader>tL :sp term://mtest\ %:<C-r>=line('.')<CR><CR>
-nmap <Leader>ts :TestSuite<CR>
-
-" 8 Tabs (alt-t new, alt-q close, alt-j/k navigate)
+" 5 Tabs (alt-t new, alt-q close, alt-j/k navigate)
 map ˙ gT
 map ¬ gt
 map † :tabnew<CR>
 map œ :tabclose<CR>
 
-" 9 Windows
+" 6 Windows
 nmap  <Leader>w <Plug>(choosewin)
 
-  " 9.1 Navigate splits with ctrl-jklh
+  " 6.1 Navigate splits with ctrl-jklh
   map <c-j> <c-w>j
   map <c-k> <c-w>k
   map <c-l> <c-w>l
   map <c-h> <c-w>h
   map <c-w>s :sp<CR>
 
-  " 9.2 Navigate windows from neovim terminal
+  " 6.2 Navigate windows from neovim terminal
   tmap <ESC> <c-\><c-n>
   tmap <c-j> <c-\><c-n><c-w>j
   tmap <c-k> <c-\><c-n><c-w>k
