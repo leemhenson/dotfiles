@@ -13,6 +13,7 @@ path[1,0]="/usr/local/share/npm/bin"
 path[1,0]="$GOPATH/bin"
 path[1,0]="./node_modules/.bin"
 path[1,0]="/usr/local/opt/postgresql/bin"
+path[1,0]="$HOME/src/other/yarn/bin"
 
 git config --global core.excludesfile "$DOTFILES/git/global.gitignore"
 
