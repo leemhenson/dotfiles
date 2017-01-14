@@ -55,28 +55,3 @@ if [ ! -d $ghci_color ]; then
   git clone https://github.com/rhysd/ghci-color.git $ghci_color
   ln -sf "${ghci_color}/ghci-color" /usr/local/bin/ghci-color
 fi
-
-kwm="$other/kwm"
-
-if [ ! -d $kwm ]; then
-  git clone https://github.com/koekeishiya/kwm.git $kwm
-fi
-
-kwm_bin="$kwm/bin/kwm"
-
-if [ ! -e $kwm_bin ]; then
-  cd $kwm
-  make install
-  ln -sf $kwm_bin /usr/local/bin/kwm
-fi
-
-source_kwm_plist="$kwm/examples/com.koekeishiya.kwm.plist"
-destination_kwm_plist="$HOME/Library/LaunchAgents/com.koekeishiya.kwm.plist"
-
-if [ ! -e $destination_kwm_plist ]; then
-  cp $source_kwm_plist $destination_kwm_plist
-  echo $kwm_bin
-  sed -i '' "s%/path/to/kwm%${kwm_bin}%" $destination_kwm_plist
-  launchctl unload -w $destination_kwm_plist
-  launchctl load -w $destination_kwm_plist
-fi

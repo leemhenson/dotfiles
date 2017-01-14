@@ -76,7 +76,7 @@
 - 0x39 : khd -p "ctrl"
 
 # Remap ralt-a to ∀
-# ralt - a : khd -w "∀"
+ralt - a : khd -w "∀"
 
 # vi-mode for non-terminal applications
 
