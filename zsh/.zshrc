@@ -29,7 +29,7 @@ export CHEATCOLORS=true
 export CLICOLOR=true
 export DEFAULT_CHEAT_DIR="$DOTFILES/cheatsheets"
 export EDITOR="emacsclient -c -nw"
-export FZF_DEFAULT_OPTS="--exact --height 25% --reverse"
+export FZF_DEFAULT_OPTS="-e --height 25% --reverse"
 export FZF_DEFAULT_SORT=100000
 export ZPLUG_HOME=/usr/local/opt/zplug
 
