@@ -199,6 +199,12 @@
               (flycheck-mode)
               (turn-on-purescript-indentation))))
 
+(use-package flycheck-purescript
+  :ensure t
+  :config
+  (eval-after-load 'flycheck
+    '(flycheck-purescript-setup)))
+
 (use-package graphql-mode
   :ensure t
   :mode (("\\.graphql$" . graphql-mode))

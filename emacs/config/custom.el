@@ -8,7 +8,7 @@
     ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
  '(package-selected-packages
    (quote
-    (parinfer graphql-mode psc-ide evil-anzu anzu-evil psci purescript-mode transpose-frame flycheck-flow :flycheck-flow eyebrowse sql-indent web-mode flycheck-haskell haskell-mode unkillable-scratch evil-terminal-cursor-changer osx-clipboard osx-clipboard-mode slim-mode php-mode yaml-mode terraform-mode git-gutter mode-icons company company-mode markdown-mode scss-mode yasnippet whitespace-cleanup-mode counsel-projectile projectile lua-mode hl-anything diredful dired-single buffer-move anzu evil-visualstar magit json-mode js2-mode hl-todo flycheck exec-path-from-shell counsel avy auto-complete ag evil-surround evil-nerd-commenter evil-leader evil use-package)))
+    (flycheck-purescript parinfer graphql-mode psc-ide evil-anzu anzu-evil psci purescript-mode transpose-frame flycheck-flow :flycheck-flow eyebrowse sql-indent web-mode flycheck-haskell haskell-mode unkillable-scratch evil-terminal-cursor-changer osx-clipboard osx-clipboard-mode slim-mode php-mode yaml-mode terraform-mode git-gutter mode-icons company company-mode markdown-mode scss-mode yasnippet whitespace-cleanup-mode counsel-projectile projectile lua-mode hl-anything diredful dired-single buffer-move anzu evil-visualstar magit json-mode js2-mode hl-todo flycheck exec-path-from-shell counsel avy auto-complete ag evil-surround evil-nerd-commenter evil-leader evil use-package)))
  '(safe-local-variable-values
    (quote
     ((eval progn
