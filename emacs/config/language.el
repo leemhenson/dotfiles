@@ -26,6 +26,8 @@
   (defvar sgml-basic-offset)
   (defvar sgml-attribute-offset)
   :config
+  (use-package js-import
+    :ensure t)
   (add-hook 'js2-mode-hook 'flycheck-mode)
   (add-hook 'js2-jsx-mode-hook 'flycheck-mode))
 
