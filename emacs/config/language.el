@@ -151,7 +151,7 @@
     (when (string= ext "js")
       (let ((local-eslint-dir (locate-dominating-file buffer-file-name executable)))
         (when local-eslint-dir
-          (let (expanded-local-eslint (expand-file-name (concat local-eslint-dir executable)))
+          (let ((expanded-local-eslint (expand-file-name (concat local-eslint-dir executable))))
             (message "expanded-local-eslint: %s" expanded-local-eslint)
             (setq flycheck-javascript-eslint-executable expanded-local-eslint)))))))
 
@@ -163,9 +163,9 @@
     (when (string= ext "js")
       (let ((local-eslintrc-dir (locate-dominating-file buffer-file-name config-file)))
         (when local-eslintrc-dir
-          (let (expanded-local-eslintrc-dir (expand-file-name local-eslintrc-dir)))
-          (message "expanded-local-eslintrc-dir: %s" expanded-local-eslintrc-dir)
-          (setq flycheck-eslint-rules-directories (list (expanded-local-eslintrc-dir))))))))
+          (let ((expanded-local-eslintrc-dir (expand-file-name local-eslintrc-dir)))
+            (message "expanded-local-eslintrc-dir: %s" expanded-local-eslintrc-dir)
+            (setq flycheck-eslint-rules-directories (list expanded-local-eslintrc-dir))))))))
 
 (use-package flycheck
   :ensure t
