@@ -151,9 +151,9 @@
     (when (string= ext "js")
       (let ((local-eslint-dir (locate-dominating-file buffer-file-name executable)))
         (when local-eslint-dir
-          (let ((local-eslint (expand-file-name (concat local-eslint-dir executable))))
-            (message "local-eslint: %s" local-eslint)
-            (setq flycheck-javascript-eslint-executable local-eslint)))))))
+          (let (expanded-local-eslint (expand-file-name (concat local-eslint-dir executable)))
+            (message "expanded-local-eslint: %s" expanded-local-eslint)
+            (setq flycheck-javascript-eslint-executable expanded-local-eslint)))))))
 
 (defun find-eslint-config-for-flycheck ()
   "If dominating .eslintrc.json found - use that for flycheck."
@@ -161,10 +161,11 @@
   (let ((ext (downcase (concat "" (file-name-extension buffer-file-name))))
         (config-file ".eslintrc.json"))
     (when (string= ext "js")
-      (let ((local-eslintrc-dir (expand-file-name (locate-dominating-file buffer-file-name config-file))))
+      (let ((local-eslintrc-dir (locate-dominating-file buffer-file-name config-file)))
         (when local-eslintrc-dir
-          (message "local-eslintrc-dir: %s" local-eslintrc-dir)
-          (setq flycheck-eslint-rules-directories (list (expand-file-name local-eslintrc-dir))))))))
+          (let (expanded-local-eslintrc-dir (expand-file-name local-eslintrc-dir)))
+          (message "expanded-local-eslintrc-dir: %s" expanded-local-eslintrc-dir)
+          (setq flycheck-eslint-rules-directories (list (expanded-local-eslintrc-dir))))))))
 
 (use-package flycheck
   :ensure t
