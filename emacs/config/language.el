@@ -8,58 +8,25 @@
   (add-hook 'haskell-mode-hook 'flycheck-haskell-setup)
   (add-hook 'haskell-mode-hook 'flycheck-mode))
 
-(use-package js2-mode
+(use-package js
   :ensure t
-  :mode (("\\.js$" . js2-mode)
-         ("\\.jsx$" . js2-jsx-mode))
-  :commands (js2-mode
-             js2-jsx-mode)
+  :mode (("\\.js$" . js-mode))
+  :commands (js-mode)
   :init
-  (setq-default js2-bounce-indent-p t)
-  (setq-default js-indent-level 2)
-  (setq-default js2-basic-offset js-indent-level
-        js2-mode-show-parse-errors nil
-        js2-mode-show-strict-warnings nil
-        js2-strict-trailing-comma-warning nil
-        sgml-basic-offset js-indent-level
-        sgml-attribute-offset js-indent-level)
+  (setq-default js-indent-level 2
+                sgml-basic-offset js-indent-level
+                sgml-attribute-offset js-indent-level)
   (defvar sgml-basic-offset)
   (defvar sgml-attribute-offset)
   :config
+  (defconst js--indent-operator-re
+    (concat "[-+*/%<>&^|?:.]\\([^-+*/.]\\|$\\)\\|"
+            (js--regexp-opt-symbol '("in" "instanceof")))
+    "Regexp matching operators that affect indentation of continued expressions.")
+
   (use-package js-import
     :ensure t)
-  (add-hook 'js2-mode-hook 'flycheck-mode)
-  (add-hook 'js2-jsx-mode-hook 'flycheck-mode))
-
-;; This defun can be removed when the patch it includes is added to emacs core.
-;; https://github.com/mooz/js2-mode/issues/369
-(defun js--multi-line-declaration-indentation ()
-  (let (forward-sexp-function ; use Lisp version even in js2-mode
-        at-opening-bracket)
-    (save-excursion
-      (back-to-indentation)
-      (when (not (looking-at js--declaration-keyword-re))
-        (when (looking-at js--indent-operator-re)
-          (goto-char (match-end 0)))
-        (while (and (not at-opening-bracket)
-                    (not (bobp))
-                    (let ((pos (point)))
-                      (save-excursion
-                        (js--backward-syntactic-ws)
-                        (or (eq (char-before) ?,)
-                            (and (not (eq (char-before) ?\;))
-                                 (prog2
-                                     (skip-syntax-backward ".")
-                                     (looking-at js--indent-operator-re)
-                                   (js--backward-syntactic-ws))
-                                 (not (eq (char-before) ?\;)))
-                            (js--same-line pos)))))
-          (condition-case nil
-              (backward-sexp)
-            (scan-error (setq at-opening-bracket t))))
-        (when (looking-at js--declaration-keyword-re)
-          (goto-char (match-end 0))
-          (1+ (current-column)))))))
+  (add-hook 'js-mode-hook 'flycheck-mode))
 
 (use-package json-mode
   :ensure t
