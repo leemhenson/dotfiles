@@ -27,13 +27,13 @@
   (defvar sgml-attribute-offset)
   :config
   (defconst js--indent-operator-re
-    (concat "[-+*/%<>&^|?:.]\\([^-+*/.]\\|$\\)\\|"
+    (concat "[>)\\w\\d]$\\|"
             (js--regexp-opt-symbol '("in" "instanceof")))
-    "Regexp matching operators that affect indentation of continued expressions."))
+    "Regexp matching operators that affect indentation of continued expressions.")
   (use-package js-import
     :ensure t)
   (add-hook 'js2-mode-hook 'flycheck-mode)
-  (add-hook 'js2-jsx-mode-hook 'flycheck-mode)
+  (add-hook 'js2-jsx-mode-hook 'flycheck-mode))
 
 (use-package json-mode
   :ensure t
