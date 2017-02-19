@@ -8,10 +8,29 @@
   (add-hook 'haskell-mode-hook 'flycheck-haskell-setup)
   (add-hook 'haskell-mode-hook 'flycheck-mode))
 
+(use-package js
+  :ensure t
+  :mode (("\\.js$" . js-mode))
+  :commands (js-mode)
+  :init
+  (setq-default js-indent-level 2
+                sgml-basic-offset js-indent-level
+                sgml-attribute-offset js-indent-level)
+  (defvar sgml-basic-offset)
+  (defvar sgml-attribute-offset)
+  :config
+  (defconst js--indent-operator-re
+    (concat "[>)a-zA-Z0-9]$\\|"
+            (js--regexp-opt-symbol '("in" "instanceof")))
+    "Regexp matching operators that affect indentation of continued expressions.")
+  (use-package js-import
+    :ensure t)
+  (add-hook 'js-mode-hook 'flycheck-mode))
+
 (use-package js2-mode
   :ensure t
-  :mode (("\\.js$" . js2-mode)
-         ("\\.jsx$" . js2-jsx-mode))
+  ;; :mode (("\\.js$" . js2-mode)
+  ;;        ("\\.jsx$" . js2-jsx-mode))
   :commands (js2-mode
              js2-jsx-mode)
   :init
