@@ -20,7 +20,7 @@
   (defvar sgml-attribute-offset)
   :config
   (defconst js--indent-operator-re
-    (concat "[>)a-zA-Z0-9]$\\|"
+    (concat "[\"'>)a-zA-Z0-9]$\\|"
             (js--regexp-opt-symbol '("in" "instanceof")))
     "Regexp matching operators that affect indentation of continued expressions.")
   (use-package js-import
