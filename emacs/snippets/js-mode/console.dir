@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: console.dir
+# key: dir
+# --
+console.dir({ $1 }, { depth: ${2:null}, colors: true });$0
