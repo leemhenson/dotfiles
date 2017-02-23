@@ -65,3 +65,5 @@
       "r" 'vr/replace
       "R" 'vr/query-replace)))
 
+(use-package fix-word
+  :ensure t)
