@@ -47,6 +47,11 @@ if [ ! -d $yarn ]; then
   mv ./dist $yarn
   rm latest.tar.gz
   rm -rf ./yarn-temp
+
+  yarn_global="$HOME/.yarn-global"
+
+  mkdir -p $yarn_global
+  yarn config set prefix $yarn_global
 fi
 
 ghci_color="$other/ghci-color"
