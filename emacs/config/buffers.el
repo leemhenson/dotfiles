@@ -49,3 +49,19 @@
 (global-set-key (kbd "C-l") 'windmove-right)
 (global-set-key (kbd "C-k") 'windmove-up)
 (global-set-key (kbd "C-j") 'windmove-down)
+
+(use-package emojify
+  :ensure t
+  :init
+  (global-emojify-mode))
+
+(use-package visual-regexp
+  :ensure t
+  :init
+  (use-package visual-regexp-steroids
+    :ensure t
+    :init
+    (evil-leader/set-key
+      "r" 'vr/replace
+      "R" 'vr/query-replace)))
+

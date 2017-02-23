@@ -3,6 +3,7 @@
 /emacs/*.dat
 /emacs/desktops
 /emacs/elpa
+/emacs/emojis
 /emacs/projectile-bookmarks.eld
 /emacs/recentf
 /git/gitk
