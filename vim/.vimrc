@@ -8,42 +8,56 @@ set rtp^=$DOTFILES/vim
 
 call plug#begin('$DOTFILES/vim/plugged')
 
+Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim'
+Plug 'joshdick/onedark.vim'
+Plug 'goatslacker/mango.vim'
+Plug 'gosukiwi/vim-atom-dark'
+Plug 'nanotech/jellybeans.vim'
+Plug 'rakr/vim-one'
+Plug 'sjl/badwolf'
+
+" Plug 'junegunn/vim-fnr' | Plug 'junegunn/vim-pseudocl'
+" Plug 'mhinz/vim-startify'
+Plug 'Chiel92/vim-autoformat'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'albfan/ag.vim'
 Plug 'artnez/vim-wipeout'
-Plug 'neomake/neomake'
 Plug 'bronson/vim-crosshairs'
-Plug 'Chiel92/vim-autoformat'
 Plug 'djoshea/vim-autoread'
 Plug 'easymotion/vim-easymotion'
 Plug 'esneider/YUNOcommit.vim'
-Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim'
+Plug 'eugen0329/vim-esearch'
+Plug 'flowtype/vim-flow', { 'for': 'javascript' }
+Plug 'garbas/vim-snipmate'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
-Plug 'jacoborus/tender'
 Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-fnr' | Plug 'junegunn/vim-pseudocl'
-Plug 'junegunn/vim-oblique' | Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/vim-oblique'
 Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/vim-pseudocl'
 Plug 'justinmk/vim-dirvish'
 Plug 'matze/vim-move'
-Plug 'mhinz/vim-startify'
 Plug 'mtth/scratch.vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'qpkorr/vim-bufkill'
 Plug 'raichoo/purescript-vim'
-Plug 'Raimondi/delimitMate'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sjl/gundo.vim'
 Plug 'slim-template/vim-slim'
-Plug 'syngan/vim-vimlint' | Plug 'ynkdir/vim-vimlparser'
+Plug 'syngan/vim-vimlint'
 Plug 't9md/vim-choosewin'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tomtom/tlib_vim', { 'tag': '1.22' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -51,11 +65,12 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+" Plug 'vim-syntastic/syntastic'
 Plug 'webdevel/tabulous'
+Plug 'ynkdir/vim-vimlparser'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -64,11 +79,16 @@ filetype plugin indent on    " required
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-colorscheme tender
+colorscheme jellybeans
 let g:airline_theme='term'
 let g:airline#extensions#hunks#enabled=0
 set guifont=Inconsolata
 set shell=~/.dotfiles/zsh/bin/zsh
+
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
+let &t_SI .= "\<Esc>[5 q" " insert mode - line
+let &t_SR .= "\<Esc>[4 q" "replace mode - underline
+let &t_EI .= "\<Esc>[3 q" "common - block
 
 " More frequent updates for, e.g. signs.
 set updatetime=750
@@ -135,6 +155,14 @@ set noshowmode
 let g:neomake_error_sign = { 'text': '✗' }
 let g:neomake_warning_sign = { 'text': '⚠' }
 let g:neomake_ruby_rubocop_maker = { 'args': ['--config=./.rubocop.yml'] }
+let g:neomake_verbose = 3
+let g:neomake_logfile='/tmp/neomake-error.log'
+" let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+" let b:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+let g:neomake_open_list = 2
+let g:neomake_jsx_enabled_makers = ["eslint"]
+let g:neomake_javascript_enabled_makers = ["eslint"]
+let g:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
 
 autocmd! BufWinEnter * Neomake
 autocmd! BufWritePost * Neomake
@@ -213,10 +241,6 @@ au FileType sql setl formatprg=/usr/local/bin/pg_format\ -
 " automatically switch to insert mode when navigating to a terminal window
 autocmd BufWinEnter,WinEnter term://* startinsert
 
-" Startify
-let g:startify_session_dir = "$HOME/icloud/docs/work/vim-sessions"
-let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']
-
 " YouCompleteMe
 " prevent conflict with endwise
 let g:endwise_no_mappings = 1
@@ -265,7 +289,7 @@ nmap <Leader>cD :FzfHelptags<cr>
 nmap <Leader>ca :FzfAg<cr>
 nmap <Leader>cf :FzfGitFiles<cr>
 nmap <Leader>cF :exe 'FzfFiles ' . <SID>fzf_root()<CR>
-nmap <Leader>s :FzfLines<cr>
+nmap <Leader>s :FzfBLines<cr>
 
 nmap <Leader><Leader> <Plug>(easymotion-sn)
 
