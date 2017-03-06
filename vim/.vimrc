@@ -12,6 +12,7 @@ Plug 'nanotech/jellybeans.vim'
 
 Plug 'Chiel92/vim-autoformat'
 Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'javascript' }
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe'
@@ -36,7 +37,10 @@ Plug 'junegunn/vim-pseudocl'
 Plug 'justinmk/vim-dirvish'
 Plug 'matze/vim-move'
 Plug 'mtth/scratch.vim'
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+
+" Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+" let g:jsx_ext_required = 0
+
 Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -145,7 +149,6 @@ let g:neomake_error_sign = { 'text': '✗' }
 let g:neomake_javascript_enabled_makers = ["eslint"]
 let g:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
 let g:neomake_jsx_enabled_makers = ["eslint"]
-let g:neomake_open_list = 2
 let g:neomake_ruby_rubocop_maker = { 'args': ['--config=./.rubocop.yml'] }
 let g:neomake_warning_sign = { 'text': '⚠' }
 
