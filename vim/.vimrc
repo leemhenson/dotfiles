@@ -8,17 +8,8 @@ set rtp^=$DOTFILES/vim
 
 call plug#begin('$DOTFILES/vim/plugged')
 
-Plug 'altercation/vim-colors-solarized'
-Plug 'dracula/vim'
-Plug 'joshdick/onedark.vim'
-Plug 'goatslacker/mango.vim'
-Plug 'gosukiwi/vim-atom-dark'
 Plug 'nanotech/jellybeans.vim'
-Plug 'rakr/vim-one'
-Plug 'sjl/badwolf'
 
-" Plug 'junegunn/vim-fnr' | Plug 'junegunn/vim-pseudocl'
-" Plug 'mhinz/vim-startify'
 Plug 'Chiel92/vim-autoformat'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'Raimondi/delimitMate'
@@ -37,7 +28,6 @@ Plug 'garbas/vim-snipmate'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
-Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-oblique'
@@ -68,7 +58,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-" Plug 'vim-syntastic/syntastic'
 Plug 'webdevel/tabulous'
 Plug 'ynkdir/vim-vimlparser'
 
