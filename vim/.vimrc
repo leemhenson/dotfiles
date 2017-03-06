@@ -153,16 +153,12 @@ set noshowmode
 
 " Neomake
 let g:neomake_error_sign = { 'text': '✗' }
-let g:neomake_warning_sign = { 'text': '⚠' }
-let g:neomake_ruby_rubocop_maker = { 'args': ['--config=./.rubocop.yml'] }
-let g:neomake_verbose = 3
-let g:neomake_logfile='/tmp/neomake-error.log'
-" let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-" let b:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-let g:neomake_open_list = 2
-let g:neomake_jsx_enabled_makers = ["eslint"]
 let g:neomake_javascript_enabled_makers = ["eslint"]
 let g:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
+let g:neomake_jsx_enabled_makers = ["eslint"]
+let g:neomake_open_list = 2
+let g:neomake_ruby_rubocop_maker = { 'args': ['--config=./.rubocop.yml'] }
+let g:neomake_warning_sign = { 'text': '⚠' }
 
 autocmd! BufWinEnter * Neomake
 autocmd! BufWritePost * Neomake
@@ -312,11 +308,11 @@ map œ :tabclose<CR>
 nmap  <Leader>W <Plug>(choosewin)
 
   " 6.1 Navigate splits with ctrl-jklh
-  map <c-j> <c-w>j
-  map <c-k> <c-w>k
-  map <c-l> <c-w>l
-  map <c-h> <c-w>h
-  map <c-w>s :sp<CR>
+  map <C-H> <C-W>h
+  map <C-j> <C-w>j
+  map <C-k> <C-w>k
+  map <C-l> <C-w>l
+  map <C-w>s :sp<CR>
 
   " 6.2 Create splits
   nmap <Leader>ws<Left> :topleft vnew<CR>
