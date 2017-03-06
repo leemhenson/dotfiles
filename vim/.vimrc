@@ -24,7 +24,10 @@ Plug 'djoshea/vim-autoread'
 Plug 'easymotion/vim-easymotion'
 Plug 'esneider/YUNOcommit.vim'
 Plug 'eugen0329/vim-esearch'
+
 Plug 'flowtype/vim-flow', { 'for': 'javascript' }
+let g:flow#autoclose = 1
+
 Plug 'garbas/vim-snipmate'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'janko-m/vim-test'
