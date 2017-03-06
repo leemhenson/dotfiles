@@ -12,11 +12,11 @@ Plug 'arcticicestudio/nord-vim'
 
 Plug 'Chiel92/vim-autoformat'
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'javascript' }
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
 Plug 'albfan/ag.vim'
 Plug 'artnez/vim-wipeout'
 Plug 'bronson/vim-crosshairs'
@@ -24,10 +24,6 @@ Plug 'djoshea/vim-autoread'
 Plug 'easymotion/vim-easymotion'
 Plug 'esneider/YUNOcommit.vim'
 Plug 'eugen0329/vim-esearch'
-
-Plug 'flowtype/vim-flow', { 'for': 'javascript' }
-let g:flow#autoclose = 1
-
 Plug 'garbas/vim-snipmate'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'janko-m/vim-test'
@@ -41,12 +37,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'matze/vim-move'
 Plug 'mtth/scratch.vim'
 
-" Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-" let g:jsx_ext_required = 0
-
-Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'qpkorr/vim-bufkill'
 Plug 'raichoo/purescript-vim'
 Plug 'sjl/gundo.vim'
@@ -62,11 +53,35 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'webdevel/tabulous'
 Plug 'ynkdir/vim-vimlparser'
+
+Plug 'neomake/neomake'
+let g:neomake_error_sign = { 'text': '✗' }
+let g:neomake_javascript_enabled_makers = ["eslint"]
+let g:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
+let g:neomake_jsx_enabled_makers = ["eslint"]
+let g:neomake_ruby_rubocop_maker = { 'args': ['--config=./.rubocop.yml'] }
+let g:neomake_warning_sign = { 'text': '⚠' }
+
+autocmd! BufWinEnter * Neomake
+autocmd! BufWritePost * Neomake
+
+Plug 'flowtype/vim-flow', { 'for': 'javascript' }
+let g:flow#autoclose = 1
+
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+let g:javascript_plugin_flow = 1
+
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+let g:jsx_ext_required = 0
+
+Plug 'vim-airline/vim-airline'
+let g:airline#extensions#hunks#enabled=0
+
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='term'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -76,11 +91,10 @@ syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme nord
-let g:airline_theme='term'
-let g:airline#extensions#hunks#enabled=0
 set guifont=Inconsolata
 set shell=~/.dotfiles/zsh/bin/zsh
 
+" Cursor shapes
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 let &t_SI .= "\<Esc>[5 q" " insert mode - line
 let &t_SR .= "\<Esc>[4 q" "replace mode - underline
@@ -146,17 +160,6 @@ set scrolloff=30
 
 " Hide current mode in command bar
 set noshowmode
-
-" Neomake
-let g:neomake_error_sign = { 'text': '✗' }
-let g:neomake_javascript_enabled_makers = ["eslint"]
-let g:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
-let g:neomake_jsx_enabled_makers = ["eslint"]
-let g:neomake_ruby_rubocop_maker = { 'args': ['--config=./.rubocop.yml'] }
-let g:neomake_warning_sign = { 'text': '⚠' }
-
-autocmd! BufWinEnter * Neomake
-autocmd! BufWritePost * Neomake
 
 " strip whitespace on save
 autocmd BufWritePre * StripWhitespace

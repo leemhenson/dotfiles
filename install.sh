@@ -19,6 +19,7 @@ brew bundle
 npm install -g \
     bower \
     flow-bin \
+    flow-vim-quickfix \
     nodemon \
     pulp
 
