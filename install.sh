@@ -67,3 +67,4 @@ if [ ! -d $ghci_color ]; then
   git clone https://github.com/rhysd/ghci-color.git $ghci_color
   ln -sf "${ghci_color}/ghci-color" /usr/local/bin/ghci-color
 fi
+

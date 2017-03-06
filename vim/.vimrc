@@ -8,7 +8,7 @@ set rtp^=$DOTFILES/vim
 
 call plug#begin('$DOTFILES/vim/plugged')
 
-Plug 'nanotech/jellybeans.vim'
+Plug 'arcticicestudio/nord-vim'
 
 Plug 'Chiel92/vim-autoformat'
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -75,7 +75,7 @@ filetype plugin indent on    " required
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-colorscheme jellybeans
+colorscheme nord
 let g:airline_theme='term'
 let g:airline#extensions#hunks#enabled=0
 set guifont=Inconsolata
