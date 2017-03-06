@@ -265,6 +265,12 @@ let g:fugitive_no_maps=1
 " 1 Buffers
 nmap <Leader>cb :FzfBuffers<cr>
 
+  " 1.1 Create splits
+  nmap <Leader>bs<Left> :leftabove vnew<CR>
+  nmap <Leader>bs<Right> :rightbelow vnew<CR>
+  nmap <Leader>bs<Up> :leftabove new<CR>
+  nmap <Leader>bs<Down> :rightbelow new<CR>
+
 " 2 Editing
 nmap <Leader>f :Autoformat<cr>
 nmap <Leader>u :GundoToggle<cr>
@@ -303,7 +309,7 @@ map † :tabnew<CR>
 map œ :tabclose<CR>
 
 " 6 Windows
-nmap  <Leader>w <Plug>(choosewin)
+nmap  <Leader>W <Plug>(choosewin)
 
   " 6.1 Navigate splits with ctrl-jklh
   map <c-j> <c-w>j
@@ -312,7 +318,13 @@ nmap  <Leader>w <Plug>(choosewin)
   map <c-h> <c-w>h
   map <c-w>s :sp<CR>
 
-  " 6.2 Navigate windows from neovim terminal
+  " 6.2 Create splits
+  nmap <Leader>ws<Left> :topleft vnew<CR>
+  nmap <Leader>ws<Right> :botright vnew<CR>
+  nmap <Leader>ws<Up> :topleft new<CR>
+  nmap <Leader>ws<Down> :botright new<CR>
+
+  " 6.3 Navigate windows from neovim terminal
   tmap <ESC> <c-\><c-n>
   tmap <c-j> <c-\><c-n><c-w>j
   tmap <c-k> <c-\><c-n><c-w>k
