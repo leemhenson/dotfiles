@@ -25,8 +25,13 @@ npm install -g \
 pip2 install --upgrade pip
 pip3 install --upgrade pip
 
+# upgrade neovim and recompile dependent plugins
 pip2 install --upgrade neovim
 pip3 install --upgrade neovim
+
+# fix ctrl-h terminfo bug
+infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $HOME/$TERM.ti
+tic $HOME/$TERM.ti
 
 # tools built from source
 

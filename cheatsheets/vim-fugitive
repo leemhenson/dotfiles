@@ -1,14 +1,20 @@
 # show help
 g?
 
-# stage/unstage file
--
-
 # next file
 <ctrl-n>
 
 # previous file
 <ctrl-p>
+
+# stage/unstage file
+-
+
+# diff file on current line
+D
+
+# stage hunk (in diff view)
+:diffput
 
 # commit
 cc
