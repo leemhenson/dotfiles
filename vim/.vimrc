@@ -267,6 +267,10 @@ nmap <Leader>cb :FzfBuffers<cr>
   nmap <Leader>bs<Up> :leftabove new<CR>
   nmap <Leader>bs<Down> :rightbelow new<CR>
 
+  " 1.2 Killing
+  nmap <Leader>bk :BD<CR>
+  nmap <Leader>bK :Wipeout<CR>
+
 " 2 Editing
 nmap <Leader>f :Autoformat<cr>
 nmap <Leader>u :GundoToggle<cr>
@@ -282,7 +286,7 @@ smap <Tab> <Plug>snipMateNextOrTrigger
   vmap > >gv
 
 " 3 Git
-nmap <Leader>gs :Magit<cr>
+nmap <Leader>gs :Gstatus<cr>
 
 " 4 Search
 nmap <Leader>cx :FzfCommands<cr>
