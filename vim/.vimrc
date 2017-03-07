@@ -9,7 +9,6 @@ set rtp^=$DOTFILES/vim
 call plug#begin('$DOTFILES/vim/plugged')
 
 Plug 'arcticicestudio/nord-vim'
-
 Plug 'Chiel92/vim-autoformat'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'Raimondi/delimitMate'
@@ -36,7 +35,6 @@ Plug 'junegunn/vim-pseudocl'
 Plug 'justinmk/vim-dirvish'
 Plug 'matze/vim-move'
 Plug 'mtth/scratch.vim'
-
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'qpkorr/vim-bufkill'
 Plug 'raichoo/purescript-vim'
@@ -56,6 +54,8 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'webdevel/tabulous'
 Plug 'ynkdir/vim-vimlparser'
+Plug 'vim-scripts/SyntaxAttr.vim'
+map <Leader>x :call SyntaxAttr()<cr>
 
 Plug 'neomake/neomake'
 let g:neomake_error_sign = { 'text': '✗' }
