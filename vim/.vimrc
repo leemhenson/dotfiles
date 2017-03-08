@@ -6,6 +6,10 @@ let g:mapleader = "\<Space>"
 
 set rtp^=$DOTFILES/vim
 
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 call plug#begin('$DOTFILES/vim/plugged')
 
 Plug 'albfan/ag.vim'
@@ -170,11 +174,10 @@ call plug#end()
 
 filetype plugin indent on    " required
 syntax enable
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set background=dark
 colorscheme nord
 set guifont=Inconsolata
 set shell=~/.dotfiles/zsh/bin/zsh
+highlight Normal guibg=nord0_gui
 
 " Cursor shapes
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
