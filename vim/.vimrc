@@ -1,4 +1,4 @@
-scriptencoding utf-9
+scriptencoding utf-8
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
