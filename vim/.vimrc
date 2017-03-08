@@ -64,6 +64,12 @@ autocmd! BufWinEnter * Neomake
 autocmd! BufWritePost * Neomake
 
 Plug 'arcticicestudio/nord-vim'
+augroup nord-overrides
+  autocmd!
+  autocmd ColorScheme nord highlight xmlTagName guifg=5 ctermfg=5
+  autocmd ColorScheme nord highlight xmlTag guifg=5 ctermfg=5
+augroup END
+
 Plug 'raichoo/purescript-vim'
 
 Plug 'vim-scripts/SyntaxAttr.vim'
