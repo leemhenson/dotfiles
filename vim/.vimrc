@@ -83,6 +83,7 @@ Plug 'webdevel/tabulous'
 
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#hunks#enabled=0
+let g:airline_powerline_fonts = 1
 
 Plug 'Chiel92/vim-autoformat'
 nmap <Leader>f :Autoformat<cr>
@@ -102,6 +103,7 @@ nmap <Leader>bk :BD<CR>
 
 Plug 'tpope/vim-commentary'
 Plug 'bronson/vim-crosshairs'
+Plug 'ryanoasis/vim-devicons'
 Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-dispatch'
 
@@ -175,7 +177,6 @@ call plug#end()
 filetype plugin indent on    " required
 syntax enable
 colorscheme nord
-set guifont=Inconsolata
 set shell=~/.dotfiles/zsh/bin/zsh
 highlight Normal guibg=nord0_gui
 
