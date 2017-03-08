@@ -57,6 +57,7 @@ let g:neomake_error_sign = { 'text': '✗' }
 let g:neomake_javascript_enabled_makers = ["eslint"]
 let g:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
 let g:neomake_jsx_enabled_makers = ["eslint"]
+let g:neomake_ruby_enabled_makers = []
 let g:neomake_ruby_rubocop_maker = { 'args': ['--config=./.rubocop.yml'] }
 let g:neomake_warning_sign = { 'text': '⚠' }
 autocmd! BufWinEnter * Neomake
