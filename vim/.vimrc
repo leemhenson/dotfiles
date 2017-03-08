@@ -8,54 +8,45 @@ set rtp^=$DOTFILES/vim
 
 call plug#begin('$DOTFILES/vim/plugged')
 
-Plug 'arcticicestudio/nord-vim'
-Plug 'Chiel92/vim-autoformat'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'Raimondi/delimitMate'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Valloric/YouCompleteMe'
-Plug 'airblade/vim-gitgutter'
-Plug 'airblade/vim-rooter'
 Plug 'albfan/ag.vim'
-Plug 'artnez/vim-wipeout'
-Plug 'bronson/vim-crosshairs'
-Plug 'djoshea/vim-autoread'
-Plug 'easymotion/vim-easymotion'
-Plug 'esneider/YUNOcommit.vim'
-Plug 'eugen0329/vim-esearch'
-Plug 'garbas/vim-snipmate'
-Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
-Plug 'janko-m/vim-test'
-Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
+let g:ag_working_path_mode="r"
+
+Plug 'Raimondi/delimitMate'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-oblique'
-Plug 'junegunn/vim-peekaboo'
-Plug 'junegunn/vim-pseudocl'
-Plug 'justinmk/vim-dirvish'
-Plug 'matze/vim-move'
-Plug 'mtth/scratch.vim'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'qpkorr/vim-bufkill'
-Plug 'raichoo/purescript-vim'
+let g:fzf_command_prefix = 'Fzf'
+
+fun! s:fzf_root()
+  let path = finddir(".git", expand("%:p:h").";")
+  return fnamemodify(substitute(path, ".git", "", ""), ":p:h")
+endfun
+
+let g:fzf_colors = {
+      \ 'fg':      ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'Comment'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \ 'hl+':     ['fg', 'Statement'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'] }
+
+nmap <Leader>cD :FzfHelptags<cr>
+nmap <Leader>cF :exe 'FzfFiles ' . <SID>fzf_root()<CR>
+nmap <Leader>ca :FzfAg<cr>
+nmap <Leader>cb :FzfBuffers<cr>
+nmap <Leader>cd <plug>(fzf-maps-n)
+nmap <Leader>cf :FzfGitFiles<cr>
+nmap <Leader>cx :FzfCommands<cr>
+nmap <Leader>s :FzfBLines<cr>
+
 Plug 'sjl/gundo.vim'
-Plug 'slim-template/vim-slim'
-Plug 'syngan/vim-vimlint'
-Plug 't9md/vim-choosewin'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tomtom/tlib_vim', { 'tag': '1.22' }
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'webdevel/tabulous'
-Plug 'ynkdir/vim-vimlparser'
-Plug 'vim-scripts/SyntaxAttr.vim'
-map <Leader>x :call SyntaxAttr()<cr>
+nmap <Leader>u :GundoToggle<cr>
 
 Plug 'neomake/neomake'
 let g:neomake_error_sign = { 'text': '✗' }
@@ -64,24 +55,105 @@ let g:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
 let g:neomake_jsx_enabled_makers = ["eslint"]
 let g:neomake_ruby_rubocop_maker = { 'args': ['--config=./.rubocop.yml'] }
 let g:neomake_warning_sign = { 'text': '⚠' }
-
 autocmd! BufWinEnter * Neomake
 autocmd! BufWritePost * Neomake
 
+Plug 'arcticicestudio/nord-vim'
+Plug 'raichoo/purescript-vim'
+
+Plug 'vim-scripts/SyntaxAttr.vim'
+map <Leader>x :call SyntaxAttr()<cr>
+
+Plug 'webdevel/tabulous'
+
+Plug 'vim-airline/vim-airline'
+let g:airline#extensions#hunks#enabled=0
+
+Plug 'Chiel92/vim-autoformat'
+nmap <Leader>f :Autoformat<cr>
+
+Plug 'djoshea/vim-autoread'
+
+Plug 'ntpeters/vim-better-whitespace'
+autocmd BufWritePre * StripWhitespace
+
+Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
+let g:blockle_mapping="∫"
+
+Plug 'qpkorr/vim-bufkill'
+let g:BufKillCreateMappings=0
+nmap <Leader>bK :Wipeout<CR>
+nmap <Leader>bk :BD<CR>
+
+Plug 'tpope/vim-commentary'
+Plug 'bronson/vim-crosshairs'
+Plug 'justinmk/vim-dirvish'
+Plug 'tpope/vim-dispatch'
+
+Plug 'easymotion/vim-easymotion'
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+nmap <Leader><Leader> <Plug>(easymotion-sn)
+
+Plug 'tpope/vim-endwise'
+let g:endwise_no_mappings = 1  " prevent conflict with YouCompleteMe
+
+Plug 'eugen0329/vim-esearch'
+Plug 'tpope/vim-eunuch'
+
 Plug 'flowtype/vim-flow', { 'for': 'javascript' }
 let g:flow#autoclose = 1
+
+Plug 'tpope/vim-fugitive'
+let g:fugitive_no_maps=1
+nmap <Leader>gs :Gstatus<cr>
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'matze/vim-move'
+let g:move_map_keys = 0
+nmap <C-o> <Plug>MoveLineDown
+nmap <C-p> <Plug>MoveLineUp
+vmap <C-o> <Plug>MoveBlockDown
+vmap <C-p> <Plug>MoveBlockUp
+
+Plug 'tpope/vim-obsession'
+Plug 'junegunn/vim-oblique'
+Plug 'junegunn/vim-peekaboo'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'junegunn/vim-pseudocl'
+Plug 'airblade/vim-rooter'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'slim-template/vim-slim'
+
+Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim', { 'tag': '1.22' }
+imap <Tab> <Plug>snipMateNextOrTrigger
+smap <Tab> <Plug>snipMateNextOrTrigger
+
+Plug 'tpope/vim-surround'
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+
+Plug 'janko-m/vim-test'
+let test#ruby#bundle_exec = 0
+
+Plug 'syngan/vim-vimlint'
+Plug 'ynkdir/vim-vimlparser'
+Plug 'artnez/vim-wipeout'
+
+Plug 'Valloric/YouCompleteMe'
+let g:ycm_key_list_previous_completion=[]
+let g:ycm_key_list_select_completion=[]
+imap <expr><cr> pumvisible() ? "\<c-y>" : "\<cr>\<Plug>DiscretionaryEnd"
+
+Plug 'esneider/YUNOcommit.vim'
+
+" Order-dependent
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 let g:javascript_plugin_flow = 1
 
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 let g:jsx_ext_required = 0
-
-Plug 'vim-airline/vim-airline'
-let g:airline#extensions#hunks#enabled=0
-
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='term'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -111,7 +183,6 @@ set mouse=a
 
 " Highlight current line
 :set cursorline
-highlight CursorLine cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NON
 
 " Line numbers
 set nu
@@ -161,9 +232,6 @@ set scrolloff=30
 " Hide current mode in command bar
 set noshowmode
 
-" strip whitespace on save
-autocmd BufWritePre * StripWhitespace
-
 " Map to trigger sudo prompt
 cmap w!! %!sudo tee > /dev/null %
 
@@ -180,152 +248,48 @@ set wildignore+=*/node_modules/*
 set wildignore+=*/tmp/*
 set wildignore+=*/vendor/*
 
-" Remove airline seperators (arrows)
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_section_b=''
-let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
-
-" Blockle
-let g:blockle_mapping="∫"
-
-" Bufkill
-let g:BufKillCreateMappings=0
-
-" fzf
-let g:fzf_command_prefix = 'Fzf'
-
-fun! s:fzf_root()
-  let path = finddir(".git", expand("%:p:h").";")
-  return fnamemodify(substitute(path, ".git", "", ""), ":p:h")
-endfun
-
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-
-" JSX
-let g:jsx_ext_required = 0
-
 " Don't automatically insert comment chars
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" vim-move
-let g:move_map_keys = 0
-
-" vim-test
-let test#ruby#bundle_exec = 0
-
-" ag.vim
-let g:ag_working_path_mode="r"
-
-" pgformatter
+" Pgformatter
 au FileType sql setl formatprg=/usr/local/bin/pg_format\ -
 
-" automatically switch to insert mode when navigating to a terminal window
+" Automatically switch to insert mode when navigating to a terminal window
 autocmd BufWinEnter,WinEnter term://* startinsert
 
-" YouCompleteMe
-" prevent conflict with endwise
-let g:endwise_no_mappings = 1
-imap <expr><cr> pumvisible() ? "\<c-y>" : "\<cr>\<Plug>DiscretionaryEnd"
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+" Remain in visual mode while indenting
+vmap < <gv
+vmap > >gv
 
-" ChooseWin
-let g:choosewin_overlay_enable = 1
+" Toggle highlighted search results
+map <Leader>H :set hlsearch! hlsearch?<CR>
 
-" Easymotion
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase = 1
+" Split buffers
+nmap <Leader>bs<Left> :leftabove vnew<CR>
+nmap <Leader>bs<Right> :rightbelow vnew<CR>
+nmap <Leader>bs<Up> :leftabove new<CR>
+nmap <Leader>bs<Down> :rightbelow new<CR>
 
-" Fugitive
-let g:fugitive_no_maps=1
+" Split window
+nmap <Leader>ws<Left> :topleft vnew<CR>
+nmap <Leader>ws<Right> :botright vnew<CR>
+nmap <Leader>ws<Up> :topleft new<CR>
+nmap <Leader>ws<Down> :botright new<CR>
 
-" ================
-" Mappings
-" ================
-
-" 1 Buffers
-nmap <Leader>cb :FzfBuffers<cr>
-
-  " 1.1 Create splits
-  nmap <Leader>bs<Left> :leftabove vnew<CR>
-  nmap <Leader>bs<Right> :rightbelow vnew<CR>
-  nmap <Leader>bs<Up> :leftabove new<CR>
-  nmap <Leader>bs<Down> :rightbelow new<CR>
-
-  " 1.2 Killing
-  nmap <Leader>bk :BD<CR>
-  nmap <Leader>bK :Wipeout<CR>
-
-" 2 Editing
-nmap <Leader>f :Autoformat<cr>
-nmap <Leader>u :GundoToggle<cr>
-nmap <C-o> <Plug>MoveLineDown
-nmap <C-p> <Plug>MoveLineUp
-vmap <C-o> <Plug>MoveBlockDown
-vmap <C-p> <Plug>MoveBlockUp
-imap <Tab> <Plug>snipMateNextOrTrigger
-smap <Tab> <Plug>snipMateNextOrTrigger
-
-  " 2.1 Remain in visual mode while indenting
-  vmap < <gv
-  vmap > >gv
-
-" 3 Git
-nmap <Leader>gs :Gstatus<cr>
-
-" 4 Search
-nmap <Leader>cx :FzfCommands<cr>
-nmap <Leader>cd <plug>(fzf-maps-n)
-nmap <Leader>cD :FzfHelptags<cr>
-nmap <Leader>ca :FzfAg<cr>
-nmap <Leader>cf :FzfGitFiles<cr>
-nmap <Leader>cF :exe 'FzfFiles ' . <SID>fzf_root()<CR>
-nmap <Leader>s :FzfBLines<cr>
-
-nmap <Leader><Leader> <Plug>(easymotion-sn)
-
-  " 4.1 Toggle highlighted search results
-  map <Leader>H :set hlsearch! hlsearch?<CR>
-
-" 5 Tabs (alt-t new, alt-q close, alt-j/k navigate)
+" Navigate tabs (alt-t new, alt-q close, alt-j/k navigate)
 map ˙ gT
 map ¬ gt
 map † :tabnew<CR>
 map œ :tabclose<CR>
 
-" 6 Windows
-nmap  <Leader>W <Plug>(choosewin)
-
-  " 6.1 Navigate splits with ctrl-jklh
-  map <C-H> <C-W>h
-  map <C-j> <C-w>j
-  map <C-k> <C-w>k
-  map <C-l> <C-w>l
-  map <C-w>s :sp<CR>
-
-  " 6.2 Create splits
-  nmap <Leader>ws<Left> :topleft vnew<CR>
-  nmap <Leader>ws<Right> :botright vnew<CR>
-  nmap <Leader>ws<Up> :topleft new<CR>
-  nmap <Leader>ws<Down> :botright new<CR>
-
-  " 6.3 Navigate windows from neovim terminal
-  tmap <ESC> <c-\><c-n>
-  tmap <c-j> <c-\><c-n><c-w>j
-  tmap <c-k> <c-\><c-n><c-w>k
-  tmap <c-l> <c-\><c-n><c-w>l
-  tmap <c-h> <c-\><c-n><c-w>h
+" Navigate splits
+map <C-H> <C-W>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+tmap <ESC> <c-\><c-n>
+tmap <c-j> <c-\><c-n><c-w>j
+tmap <c-k> <c-\><c-n><c-w>k
+tmap <c-l> <c-\><c-n><c-w>l
+tmap <c-h> <c-\><c-n><c-w>h
 
