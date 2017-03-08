@@ -11,6 +11,10 @@ call plug#begin('$DOTFILES/vim/plugged')
 Plug 'albfan/ag.vim'
 let g:ag_working_path_mode="r"
 
+Plug 'dyng/ctrlsf.vim'
+map <Leader>r <Plug>CtrlSFPrompt
+map <Leader>R <Plug>CtrlSFVwordExec
+
 Plug 'Raimondi/delimitMate'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
@@ -98,7 +102,6 @@ nmap <Leader><Leader> <Plug>(easymotion-sn)
 Plug 'tpope/vim-endwise'
 let g:endwise_no_mappings = 1  " prevent conflict with YouCompleteMe
 
-Plug 'eugen0329/vim-esearch'
 Plug 'tpope/vim-eunuch'
 
 Plug 'flowtype/vim-flow', { 'for': 'javascript' }
