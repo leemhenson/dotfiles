@@ -58,7 +58,7 @@ nmap <Leader>u :GundoToggle<cr>
 
 Plug 'neomake/neomake'
 let g:neomake_error_sign = { 'text': '✗' }
-let g:neomake_javascript_enabled_makers = ["eslint"]
+let g:neomake_javascript_enabled_makers = ["eslint", "flow"]
 let g:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
 let g:neomake_jsx_enabled_makers = ["eslint"]
 let g:neomake_ruby_enabled_makers = []
@@ -118,6 +118,7 @@ let g:endwise_no_mappings = 1  " prevent conflict with YouCompleteMe
 Plug 'tpope/vim-eunuch'
 
 Plug 'flowtype/vim-flow', { 'for': 'javascript' }
+let g:flow#enable = 0
 let g:flow#autoclose = 1
 
 Plug 'tpope/vim-fugitive'
