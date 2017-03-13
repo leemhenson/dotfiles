@@ -18,6 +18,7 @@ let g:ag_working_path_mode="r"
 Plug 'w0rp/ale'
 let g:ale_linters = {
 \   'javascript': ['eslint', 'flow'],
+\   'vim': ['vint'],
 \}
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
@@ -149,8 +150,6 @@ Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'janko-m/vim-test'
 let test#ruby#bundle_exec = 0
 
-Plug 'syngan/vim-vimlint'
-Plug 'ynkdir/vim-vimlparser'
 Plug 'artnez/vim-wipeout'
 
 Plug 'Valloric/YouCompleteMe'

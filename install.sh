@@ -11,6 +11,7 @@ ln -sf "$DOTFILES/pgcli/config" "$HOME/.config/pgcli/config"
 ln -sf "$DOTFILES/khdrc" "$HOME/.khdrc"
 ln -snf "$DOTFILES/kwm" "$HOME/.kwm"
 ln -sf "$DOTFILES/tern/.tern-project" "$HOME/.tern-project"
+ln -sf "$DOTFILES/vim/.vintrc.yaml" "$HOME/.vintrc.yaml"
 
 # tools delivered through package managers
 
@@ -30,6 +31,9 @@ pip3 install --upgrade pip
 
 pip2 install --upgrade neovim
 pip3 install --upgrade neovim
+
+pip2 install --upgrade vim-vint
+pip3 install --upgrade vim-vint
 
 # fix ctrl-h terminfo bug
 
