@@ -15,6 +15,15 @@ call plug#begin('$DOTFILES/vim/plugged')
 Plug 'albfan/ag.vim'
 let g:ag_working_path_mode="r"
 
+Plug 'w0rp/ale'
+let g:ale_linters = {
+\   'javascript': ['eslint', 'flow'],
+\}
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
+" highlight clear ALEErrorSign
+" highlight clear ALEWarningSign
+
 Plug 'dyng/ctrlsf.vim'
 map <Leader>r <Plug>CtrlSFPrompt
 map <Leader>R <Plug>CtrlSFVwordExec
@@ -56,16 +65,16 @@ nmap <Leader>s :FzfBLines<cr>
 Plug 'sjl/gundo.vim'
 nmap <Leader>u :GundoToggle<cr>
 
-Plug 'neomake/neomake'
-let g:neomake_error_sign = { 'text': '✗' }
-let g:neomake_javascript_enabled_makers = ["eslint", "flow"]
-let g:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
-let g:neomake_jsx_enabled_makers = ["eslint"]
-let g:neomake_ruby_enabled_makers = []
-let g:neomake_ruby_rubocop_maker = { 'args': ['--config=./.rubocop.yml'] }
-let g:neomake_warning_sign = { 'text': '⚠' }
-autocmd! BufWinEnter * Neomake
-autocmd! BufWritePost * Neomake
+" Plug 'neomake/neomake'
+" let g:neomake_error_sign = { 'text': '✗' }
+" let g:neomake_javascript_enabled_makers = ["eslint", "flow"]
+" let g:neomake_javascript_eslint_exe = './node_modules/.bin/eslint'
+" let g:neomake_jsx_enabled_makers = ["eslint"]
+" let g:neomake_ruby_enabled_makers = []
+" let g:neomake_ruby_rubocop_maker = { 'args': ['--config=./.rubocop.yml'] }
+" let g:neomake_warning_sign = { 'text': '⚠' }
+" autocmd! BufWinEnter * Neomake
+" autocmd! BufWritePost * Neomake
 
 Plug 'arcticicestudio/nord-vim'
 augroup nord-overrides
@@ -179,7 +188,11 @@ filetype plugin indent on    " required
 syntax enable
 colorscheme nord
 set shell=~/.dotfiles/zsh/bin/zsh
-highlight Normal guibg=nord0_gui
+
+" Colorscheme overrides
+highlight Normal guibg=#111111
+highlight ALEErrorSign guifg=#BF616A guibg=#2E3440
+highlight ALEWarningSign guifg=#EBCB8B guibg=#2E3440
 
 " Cursor shapes
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
