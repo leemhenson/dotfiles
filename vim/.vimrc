@@ -21,8 +21,6 @@ let g:ale_linters = {
 \}
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
-" highlight clear ALEErrorSign
-" highlight clear ALEWarningSign
 
 Plug 'dyng/ctrlsf.vim'
 map <Leader>r <Plug>CtrlSFPrompt
