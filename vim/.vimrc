@@ -201,8 +201,8 @@ set mouse=a
 " Line numbers
 set nu
 
-" Highlight 120th column
-set colorcolumn=120
+" Highlight 100th column
+set colorcolumn=100
 
 " Enable hidden buffers (navigate away from buffer with unsaved changes)
 set hidden
