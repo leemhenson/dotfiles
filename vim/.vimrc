@@ -64,6 +64,8 @@ nmap <Leader>s :FzfBLines<cr>
 Plug 'sjl/gundo.vim'
 nmap <Leader>u :GundoToggle<cr>
 
+Plug 'neovim/node-host'
+
 Plug 'arcticicestudio/nord-vim'
 augroup nord-overrides
   autocmd!
