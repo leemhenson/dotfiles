@@ -116,10 +116,6 @@ let g:endwise_no_mappings = 1  " prevent conflict with YouCompleteMe
 
 Plug 'tpope/vim-eunuch'
 
-Plug 'flowtype/vim-flow', { 'for': 'javascript' }
-let g:flow#enable = 0
-let g:flow#autoclose = 1
-
 Plug 'tpope/vim-fugitive'
 let g:fugitive_no_maps=1
 nmap <Leader>gs :Gstatus<cr>
@@ -142,7 +138,7 @@ Plug 'airblade/vim-rooter'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'slim-template/vim-slim'
 
-Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim', { 'tag': '1.22' }
+Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim'
 imap <Tab> <Plug>snipMateNextOrTrigger
 smap <Tab> <Plug>snipMateNextOrTrigger
 
@@ -154,19 +150,18 @@ let test#ruby#bundle_exec = 0
 
 Plug 'artnez/vim-wipeout'
 
-Plug 'Valloric/YouCompleteMe'
-let g:ycm_key_list_previous_completion=[]
-let g:ycm_key_list_select_completion=[]
-imap <expr><cr> pumvisible() ? "\<c-y>" : "\<cr>\<Plug>DiscretionaryEnd"
-
 Plug 'esneider/YUNOcommit.vim'
 
 " Order-dependent
 
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
+let g:flow#enable = 0
+let g:flow#autoclose = 1
+
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 let g:javascript_plugin_flow = 1
 
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 let g:jsx_ext_required = 0
 
 " Add plugins to &runtimepath
@@ -272,6 +267,23 @@ au FileType sql setl formatprg=/usr/local/bin/pg_format\ -
 
 " Automatically switch to insert mode when navigating to a terminal window
 autocmd BufWinEnter,WinEnter term://* startinsert
+
+" Tab completion
+set wildmode=list:longest,list:full
+set complete=.,b,u,w,t,]
+
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <S-Tab> <c-n>
+inoremap <unique> <C-Space> <C-X><C-O><C-P>
 
 " Remain in visual mode while indenting
 vmap < <gv
