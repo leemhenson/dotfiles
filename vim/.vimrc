@@ -295,16 +295,16 @@ vmap > >gv
 map <Leader>H :set hlsearch! hlsearch?<CR>
 
 " Split buffers
-nmap <Leader>bs<Left> :leftabove vnew<CR>
-nmap <Leader>bs<Right> :rightbelow vnew<CR>
-nmap <Leader>bs<Up> :leftabove new<CR>
-nmap <Leader>bs<Down> :rightbelow new<CR>
+nmap <Leader>bsh :leftabove vnew<CR>
+nmap <Leader>bsj :rightbelow new<CR>
+nmap <Leader>bsk :leftabove new<CR>
+nmap <Leader>bsl :rightbelow vnew<CR>
 
 " Split window
-nmap <Leader>ws<Left> :topleft vnew<CR>
-nmap <Leader>ws<Right> :botright vnew<CR>
-nmap <Leader>ws<Up> :topleft new<CR>
-nmap <Leader>ws<Down> :botright new<CR>
+nmap <Leader>wsh :topleft vnew<CR>
+nmap <Leader>wsj :botright new<CR>
+nmap <Leader>wsk :topleft new<CR>
+nmap <Leader>wsl :botright vnew<CR>
 
 " Navigate tabs (alt-t new, alt-q close, alt-j/k navigate)
 map ˙ gT
