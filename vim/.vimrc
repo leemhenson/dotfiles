@@ -16,8 +16,9 @@ Plug 'albfan/ag.vim'
 let g:ag_working_path_mode="r"
 
 Plug 'w0rp/ale'
+" \   'javascript': ['eslint', 'flow'],
 let g:ale_linters = {
-\   'javascript': ['eslint', 'flow'],
+\   'javascript': ['eslint'],
 \   'vim': ['vint'],
 \}
 let g:ale_sign_error = '✗'
@@ -155,8 +156,8 @@ Plug 'esneider/YUNOcommit.vim'
 " Order-dependent
 
 Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
-let g:flow#enable = 0
 let g:flow#autoclose = 1
+nmap <Leader>Ft :FlowType<CR>
 
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 let g:javascript_plugin_flow = 1
@@ -176,6 +177,7 @@ set shell=~/.dotfiles/zsh/bin/zsh
 highlight Normal guibg=#111111
 highlight ALEErrorSign guifg=#BF616A guibg=#2E3440
 highlight ALEWarningSign guifg=#EBCB8B guibg=#2E3440
+highlight Search guifg=#111111 guibg=#88C0D0
 
 " Cursor shapes
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
