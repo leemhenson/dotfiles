@@ -74,6 +74,7 @@ zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 bindkey "^j" zce
 
 # aliases
+alias ag='ag --path-to-ignore ~/.dotfiles/ag/agignore'
 alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'

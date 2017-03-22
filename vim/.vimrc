@@ -157,6 +157,7 @@ Plug 'esneider/YUNOcommit.vim'
 
 Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
 let g:flow#autoclose = 1
+let g:flow#timeout = 4
 nmap <Leader>Ft :FlowType<CR>
 
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
