@@ -1,0 +1,16 @@
+# I Combinator
+
+aka identity, idiot-bird
+
+fx => x
+
+# B-combinator
+
+aka compose, bluebird
+
+# K-combinator
+
+aka tap, kestrel
+
+fxy => x
+
