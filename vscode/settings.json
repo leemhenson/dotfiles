@@ -10,15 +10,10 @@
   "sync.anonymousGist": false,
   "sync.host": "",
   "sync.pathPrefix": "",
-  "projectManager.projectsLocation": "~/Documents/vscode",
-  "projectManager.git.baseFolders": [
-    "~/src/musicglue"
-  ],
-  "projectManager.git.maxDepthRecursion": 2,
   "flow.useNPMPackagedFlow": true,
   "vim.leader": " ",
   "vim.easymotion": true,
-  "terminal.integrated.shell.osx": "/Users/leemhenson/.dotfiles/zsh/bin/zsh",
+  "terminal.integrated.shell.osx": "$home/.dotfiles/zsh/bin/zsh",
   "terminal.external.osxExec": "iTerm.app",
   "search.exclude": {
     "**/node_modules": true,
@@ -43,5 +38,16 @@
   "editor.fontSize": 13,
   "editor.fontWeight": "100",
   "editor.lineHeight": 18,
-  "workbench.colorTheme": "Nord"
+  "workbench.colorTheme": "Nord",
+  "window.zoomLevel": 0,
+  "gitProjectManager.baseProjectsFolders": [
+    "$home/src/musicglue"
+  ],
+  "gitProjectManager.storeRepositoriesBetweenSessions": true,
+  "gitProjectManager.ignoredFolders": [
+    "flow-typed",
+    "node_modules"
+  ],
+  "gitProjectManager.maxDepthRecursion": 2,
+  "gitProjectManager.recentProjectsListSize": 10
 }
