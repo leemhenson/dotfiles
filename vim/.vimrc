@@ -271,6 +271,9 @@ au FileType sql setl formatprg=/usr/local/bin/pg_format\ -
 " Automatically switch to insert mode when navigating to a terminal window
 autocmd BufWinEnter,WinEnter term://* startinsert
 
+" Disable sorting of FzfAg results
+command! -bang -nargs=* FzfAg call fzf#vim#ag(<q-args>, '--workers=1', {"options": "--no-sort"}, <bang>0)
+
 " Tab completion
 set wildmode=list:longest,list:full
 set complete=.,b,u,w,t,]
