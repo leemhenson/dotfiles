@@ -35,6 +35,9 @@ pip3 install --upgrade neovim
 pip2 install --upgrade vim-vint
 pip3 install --upgrade vim-vint
 
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
+
 # fix ctrl-h terminfo bug
 
 infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $HOME/$TERM.ti
