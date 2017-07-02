@@ -49,26 +49,6 @@ other="$HOME/src/other"
 
 mkdir -p $other
 
-yarn="$other/yarn"
-
-if [ ! -d $yarn ]; then
-  cd $other
-
-  mkdir -p ./yarn-temp
-
-  cd ./yarn-temp
-  wget https://yarnpkg.com/latest.tar.gz
-  tar zxvf latest.tar.gz
-  mv ./dist $yarn
-  rm latest.tar.gz
-  rm -rf ./yarn-temp
-
-  yarn_global="$HOME/.yarn-global"
-
-  mkdir -p $yarn_global
-  yarn config set prefix $yarn_global
-fi
-
 ghci_color="$other/ghci-color"
 
 if [ ! -d $ghci_color ]; then
