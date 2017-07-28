@@ -31,10 +31,13 @@
   autocorrect = 1
 
 [merge]
-  tool = Kaleidoscope
+    tool = vscode
 
 [mergetool]
   keepBackup = false
+
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
 
 [mergetool "Kaleidoscope"]
   cmd           = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
