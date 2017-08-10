@@ -14,8 +14,7 @@
   interactive = auto
 
 [core]
-  ; editor       = emacsclient -c -nw
-  editor       = vim
+  editor       = code --wait
 	excludesfile = /Users/leemhenson/.dotfiles/git/global.gitignore
 
 [diff]
