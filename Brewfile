@@ -37,7 +37,7 @@ brew 'hub'
 brew 'imagemagick@6'
 brew 'jq'
 brew 'multimarkdown'
-brew 'neovim/neovim/neovim', args: ['--HEAD']
+brew 'neovim'
 brew 'node'
 brew 'openssh'
 brew 'openssl'
