@@ -6,7 +6,6 @@
 /.envrc
 /.vscode
 /npm-debug.log*
-/package-lock.json
 /tags
 /tags.lock
 /tags.temp
