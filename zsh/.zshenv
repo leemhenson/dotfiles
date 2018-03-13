@@ -9,6 +9,7 @@ typeset -U path
 path[1,0]="$DOTFILES/zsh/bin"
 path[1,0]="/usr/local/sbin"
 path[1,0]="/usr/local/heroku/bin"
+path[1,0]="$HOME/src/other/google-cloud-sdk/bin"
 path[1,0]="/usr/local/share/npm/bin"
 path[1,0]="/usr/local/opt/node/bin"
 path[1,0]="/Applications/Postgres.app/Contents/Versions/10/bin"
