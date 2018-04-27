@@ -1,20 +1,26 @@
 [alias]
-  co                = checkout
-  count             = !git shortlog -sn
-  tree              = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit --date-order
+  co = checkout
+  count = !git shortlog -sn
+  tree = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit --date-order
 
 [apply]
   whitespace = nowarn
 
 [color]
-  diff        = auto
-  status      = auto
-  branch      = auto
-  ui          = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
   interactive = auto
 
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
 [core]
-  editor       = code --wait
+  editor = code --wait
 	excludesfile = /Users/leemhenson/.dotfiles/git/global.gitignore
 
 [diff]
@@ -26,42 +32,39 @@
 [difftool "Kaleidoscope"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
+[fetch]
+	prune = true
+
 [help]
   autocorrect = 1
 
+[heroku]
+  account = personal
+
 [merge]
-    tool = code
+  tool = vscode
 
 [mergetool]
   keepBackup = false
 
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+
 [mergetool "vscode"]
   cmd = code --wait $MERGED
 
-[mergetool "Kaleidoscope"]
-  cmd           = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
+[pager]
+	diff = diff-so-fancy | less --tabs=2 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+
+[pull]
+  rebase = true
+
+[push]
+  default = current
 
 [user]
   name = Lee Henson
   email = lee.m.henson@gmail.com
   helper = osxkeychain
-
-[heroku]
-  account = personal
-
-[push]
-  default = current
-
-[pull]
-  rebase = true
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[pager]
-	diff = diff-so-fancy | less --tabs=2 -RFX
-	show = diff-so-fancy | less --tabs=4 -RFX
-[fetch]
-	prune = true
