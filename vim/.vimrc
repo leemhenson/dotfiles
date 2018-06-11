@@ -3,6 +3,7 @@ scriptencoding utf-8
 set nocompatible              " be iMproved, required
 filetype off                  " required
 let g:mapleader = "\<Space>"
+set shada="NONE" "end the shada madness
 
 set rtp^=$DOTFILES/vim
 
