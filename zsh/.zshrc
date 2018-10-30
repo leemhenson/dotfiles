@@ -47,6 +47,7 @@ zplug "lib/key-bindings", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/httpie", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
+zplug "spwhitt/nix-zsh-completions"
 zplug "willghatch/zsh-saneopt"
 zplug "$DOTFILES/zsh/plugins/dirpersist", from:local, use:dirpersist.zsh
 
