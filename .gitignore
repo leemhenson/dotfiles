@@ -7,11 +7,13 @@
 /emacs/emojis
 /emacs/projectile-bookmarks.eld
 /emacs/recentf
-/git/gitk
+/git
 /heroku
 /htop
 /iterm/settings
 /karabiner-elements/log
+/obsolete
+/result
 /tags
 /vim/.netrwhist
 /vim/plugged
