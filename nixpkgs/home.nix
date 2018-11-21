@@ -1,4 +1,12 @@
+{ pkgs, ... }:
+
 {
-  programs.home-manager.enable = true;
-  programs.home-manager.path = https://github.com/rycee/home-manager/archive/master.tar.gz;
+  home.packages = [
+    pkgs.htop
+  ];
+
+  programs.home-manager = {
+    enable = true;
+    path = https://github.com/rycee/home-manager/archive/master.tar.gz;
+  };
 }
