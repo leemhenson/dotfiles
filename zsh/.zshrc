@@ -113,7 +113,6 @@ alias ls='ls -alh'
 
 # source other scripts
 source /usr/local/share/zsh/site-functions/_aws
-source $HOME/.nix-profile/etc/profile.d/nix.sh
 
 # source private scripts
 if [[ -d $PRIVATE_DOTFILES ]]; then
