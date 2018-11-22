@@ -1,30 +1,51 @@
 { pkgs, ... }:
 
 {
-  home.file.".zshenv".text = ''
-    export LANG=en_GB.UTF-8
-    export LC_ALL=en_GB.UTF-8
-  '';
+  home.file = {
+    ".config/pgcli/config" = {
+      source = ~/.dotfiles/pgcli/config;
+    };
 
-  home.file.".direnvrc".text = ''
-    use_ruby() {
-      local ver=$1
+    ".direnvrc" = {
+      text = ''
+        use_ruby() {
+          local ver=$1
 
-      if [[ -z $ver ]] && [[ -f .ruby-version ]]; then
-        ver=$(cat .ruby-version)
-      fi
+          if [[ -z $ver ]] && [[ -f .ruby-version ]]; then
+            ver=$(cat .ruby-version)
+          fi
 
-      if [[ ! -z $ver ]]; then
-        chruby $ver
-      fi
-    }
-  '';
+          if [[ ! -z $ver ]]; then
+            chruby $version
+          fi
+        }
+      '';
+    };
+
+    ".ghci" = {
+      text = ''
+        :set -package pretty-simple
+        :set -interactive-print=Text.Pretty.Simple.pPrint
+        :set +t
+        :set prompt "\ESC[1;34m\STX%s\n\ESC[0;34m\STXλ> \ESC[m\STX"
+      '';
+    };
+
+    ".zshenv" = {
+      text = ''
+        export LANG=en_GB.UTF-8
+        export LC_ALL=en_GB.UTF-8
+      '';
+    };
+  };
 
   home.packages = [
     pkgs.bat
     pkgs.cheat
     pkgs.chruby
+    pkgs.fd
     pkgs.httpie
+    pkgs.pgcli
   ];
 
   programs.bash = {
@@ -181,18 +202,35 @@
 
       source $HOME/.dotfiles/oh-my-zsh/plugins/vi-mode.zsh
       source $HOME/.nix-profile/share/chruby/chruby.sh
+
+      if [[ -d $PRIVATE_DOTFILES ]]; then
+        for file in $PRIVATE_DOTFILES/zsh/*.zsh; do
+          source "$file"
+        done
+      fi
     '';
     oh-my-zsh = {
       custom = "$DOTFILES/oh-my-zsh";
       enable = true;
-      plugins = [ "git" "httpie" "stack" "vi-mode" "z" ];
+      plugins = [ "docker" "git" "httpie" "stack" "vi-mode" "z" ];
       theme = "custom";
     };
+    plugins = [
+      {
+        name = "fzf-z";
+        src = builtins.fetchGit {
+          name = "andrewferrier-fzf";
+          url = "https://github.com/andrewferrier/fzf-z.git";
+          rev = "4dee410557024671ae7763fce342009d03aa171f";
+        };
+      }
+    ];
     sessionVariables = {
       CHEATCOLORS = true;
       CLICOLOR = true;
       DOTFILES = "$HOME/.dotfiles";
       DEFAULT_CHEAT_DIR = "$DOTFILES/cheatsheets";
+      PRIVATE_DOTFILES = "$HOME/.private-dotfiles";
     };
     shellAliases = {
       grom = "git rebase origin/master";
