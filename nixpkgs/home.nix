@@ -40,12 +40,24 @@
   };
 
   home.packages = [
+    pkgs.awscli
     pkgs.bat
     pkgs.cheat
     pkgs.chruby
+    pkgs.curl
+    pkgs.gitAndTools.diff-so-fancy
     pkgs.fd
+    pkgs.gcc
     pkgs.httpie
+    pkgs.jq
+    # pkgs.neovim
+    pkgs.nodejs-10_x
+    pkgs.openssh
+    pkgs.openssl
     pkgs.pgcli
+    pkgs.readline
+    pkgs.ripgrep
+    pkgs.terraform
   ];
 
   programs.bash = {
