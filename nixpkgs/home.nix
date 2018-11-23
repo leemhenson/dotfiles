@@ -192,7 +192,7 @@
     enableAutosuggestions = true;
     history = {
       expireDuplicatesFirst = true;
-      extended = false;
+      extended = true;
       path = "Documents/zsh/.histfile";
       save = 100000;
       size = 100000;
