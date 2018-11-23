@@ -50,6 +50,7 @@
     pkgs.fd
     pkgs.gcc
     pkgs.git-crypt
+    pkgs.gnupg
     pkgs.httpie
     pkgs.jq
     pkgs.nodejs-10_x
