@@ -229,11 +229,29 @@
     };
     plugins = [
       {
+        file = "alias-tips.plugin.zsh";
+        name = "alias-tips";
+        src = builtins.fetchGit {
+          name = "djui-alias-tips";
+          url = "https://github.com/djui/alias-tips.git";
+          rev = "881ac952033dc62ba9ea3a215e45eb9b9b945362";
+        };
+      }
+      {
         name = "fzf-z";
         src = builtins.fetchGit {
           name = "andrewferrier-fzf";
           url = "https://github.com/andrewferrier/fzf-z.git";
           rev = "4dee410557024671ae7763fce342009d03aa171f";
+        };
+      }
+      {
+        file = "nix.plugin.zsh";
+        name = "nix-zsh-completions";
+        src = builtins.fetchGit {
+          name = "spwhitt-nix-zsh-completions";
+          url = "https://github.com/spwhitt/nix-zsh-completions.git";
+          rev = "8f1921160472307cbbc3e16813e57d3db7a2956e";
         };
       }
     ];
