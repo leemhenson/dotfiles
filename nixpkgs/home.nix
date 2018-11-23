@@ -254,6 +254,15 @@
           rev = "8f1921160472307cbbc3e16813e57d3db7a2956e";
         };
       }
+      {
+        file = "zsh-syntax-highlighting.zsh";
+        name = "zsh-syntax-highlighting";
+        src = builtins.fetchGit {
+          name = "zsh-users-zsh-syntax-highlighting";
+          url = "https://github.com/zsh-users/zsh-syntax-highlighting.git";
+          rev = "e900ad8bad53501689afcb050456400d7a8466e5";
+        };
+      }
     ];
     sessionVariables = {
       CHEATCOLORS = true;
