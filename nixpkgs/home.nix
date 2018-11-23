@@ -42,26 +42,28 @@
   home.packages = [
     pkgs.awscli
     pkgs.bat
+    pkgs.cargo
     pkgs.cheat
     pkgs.chruby
     pkgs.curl
     pkgs.gitAndTools.diff-so-fancy
     pkgs.fd
     pkgs.gcc
+    pkgs.git-crypt
     pkgs.httpie
     pkgs.jq
-    # pkgs.neovim
     pkgs.nodejs-10_x
     pkgs.openssh
     pkgs.openssl
     pkgs.pgcli
     pkgs.readline
     pkgs.ripgrep
+    pkgs.stack
     pkgs.terraform
   ];
 
-  programs.bash = {
-    enable = true;
+  nixpkgs.config = {
+    allowUnsupportedSystem = true;
   };
 
   programs.direnv = {
@@ -227,6 +229,7 @@
       unsetopt SHARE_HISTORY
 
       source $HOME/.dotfiles/oh-my-zsh/plugins/vi-mode.zsh
+      source $HOME/.nix-profile/etc/profile.d/nix.sh
       source $HOME/.nix-profile/share/chruby/chruby.sh
 
       if [[ -d $PRIVATE_DOTFILES ]]; then
