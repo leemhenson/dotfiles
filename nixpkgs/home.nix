@@ -192,7 +192,8 @@
     enableAutosuggestions = true;
     history = {
       expireDuplicatesFirst = true;
-      extended = true;
+      extended = false;
+      path = "Documents/zsh/.histfile";
       save = 100000;
       size = 100000;
     };
@@ -201,16 +202,29 @@
 
       # Do not require a leading '.' in a filename to be matched explicitly
       setopt GLOBDOTS
+
+      # When searching for history entries in the line editor, do not display
+      # duplicates of a line previously found, even if the duplicates are not contiguous.
+      setopt HIST_FIND_NO_DUPS
+
+      # If a new command line being added to the history list duplicates an older one,
+      # the older command is removed from the list (even if it is not the previous event).
+      setopt HIST_IGNORE_ALL_DUPS
+
+      # Remove superfluous blanks from each command line being added to the history list
+      setopt HIST_REDUCE_BLANKS
+
+      # When writing out the history file, older commands that duplicate newer ones are omitted.
+      setopt HIST_SAVE_NO_DUPS
+
+      # immediately appends new commands to the histfile
+      setopt INC_APPEND_HISTORY
+
       # Shaddapayourface
       unsetopt BEEP
 
-      # Remove command lines from the history list when the first character on the
-      # line is a space, or when one of the expanded aliases contains a leading space
-      setopt HIST_IGNORE_SPACE
-      # Remove superfluous blanks from each command line being added to the history list
-      setopt HIST_REDUCE_BLANKS
-      # immediately appends new commands to the histfile
-      setopt INC_APPEND_HISTORY
+      # clashes with INC_APPEND_HISTORY
+      unsetopt SHARE_HISTORY
 
       source $HOME/.dotfiles/oh-my-zsh/plugins/vi-mode.zsh
       source $HOME/.nix-profile/share/chruby/chruby.sh
