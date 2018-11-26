@@ -47,7 +47,7 @@
     pkgs.awscli
     pkgs.bat
     pkgs.cargo
-    pkgs.cheat
+    # pkgs.cheat
     pkgs.chruby
     pkgs.curl
     pkgs.gitAndTools.diff-so-fancy
