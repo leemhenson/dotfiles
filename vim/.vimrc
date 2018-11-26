@@ -205,9 +205,6 @@ set nu
 " Highlight 100th column
 set colorcolumn=100
 
-" Enable hidden buffers (navigate away from buffer with unsaved changes)
-set hidden
-
 " Yank and paste using system clipboard
 set clipboard+=unnamedplus
 
@@ -318,7 +315,7 @@ map † :tabnew<CR>
 map œ :tabclose<CR>
 
 " Navigate splits
-map <C-H> <C-W>h
+map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l

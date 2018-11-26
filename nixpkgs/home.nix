@@ -6,6 +6,10 @@
       source = ~/.dotfiles/pgcli/config;
     };
 
+    ".config/nvim/init.vim" = {
+      source = ~/.dotfiles/nvim/init.vim;
+    };
+
     ".direnvrc" = {
       text = ''
         use_ruby() {
@@ -57,6 +61,8 @@
     pkgs.openssh
     pkgs.openssl
     pkgs.pgcli
+    pkgs.python
+    pkgs.python37Packages.neovim
     pkgs.readline
     pkgs.ripgrep
     pkgs.stack
@@ -232,6 +238,8 @@
       source $HOME/.dotfiles/oh-my-zsh/plugins/vi-mode.zsh
       source $HOME/.nix-profile/etc/profile.d/nix.sh
       source $HOME/.nix-profile/share/chruby/chruby.sh
+
+      export PATH="$HOME/.npm-packages/bin:$PATH"
 
       if [[ -d $PRIVATE_DOTFILES ]]; then
         for file in $PRIVATE_DOTFILES/zsh/*.zsh; do
