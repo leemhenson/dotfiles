@@ -34,9 +34,6 @@ Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 call plug#end()
 
-" neovim node provider
-let g:node_host_prog = '$HOME/.npm-packages/bin/neovim-node-host'
-
 " vim-bufkill
 let g:BufKillCreateMappings = 0
 
@@ -79,7 +76,7 @@ set clipboard+=unnamedplus
 set colorcolumn=100
 
 " insert-mode completion options
-set completeopt=noinsert,menuone,noselect
+set completeopt=noinsert,menuone
 
 " highlight current line
 set cursorline
@@ -200,7 +197,7 @@ nmap <Leader>fl :FzfBLines<cr>
 nmap <Leader>fr :FzfRg<cr>
 
 " fugitive
-nmap <Leader>gs :Gstatus
+nmap <Leader>gs :Gstatus<cr>
 
 " language-client
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
@@ -212,6 +209,9 @@ nmap <C-o> <Plug>MoveLineDown
 nmap <C-p> <Plug>MoveLineUp
 vmap <C-o> <Plug>MoveBlockDown
 vmap <C-p> <Plug>MoveBlockUp
+
+" terminal
+:tnoremap <Esc><Esc> <C-\><C-n>
 
 " ==========================================================
 " autocommands
