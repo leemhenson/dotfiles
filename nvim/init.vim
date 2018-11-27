@@ -197,6 +197,7 @@ nmap <Leader>fF :FzfFile<cr>
 nmap <Leader>fh :FzfHelptags<cr>
 nmap <Leader>fm :FzfMaps<cr>
 nmap <Leader>fl :FzfBLines<cr>
+nmap <Leader>fr :FzfRg<cr>
 
 " fugitive
 nmap <Leader>gs :Gstatus
