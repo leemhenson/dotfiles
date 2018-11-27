@@ -26,6 +26,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'purescript-contrib/purescript-vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'roxma/nvim-yarp'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 call plug#end()
