@@ -3,8 +3,10 @@ let g:mapleader = "\<Space>"
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'artnez/vim-wipeout'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-Plug 'haya14busa/incsearch.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf.vim'
@@ -38,6 +40,10 @@ let g:node_host_prog = '$HOME/.npm-packages/bin/neovim-node-host'
 " vim-bufkill
 let g:BufKillCreateMappings = 0
 
+" vim-easymotion
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+
 " fzf
 let g:fzf_command_prefix = 'Fzf'
 
@@ -63,6 +69,9 @@ set background=dark
 " fix backspace
 set backspace=indent,eol,start
 
+" affects the way cindent works
+set cinoptions=j1,J1,(2,W2
+
 " yank and paste using system clipboard
 set clipboard+=unnamedplus
 
@@ -71,6 +80,9 @@ set colorcolumn=100
 
 " insert-mode completion options
 set completeopt=noinsert,menuone,noselect
+
+" highlight current line
+set cursorline
 
 " use spaces instead of tabs
 set expandtab
@@ -108,12 +120,24 @@ set shada="NONE"
 " use zsh as default in terminal
 set shell=~/.nix-profile/bin/zsh
 
+" round indent to multiple of 'shiftwidth'
+set shiftround
+
+" number of spaces to use for each step of (auto)indent
+set shiftwidth=2
+
 " override 'ignorecase' when pattern has upper case character
 set smartcase
+
+" autoindent new lines
+set smartindent
 
 " open new splits below and to the right
 set splitright
 set splitbelow
+
+" number of spaces that a <Tab> in the file counts for
+set tabstop=2
 
 " enable 24-bit colors in terminal vim
 set termguicolors
@@ -143,10 +167,8 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" incsearch
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+" vim-easymotion
+nmap <Leader><Leader> <Plug>(easymotion-sn)
 
 " close current buffer without closing split
 nmap <Leader>bk :BD<CR>
@@ -176,6 +198,9 @@ nmap <Leader>fh :FzfHelptags<cr>
 nmap <Leader>fm :FzfMaps<cr>
 nmap <Leader>fl :FzfBLines<cr>
 
+" fugitive
+nmap <Leader>gs :Gstatus
+
 " language-client
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
@@ -188,7 +213,7 @@ vmap <C-o> <Plug>MoveBlockDown
 vmap <C-p> <Plug>MoveBlockUp
 
 " ==========================================================
-" autocommads
+" autocommands
 " ==========================================================
 
 " enable ncm2 for all buffers
@@ -202,3 +227,9 @@ autocmd BufWritePre * StripWhitespace
 
 " reload file on focus if it changed on disk
 autocmd FocusGained * silent! checktime
+
+augroup vimrc-incsearch-highlight
+  autocmd!
+  autocmd CmdlineEnter [/\?] :set hlsearch
+  autocmd CmdlineLeave [/\?] :set nohlsearch
+augroup END
