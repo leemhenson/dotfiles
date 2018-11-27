@@ -6,6 +6,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'artnez/vim-wipeout'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'easymotion/vim-easymotion'
+Plug 'elzr/vim-json'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'itchyny/lightline.vim'
@@ -56,6 +57,9 @@ let g:lightline = { 'colorscheme': 'snow_dark' }
 " vim-move
 let g:move_map_keys = 0
 
+" vim-json
+let g:vim_json_syntax_conceal = 0
+
 " ==========================================================
 " settings
 " ==========================================================
@@ -76,7 +80,7 @@ set clipboard+=unnamedplus
 set colorcolumn=100
 
 " insert-mode completion options
-set completeopt=noinsert,menuone
+set completeopt=noinsert,menuone,noselect
 
 " highlight current line
 set cursorline
@@ -168,6 +172,7 @@ map <C-l> <C-w>l
 nmap <Leader><Leader> <Plug>(easymotion-sn)
 
 " close current buffer without closing split
+nmap <Leader>bc :close<CR>
 nmap <Leader>bk :BD<CR>
 
 " split buffers
