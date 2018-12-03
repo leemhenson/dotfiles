@@ -60,7 +60,7 @@
     pkgs.nodejs-10_x
     pkgs.openssh
     pkgs.openssl
-    pkgs.pgcli
+    # pkgs.pgcli
     pkgs.python
     pkgs.python37Packages.neovim
     pkgs.readline
