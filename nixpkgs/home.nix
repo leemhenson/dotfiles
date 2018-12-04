@@ -35,6 +35,10 @@
       '';
     };
 
+    ".taskrc" = {
+      source = ~/.dotfiles/taskwarrior/taskrc;
+    };
+
     ".zshenv" = {
       text = ''
         export LANG=en_GB.UTF-8
