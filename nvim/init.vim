@@ -215,9 +215,6 @@ nmap <C-p> <Plug>MoveLineUp
 vmap <C-o> <Plug>MoveBlockDown
 vmap <C-p> <Plug>MoveBlockUp
 
-" terminal
-:tnoremap <Esc><Esc> <C-\><C-n>
-
 " ==========================================================
 " autocommands
 " ==========================================================
