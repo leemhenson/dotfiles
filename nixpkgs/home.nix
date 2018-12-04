@@ -53,6 +53,7 @@
     pkgs.gitAndTools.diff-so-fancy
     pkgs.fd
     pkgs.gcc
+    pkgs.ghc
     pkgs.git-crypt
     pkgs.gnupg
     pkgs.httpie
@@ -66,6 +67,7 @@
     pkgs.readline
     pkgs.ripgrep
     pkgs.stack
+    pkgs.taskwarrior
     pkgs.terraform
   ];
 
@@ -236,11 +238,14 @@
       # clashes with INC_APPEND_HISTORY
       unsetopt SHARE_HISTORY
 
+      # emacs-style keybindings
+      bindkey -e
+
       source $HOME/.dotfiles/oh-my-zsh/plugins/vi-mode.zsh
       source $HOME/.nix-profile/etc/profile.d/nix.sh
       source $HOME/.nix-profile/share/chruby/chruby.sh
 
-      export PATH="$HOME/.npm-packages/bin:$PATH"
+      export PATH="$HOME/.npm-packages/bin:$HOME/.local/bin:$PATH"
 
       if [[ -d $PRIVATE_DOTFILES ]]; then
         for file in $PRIVATE_DOTFILES/zsh/*.zsh; do
@@ -251,7 +256,7 @@
     oh-my-zsh = {
       custom = "$DOTFILES/oh-my-zsh";
       enable = true;
-      plugins = [ "docker" "git" "httpie" "stack" "vi-mode" "z" ];
+      plugins = [ "docker" "git" "httpie" "stack" "taskwarrior" "z" ];
       theme = "custom";
     };
     plugins = [
