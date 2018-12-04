@@ -225,9 +225,6 @@ vmap <C-p> <Plug>MoveBlockUp
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
-" automatically switch to insert mode when navigating to a terminal window
-autocmd BufWinEnter,WinEnter term://* startinsert
-
 " stripe whitespace on save
 autocmd BufWritePre * StripWhitespace
 
