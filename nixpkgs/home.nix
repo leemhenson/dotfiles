@@ -250,7 +250,6 @@
       # emacs-style keybindings
       bindkey -e
 
-      source $HOME/.dotfiles/oh-my-zsh/plugins/vi-mode.zsh
       source $HOME/.nix-profile/etc/profile.d/nix.sh
       source $HOME/.nix-profile/share/chruby/chruby.sh
 
