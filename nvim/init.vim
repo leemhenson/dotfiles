@@ -195,7 +195,7 @@ vmap > >gv
 nmap <Leader>fb :FzfBuffers<cr>
 nmap <Leader>fc :FzfCommands<cr>
 nmap <Leader>ff :FzfGFiles<cr>
-nmap <Leader>fF :FzfFile<cr>
+nmap <Leader>fF :FzfFiles<cr>
 nmap <Leader>fh :FzfHelptags<cr>
 nmap <Leader>fm :FzfMaps<cr>
 nmap <Leader>fl :FzfBLines<cr>
