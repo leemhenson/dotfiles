@@ -61,7 +61,6 @@
     pkgs.gitAndTools.diff-so-fancy
     pkgs.fd
     pkgs.gcc
-    pkgs.ghc
     pkgs.git-crypt
     pkgs.gnupg
     pkgs.httpie
@@ -74,7 +73,6 @@
     pkgs.python37Packages.neovim
     pkgs.readline
     pkgs.ripgrep
-    pkgs.stack
     pkgs.taskwarrior
     pkgs.terraform
     pkgs.tmux
