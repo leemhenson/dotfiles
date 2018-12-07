@@ -1,29 +1,33 @@
 scriptencoding utf-8
 let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
 
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'LnL7/vim-nix', { 'for': ['nix'] }
 Plug 'airblade/vim-gitgutter'
 Plug 'artnez/vim-wipeout'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'junegunn/fzf.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.local/share/nvim/fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-dirvish'
-Plug 'LnL7/vim-nix', { 'for': ['nix'] }
+Plug 'liuchengxu/vim-which-key'
+Plug 'markonm/traces.vim'
 Plug 'matze/vim-move'
 Plug 'mhartington/nvim-typescript', { 'for': ['typescript', 'tsx'], 'build': './install.sh' }
+Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-cssomni'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
 Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
-Plug 'ncm2/ncm2'
 Plug 'nightsense/snow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'purescript-contrib/purescript-vim'
@@ -52,7 +56,7 @@ let g:LanguageClient_serverCommands = {
   \ }
 
 " vim-lightline
-let g:lightline = { 'colorscheme': 'snow_dark' }
+let g:lightline = { 'colorscheme': 'one' }
 
 " vim-move
 let g:move_map_keys = 0
@@ -155,68 +159,84 @@ set wildignore+=*/vendor/*
 set wrap
 
 " theme
-colorscheme snow
+colorscheme onedark
 highlight Normal ctermfg=249 ctermbg=236 guifg=#afb7c0 guibg=111213 guisp=NONE cterm=NONE gui=NONE
 
 " ==========================================================
-" key mapping
+" non-mnemonic key mapping
 " ==========================================================
 
-" Navigate splits
+" navigate splits
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" vim-easymotion
-nmap <Leader><Leader> <Plug>(easymotion-sn)
-
-" close current buffer without closing split
-nmap <Leader>bc :close<CR>
-nmap <Leader>bk :BD<CR>
-
-" split buffers
-nmap <Leader>bsh :leftabove vnew<CR>
-nmap <Leader>bsj :rightbelow new<CR>
-nmap <Leader>bsk :leftabove new<CR>
-nmap <Leader>bsl :rightbelow vnew<CR>
-
-" split windows
-nmap <Leader>wsh :topleft vnew<CR>
-nmap <Leader>wsj :botright new<CR>
-nmap <Leader>wsk :topleft new<CR>
-nmap <Leader>wsl :botright vnew<CR>
-
 " remain in visual mode while indenting
 vmap < <gv
 vmap > >gv
 
-" fzf
-nmap <Leader>fb :FzfBuffers<cr>
-nmap <Leader>fc :FzfCommands<cr>
-nmap <Leader>ff :FzfGFiles<cr>
-nmap <Leader>fF :FzfFiles<cr>
-nmap <Leader>fh :FzfHelptags<cr>
-nmap <Leader>fm :FzfMaps<cr>
-nmap <Leader>fl :FzfBLines<cr>
-nmap <Leader>fr :FzfRg<cr>
-
-" fugitive
-nmap <Leader>gs :Gstatus<cr>
-
-" language-client
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+" search
+nmap <M-/> :nohlsearch<cr>
 
 " terminal
-:tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
+
+" vim-easymotion
+nmap <leader><leader> <Plug>(easymotion-sn)
 
 " vim-move
 nmap <C-o> <Plug>MoveLineDown
 nmap <C-p> <Plug>MoveLineUp
 vmap <C-o> <Plug>MoveBlockDown
 vmap <C-p> <Plug>MoveBlockUp
+
+" which-key
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<cr>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<cr>
+
+" ==========================================================
+" mnemonic key mapping
+" ==========================================================
+
+" buffers
+nmap <leader>bc :close<cr>
+nmap <leader>bk :BD<cr>
+nmap <leader>bsh :leftabove vnew<cr>
+nmap <leader>bsj :rightbelow new<cr>
+nmap <leader>bsk :leftabove new<cr>
+nmap <leader>bsl :rightbelow vnew<cr>
+
+" git
+nmap <leader>gs :Gstatus<cr>
+
+" language
+nmap <silent> ld :call LanguageClient#textDocument_definition()<cr>
+nmap <silent> lh :call LanguageClient#textDocument_hover()<cr>
+nmap <silent> lr :call LanguageClient#textDocument_rename()<cr>
+
+autocmd FileType typescript map <buffer> <leader>lD :TSDoc<cr>
+autocmd FileType typescript map <buffer> <leader>lf :TSGetCodeFix<cr>
+autocmd FileType typescript map <buffer> <leader>li :TSImport<cr>
+autocmd FileType typescript map <buffer> <leader>lp :TSDefPreview<cr>
+autocmd FileType typescript map <buffer> <leader>lt :TSTypeDef<cr>
+
+" search
+nmap <leader>sC :FzfColors<cr>
+nmap <leader>sF :FzfFiles<cr>
+nmap <leader>sb :FzfBuffers<cr>
+nmap <leader>sc :FzfCommands<cr>
+nmap <leader>sf :FzfGFiles<cr>
+nmap <leader>sh :FzfHelptags<cr>
+nmap <leader>sl :FzfBLines<cr>
+nmap <leader>sm :FzfMaps<cr>
+nmap <leader>sr :FzfRg<cr>
+
+" windows
+nmap <leader>wsh :topleft vnew<cr>
+nmap <leader>wsj :botright new<cr>
+nmap <leader>wsk :topleft new<cr>
+nmap <leader>wsl :botright vnew<cr>
 
 " ==========================================================
 " autocommands
@@ -231,8 +251,3 @@ autocmd BufWritePre * StripWhitespace
 " reload file on focus if it changed on disk
 autocmd FocusGained * silent! checktime
 
-augroup vimrc-incsearch-highlight
-  autocmd!
-  autocmd CmdlineEnter [/\?] :set hlsearch
-  autocmd CmdlineLeave [/\?] :set nohlsearch
-augroup END
