@@ -6,6 +6,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'LnL7/vim-nix', { 'for': ['nix'] }
 Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
 Plug 'artnez/vim-wipeout'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'easymotion/vim-easymotion'
