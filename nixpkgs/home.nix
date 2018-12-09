@@ -176,7 +176,7 @@
     ];
     signing = {
       key = "B1EA4611F4564B0C487DF4B44CC045383A6DCF55";
-      signByDefault = true;
+      # signByDefault = true;
     };
     userEmail = "lee.m.henson@gmail.com";
     userName = "Lee Henson";
@@ -204,6 +204,11 @@
 
   programs.ssh = {
     enable = true;
+    matchBlocks = {
+      "github.com" = {
+        identityFile = "~/.ssh/github";
+      };
+    };
   };
 
   programs.zsh = {
