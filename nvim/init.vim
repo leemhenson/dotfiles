@@ -8,7 +8,7 @@ Plug 'LnL7/vim-nix', { 'for': ['nix'] }
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'artnez/vim-wipeout'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
@@ -29,6 +29,7 @@ Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
 Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'nightsense/snow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'purescript-contrib/purescript-vim'
@@ -53,6 +54,7 @@ let g:fzf_command_prefix = 'Fzf'
 " languageclient-neovim
 let g:LanguageClient_serverCommands = {
   \ 'javascript': ['javascript-typescript-stdio'],
+  \ 'haskell': ['hie-wrapper'],
   \ 'typescript': ['javascript-typescript-stdio'],
   \ }
 
@@ -212,15 +214,23 @@ nmap <leader>bsl :rightbelow vnew<cr>
 nmap <leader>gs :Gstatus<cr>
 
 " language
-nmap <silent> ld :call LanguageClient#textDocument_definition()<cr>
-nmap <silent> lh :call LanguageClient#textDocument_hover()<cr>
-nmap <silent> lr :call LanguageClient#textDocument_rename()<cr>
+nmap <leader>lR :call LanguageClient#textDocument_references()<CR>
+nmap <leader>lS :call LanguageClient#textDocument_documentSymbol()<CR>
+nmap <leader>la :call LanguageClient#textDocument_codeAction()<CR>
+nmap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
+nmap <leader>ld :call LanguageClient#textDocument_definition()<cr>
+nmap <leader>lh :call LanguageClient#textDocument_hover()<cr>
+nmap <leader>lm :call LanguageClient_contextMenu()<cr>
+nmap <leader>lr :call LanguageClient#textDocument_rename()<cr>
 
-autocmd FileType typescript map <buffer> <leader>lD :TSDoc<cr>
-autocmd FileType typescript map <buffer> <leader>lf :TSGetCodeFix<cr>
-autocmd FileType typescript map <buffer> <leader>li :TSImport<cr>
-autocmd FileType typescript map <buffer> <leader>lp :TSDefPreview<cr>
-autocmd FileType typescript map <buffer> <leader>lt :TSTypeDef<cr>
+autocmd FileType typescript nmap <buffer> <localleader>lD :TSDoc<cr>
+autocmd FileType typescript nmap <buffer> <localleader>lF :TSGetCodeFix<cr>
+autocmd FileType typescript nmap <buffer> <localleader>lR :TSRefs<cr>
+autocmd FileType typescript nmap <buffer> <localleader>ld :TSDef<cr>
+autocmd FileType typescript nmap <buffer> <localleader>li :TSImport<cr>
+autocmd FileType typescript nmap <buffer> <localleader>lr :TSRename
+autocmd FileType typescript nmap <buffer> <localleader>lt :TSTypeDef<cr>
+autocmd FileType typescript nmap <buffer> <localleader>lx :TSRestart<cr>
 
 " search
 nmap <leader>sC :FzfColors<cr>
