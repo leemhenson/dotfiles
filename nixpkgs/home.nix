@@ -250,9 +250,7 @@
       # clashes with INC_APPEND_HISTORY
       unsetopt SHARE_HISTORY
 
-      # emacs-style keybindings
-      bindkey -e
-
+      source $HOME/.dotfiles/oh-my-zsh/plugins/vi-mode.zsh
       source $HOME/.nix-profile/etc/profile.d/nix.sh
       source $HOME/.nix-profile/share/chruby/chruby.sh
 
@@ -267,7 +265,7 @@
     oh-my-zsh = {
       custom = "$DOTFILES/oh-my-zsh";
       enable = true;
-      plugins = [ "docker" "git" "httpie" "stack" "taskwarrior" "z" ];
+      plugins = [ "docker" "git" "httpie" "stack" "taskwarrior" "vi-mode" "z" ];
       theme = "custom";
     };
     plugins = [
