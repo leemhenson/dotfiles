@@ -1,4 +1,10 @@
-PROMPT='$(vi_mode_prompt_info) %{$fg[cyan]%}%c%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%} '
+prompt_nix_shell() {
+  if [[ -n "$IN_NIX_SHELL" ]]; then
+    echo -n "nix-shell "
+  fi
+}
+
+PROMPT='$(vi_mode_prompt_info) %{$fg[yellow]%}$(prompt_nix_shell)%{$fg[cyan]%}%c%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%} '
 RPROMPT=''
 
 ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[blue]%}"

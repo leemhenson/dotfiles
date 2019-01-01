@@ -296,6 +296,15 @@
         };
       }
       {
+        file = "nix-shell.plugin.zsh";
+        name = "zsh-nix-shell";
+        src = builtins.fetchGit {
+          name = "chisui-zsh-nix-shell";
+          url = "https://github.com/chisui/zsh-nix-shell.git";
+          rev = "dceed031a54e4420e33f22a6b8e642f45cc829e2";
+        };
+      }
+      {
         file = "zsh-syntax-highlighting.zsh";
         name = "zsh-syntax-highlighting";
         src = builtins.fetchGit {
