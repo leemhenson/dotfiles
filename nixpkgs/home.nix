@@ -69,7 +69,8 @@
     pkgs.openssl
     # pkgs.pgcli
     pkgs.python
-    pkgs.python37Packages.neovim
+    pkgs.python37Packages.pip
+    pkgs.python37Packages.pynvim
     pkgs.readline
     pkgs.ripgrep
     pkgs.stack
