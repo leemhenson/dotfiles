@@ -76,6 +76,7 @@
     pkgs.taskwarrior
     pkgs.terraform
     pkgs.tmux
+    pkgs.yarn
   ];
 
   nixpkgs.config = {
@@ -257,7 +258,7 @@
       source $HOME/.nix-profile/etc/profile.d/nix.sh
       source $HOME/.nix-profile/share/chruby/chruby.sh
 
-      export PATH="$HOME/.npm-packages/bin:$HOME/.local/bin:$PATH"
+      export PATH="$HOME/.npm-packages/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$PATH"
 
       if [[ -d $PRIVATE_DOTFILES ]]; then
         for file in $PRIVATE_DOTFILES/zsh/*.zsh; do
