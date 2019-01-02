@@ -205,6 +205,9 @@
   programs.ssh = {
     enable = true;
     matchBlocks = {
+      "bitbucket.org" = {
+        identityFile = "~/.ssh/bitbucket";
+      };
       "github.com" = {
         identityFile = "~/.ssh/github";
       };
