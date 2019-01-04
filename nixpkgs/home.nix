@@ -53,6 +53,7 @@
 
   home.packages = [
     pkgs.awscli
+    pkgs.awslogs
     pkgs.bat
     pkgs.cargo
     # pkgs.cheat
@@ -258,7 +259,7 @@
       source $HOME/.nix-profile/etc/profile.d/nix.sh
       source $HOME/.nix-profile/share/chruby/chruby.sh
 
-      export PATH="$HOME/.npm-packages/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$PATH"
+      export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$PATH"
 
       if [[ -d $PRIVATE_DOTFILES ]]; then
         for file in $PRIVATE_DOTFILES/zsh/*.zsh; do
