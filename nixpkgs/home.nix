@@ -59,7 +59,7 @@
     # pkgs.cheat
     pkgs.chruby
     pkgs.curl
-    pkgs.docker
+    # pkgs.docker
     pkgs.gitAndTools.diff-so-fancy
     pkgs.fd
     pkgs.git-crypt
