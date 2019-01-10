@@ -59,7 +59,6 @@
     # pkgs.cheat
     pkgs.chruby
     pkgs.curl
-    # pkgs.docker
     pkgs.gitAndTools.diff-so-fancy
     pkgs.fd
     pkgs.git-crypt
@@ -262,12 +261,6 @@
       source $HOME/.nix-profile/share/chruby/chruby.sh
 
       export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$PATH"
-
-      if [[ -d $PRIVATE_DOTFILES ]]; then
-        for file in $PRIVATE_DOTFILES/zsh/*.zsh; do
-          source "$file"
-        done
-      fi
     '';
     oh-my-zsh = {
       custom = "$DOTFILES/oh-my-zsh";
@@ -326,7 +319,6 @@
       CLICOLOR = true;
       DOTFILES = "$HOME/.dotfiles";
       DEFAULT_CHEAT_DIR = "$DOTFILES/cheatsheets";
-      PRIVATE_DOTFILES = "$HOME/.private-dotfiles";
     };
     shellAliases = {
       grom = "git rebase origin/master";
