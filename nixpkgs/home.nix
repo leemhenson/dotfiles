@@ -70,6 +70,7 @@
     pkgs.openssh
     pkgs.openssl
     # pkgs.pgcli
+    pkgs.pypi2nix
     pkgs.python
     pkgs.python37Packages.pynvim
     pkgs.readline
