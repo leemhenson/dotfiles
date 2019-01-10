@@ -56,7 +56,7 @@
     pkgs.awslogs
     pkgs.bat
     pkgs.cargo
-    # pkgs.cheat
+    pkgs.cheat
     pkgs.chruby
     pkgs.curl
     pkgs.gitAndTools.diff-so-fancy
@@ -68,7 +68,7 @@
     pkgs.nodejs-10_x
     pkgs.openssh
     pkgs.openssl
-    # pkgs.pgcli
+    pkgs.pgcli
     pkgs.pypi2nix
     pkgs.python
     pkgs.python37Packages.pynvim
