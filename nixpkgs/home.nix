@@ -65,6 +65,7 @@
     pkgs.gnupg
     pkgs.httpie
     pkgs.jq
+    pkgs.mycli
     pkgs.nodejs-10_x
     pkgs.openssh
     pkgs.openssl
