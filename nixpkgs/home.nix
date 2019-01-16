@@ -78,6 +78,7 @@
     pkgs.stack
     pkgs.taskwarrior
     pkgs.terraform
+    pkgs.tldr
     pkgs.tmux
     pkgs.yarn
   ];
