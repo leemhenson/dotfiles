@@ -267,7 +267,7 @@
       source $HOME/.nix-profile/etc/profile.d/nix.sh
       source $HOME/.nix-profile/share/chruby/chruby.sh
 
-      export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$PATH"
+      export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$HOME/.dotfiles/scripts:$PATH"
     '';
     oh-my-zsh = {
       custom = "$DOTFILES/oh-my-zsh";
@@ -328,7 +328,6 @@
       DEFAULT_CHEAT_DIR = "$DOTFILES/cheatsheets";
     };
     shellAliases = {
-      code = "/Applications/Visual\\ Studio\\ Code\\ -\\ Insiders.app/Contents/Resources/app/bin/code --user-data-dir=$HOME/.config/vscode-insiders";
       grom = "git rebase origin/master";
       gt = "git tree";
       j = "z";
