@@ -10,6 +10,11 @@
       source = ~/.dotfiles/nvim/init.vim;
     };
 
+    ".config/vscode-insiders/User" = {
+      source = ~/.dotfiles/vscode-insiders;
+      recursive = true;
+    };
+
     ".direnvrc" = {
       text = ''
         use_ruby() {
@@ -323,6 +328,7 @@
       DEFAULT_CHEAT_DIR = "$DOTFILES/cheatsheets";
     };
     shellAliases = {
+      code = "/Applications/Visual\\ Studio\\ Code\\ -\\ Insiders.app/Contents/Resources/app/bin/code --user-data-dir=$HOME/.config/vscode-insiders";
       grom = "git rebase origin/master";
       gt = "git tree";
       j = "z";
