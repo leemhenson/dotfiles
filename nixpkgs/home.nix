@@ -10,8 +10,12 @@
       source = ~/.dotfiles/nvim/init.vim;
     };
 
+    ".config/vscode-insiders/wrapper/code" = {
+      source = ~/.dotfiles/vscode-insiders/wrapper/code;
+    };
+
     ".config/vscode-insiders/User" = {
-      source = ~/.dotfiles/vscode-insiders;
+      source = ~/.dotfiles/vscode-insiders/user-settings;
       recursive = true;
     };
 
@@ -267,7 +271,7 @@
       source $HOME/.nix-profile/etc/profile.d/nix.sh
       source $HOME/.nix-profile/share/chruby/chruby.sh
 
-      export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$HOME/.dotfiles/scripts:$PATH"
+      export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$HOME/.config/vscode-insiders/wrapper:$PATH"
     '';
     oh-my-zsh = {
       custom = "$DOTFILES/oh-my-zsh";
