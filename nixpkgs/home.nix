@@ -71,6 +71,7 @@
     pkgs.gitAndTools.diff-so-fancy
     pkgs.fd
     pkgs.git-crypt
+    pkgs.gitAndTools.tig
     pkgs.gnupg
     pkgs.httpie
     pkgs.jq
