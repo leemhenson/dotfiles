@@ -68,9 +68,9 @@
     pkgs.cheat
     pkgs.chruby
     pkgs.curl
-    pkgs.gitAndTools.diff-so-fancy
     pkgs.fd
     pkgs.git-crypt
+    pkgs.gitAndTools.diff-so-fancy
     pkgs.gitAndTools.tig
     pkgs.gnupg
     pkgs.httpie
