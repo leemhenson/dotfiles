@@ -63,6 +63,7 @@
   home.packages = [
     pkgs.awscli
     pkgs.awslogs
+    pkgs.bash
     pkgs.bat
     pkgs.cargo
     pkgs.cheat
