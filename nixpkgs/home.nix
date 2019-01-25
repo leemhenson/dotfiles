@@ -77,7 +77,7 @@
     pkgs.httpie
     pkgs.jq
     pkgs.mycli
-    pkgs.nodejs-10_x
+    pkgs.nodejs-11_x
     pkgs.openssh
     pkgs.openssl
     pkgs.pgcli
