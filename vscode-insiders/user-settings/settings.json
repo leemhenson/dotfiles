@@ -85,6 +85,7 @@
   "languageServerHaskell.useCustomHieWrapper": false,
   "languageServerHaskell.useCustomHieWrapperPath": "${HOME}/.local/bin/hie-wrapper",
   "prettier.requireConfig": true,
+  "python.pythonPath": "/Users/leemhenson/.nix-profile/bin/python",
   "search.location": "panel",
   "terminal.external.osxExec": "iTerm.app",
   "todohighlight.toggleURI": true,
