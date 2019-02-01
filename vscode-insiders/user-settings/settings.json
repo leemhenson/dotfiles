@@ -89,6 +89,7 @@
   "search.location": "panel",
   "terminal.external.osxExec": "iTerm.app",
   "todohighlight.toggleURI": true,
+  "tslint.packageManager": "yarn",
   "typescript.referencesCodeLens.enabled": false,
   "typescript.reportStyleChecksAsWarnings": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
