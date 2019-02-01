@@ -85,7 +85,7 @@
   "languageServerHaskell.useCustomHieWrapper": false,
   "languageServerHaskell.useCustomHieWrapperPath": "${HOME}/.local/bin/hie-wrapper",
   "prettier.requireConfig": true,
-  "python.pythonPath": "/Users/leemhenson/.nix-profile/bin/python",
+  "python.pythonPath": "/Users/leehenson/.nix-profile/bin/python",
   "search.location": "panel",
   "terminal.external.osxExec": "iTerm.app",
   "todohighlight.toggleURI": true,
@@ -97,7 +97,7 @@
   "vim.easymotionMarkerFontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "vim.enableNeovim": true,
   "vim.leader": " ",
-  "vim.neovimPath": "/Users/leemhenson/.nix-profile/bin/vim",
+  "vim.neovimPath": "/Users/leehenson/.nix-profile/bin/vim",
   "vim.normalModeKeyBindings": [
     {
       "before": [
