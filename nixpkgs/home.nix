@@ -338,7 +338,7 @@
       grom = "git rebase origin/master";
       gt = "git tree";
       j = "z";
-      ls = "ls -alh";
+      ls = "ls -alh --color=auto";
     };
   };
 }
