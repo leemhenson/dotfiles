@@ -68,6 +68,7 @@
     pkgs.cargo
     pkgs.cheat
     pkgs.chruby
+    pkgs.coreutils
     pkgs.curl
     pkgs.fd
     pkgs.git-crypt
