@@ -3,15 +3,14 @@ let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
 
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'HerringtonDarkholme/yats.vim'
 Plug 'LnL7/vim-nix', { 'for': ['nix'] }
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'artnez/vim-wipeout'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
+" Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
-Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.local/share/nvim/fzf', 'do': './install --bin' }
@@ -21,7 +20,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'liuchengxu/vim-which-key'
 Plug 'markonm/traces.vim'
 Plug 'matze/vim-move'
-Plug 'mhartington/nvim-typescript', { 'for': ['typescript', 'tsx'], 'build': './install.sh' }
+" Plug 'mhartington/nvim-typescript', { 'for': ['typescript', 'tsx'], 'build': './install.sh' }
 Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-cssomni'

@@ -82,7 +82,7 @@
   "javascript.validate.enable": false,
   "languageServerHaskell.enableHIE": true,
   "languageServerHaskell.hieExecutablePath": "${HOME}/.local/bin/hie",
-  "languageServerHaskell.useCustomHieWrapper": false,
+  "languageServerHaskell.useCustomHieWrapper": true,
   "languageServerHaskell.useCustomHieWrapperPath": "${HOME}/.local/bin/hie-wrapper",
   "prettier.requireConfig": true,
   "python.pythonPath": "/Users/leehenson/.nix-profile/bin/python",

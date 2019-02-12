@@ -275,6 +275,21 @@
       source $HOME/.nix-profile/share/chruby/chruby.sh
 
       export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$HOME/.config/vscode-insiders/wrapper:$PATH"
+
+      # This speeds up pasting w/ autosuggest
+      # https://github.com/zsh-users/zsh-autosuggestions/issues/238
+
+      pasteinit() {
+        OLD_SELF_INSERT=''${''${(s.:.)widgets[self-insert]}[2,3]}
+        zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+      }
+
+      pastefinish() {
+        zle -N self-insert $OLD_SELF_INSERT
+      }
+
+      zstyle :bracketed-paste-magic paste-init pasteinit
+      zstyle :bracketed-paste-magic paste-finish pastefinish
     '';
     oh-my-zsh = {
       custom = "$DOTFILES/oh-my-zsh";
