@@ -90,6 +90,8 @@
   "terminal.external.osxExec": "iTerm.app",
   "todohighlight.toggleURI": true,
   "tslint.packageManager": "yarn",
+  "typescript.extension.sortImports.quoteStyle": "double",
+  "typescript.extension.sortImports.sortOnSave": false,
   "typescript.referencesCodeLens.enabled": false,
   "typescript.reportStyleChecksAsWarnings": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
