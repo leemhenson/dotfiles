@@ -84,6 +84,7 @@
     pkgs.pgcli
     pkgs.pypi2nix
     pkgs.python
+    pkgs.python37Packages.jupyterlab
     pkgs.python37Packages.pynvim
     pkgs.readline
     pkgs.ripgrep
