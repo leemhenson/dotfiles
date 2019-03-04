@@ -89,7 +89,13 @@
   "terminal.external.osxExec": "iTerm.app",
   "todohighlight.toggleURI": true,
   "tslint.packageManager": "yarn",
+  "typescript.extension.sortImports.pathSortOrder": [
+    "package",
+    "relativeUpLevel",
+    "relativeDownLevel"
+  ],
   "typescript.extension.sortImports.quoteStyle": "double",
+  "typescript.extension.sortImports.sortMethod": "path",
   "typescript.extension.sortImports.sortOnSave": false,
   "typescript.referencesCodeLens.enabled": false,
   "typescript.reportStyleChecksAsWarnings": false,
