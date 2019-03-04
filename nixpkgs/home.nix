@@ -70,6 +70,7 @@
     pkgs.chruby
     pkgs.coreutils
     pkgs.curl
+    pkgs.elasticsearch-oss
     pkgs.fd
     pkgs.git-crypt
     pkgs.gitAndTools.diff-so-fancy
