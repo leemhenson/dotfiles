@@ -61,7 +61,6 @@
   };
 
   home.packages = [
-    pkgs.awscli
     pkgs.awslogs
     pkgs.bash
     pkgs.bat
@@ -77,11 +76,9 @@
     pkgs.gnupg
     pkgs.httpie
     pkgs.jq
-    # pkgs.mycli
     pkgs.nodejs-11_x
     pkgs.openssh
     pkgs.openssl
-    # pkgs.pgcli
     pkgs.python
     pkgs.python37
     pkgs.python37Packages.pynvim
