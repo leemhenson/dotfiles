@@ -29,6 +29,7 @@
   "editor.rulers": [
     100
   ],
+  "editor.suggestSelection": "first",
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "editor.tokenColorCustomizations": {
