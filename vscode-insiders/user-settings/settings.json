@@ -86,7 +86,6 @@
   "languageServerHaskell.useCustomHieWrapper": true,
   "languageServerHaskell.useCustomHieWrapperPath": "${HOME}/.local/bin/hie-wrapper",
   "prettier.requireConfig": true,
-  "search.location": "panel",
   "terminal.external.osxExec": "iTerm.app",
   "todohighlight.toggleURI": true,
   "tslint.packageManager": "yarn",
