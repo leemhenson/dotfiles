@@ -1,0 +1,152 @@
+{
+  "bracketPairColorizer.consecutivePairColors": [
+    "()",
+    "[]",
+    "{}",
+    [
+      "#d8dee9",
+      "#EBCB8B",
+      "#A3BE8C",
+      "#B48EAD",
+      "#D08770",
+      "#5E81AC",
+      "#8FBCBB",
+      "Gold",
+      "Orchid",
+      "LightSkyBlue"
+    ],
+    "Red"
+  ],
+  "breadcrumbs.enabled": true,
+  "docker.showExplorer": false,
+  "editor.detectIndentation": false,
+  "editor.folding": false,
+  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 12,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [
+    100
+  ],
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    "[Plastic - deprioritised punctuation]": {
+      "textMateRules": [
+        {
+          "name": "keywords",
+          "scope": [
+            "keyword",
+            "punctuation.definition.keyword"
+          ],
+          "settings": {
+            "foreground": "#737c8c"
+          }
+        }
+      ]
+    }
+  },
+  "explorer.openEditors.visible": 0,
+  "extensions.ignoreRecommendations": false,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/.vscode": true,
+    "**/CVS": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/generated": true,
+    "**/log": true,
+    "**/node_modules": true,
+    "**/tmp": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.keymap": "chorded",
+  "html.format.endWithNewline": true,
+  "javascript.validate.enable": false,
+  "languageServerHaskell.enableHIE": true,
+  "languageServerHaskell.hieExecutablePath": "${HOME}/.local/bin/hie",
+  "languageServerHaskell.useCustomHieWrapper": true,
+  "languageServerHaskell.useCustomHieWrapperPath": "${HOME}/.local/bin/hie-wrapper",
+  "prettier.requireConfig": true,
+  "search.location": "panel",
+  "terminal.external.osxExec": "iTerm.app",
+  "todohighlight.toggleURI": true,
+  "tslint.packageManager": "yarn",
+  "typescript.extension.sortImports.pathSortOrder": [
+    "package",
+    "relativeUpLevel",
+    "relativeDownLevel"
+  ],
+  "typescript.extension.sortImports.quoteStyle": "double",
+  "typescript.extension.sortImports.sortMethod": "path",
+  "typescript.extension.sortImports.sortOnSave": false,
+  "typescript.referencesCodeLens.enabled": false,
+  "typescript.reportStyleChecksAsWarnings": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.disableExtension": false,
+  "vim.easymotion": true,
+  "vim.easymotionMarkerFontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "vim.enableNeovim": true,
+  "vim.leader": " ",
+  "vim.neovimPath": "/Users/leehenson/.nix-profile/bin/vim",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "g",
+        "d"
+      ],
+      "commands": [
+        "editor.action.revealDefinition"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "D"
+      ],
+      "commands": [
+        "editor.action.revealDefinitionAside"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "t"
+      ],
+      "commands": [
+        "editor.action.goToTypeDefinition"
+      ]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  "window.newWindowDimensions": "inherit",
+  "window.openFilesInNewWindow": "off",
+  "window.openFoldersInNewWindow": "off",
+  "window.restoreFullscreen": true,
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Plastic - deprioritised punctuation",
+  "workbench.commandPalette.preserveInput": true,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editor.showTabs": true,
+  "workbench.iconTheme": "vs-seti",
+  "workbench.startupEditor": "newUntitledFile"
+}

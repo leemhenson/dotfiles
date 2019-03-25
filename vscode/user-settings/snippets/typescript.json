@@ -1,0 +1,90 @@
+{
+  /*
+	// Place your snippets for TypeScript here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+  "console.dir": {
+    "prefix": "dir",
+    "body": [
+      "console.dir({ $1 }, { colors: true, depth: null })$0"
+    ],
+    "description": "console.dir({}, { colors: true, depth: null })"
+  },
+  "console.log": {
+    "prefix": "log",
+    "body": [
+      "console.log($1)$0"
+    ],
+    "description": "console.log({})"
+  },
+  "console.log (inspect)": {
+    "prefix": "log",
+    "body": [
+      "console.log(inspect({ $1 }, { colors: true, depth: null }))$0"
+    ],
+    "description": "console.log(inspect({}))"
+  },
+  "GraphQL-strong: createObjectType": {
+    "prefix": "createObjectType",
+    "body": [
+      "export const ${1:type}Type = createObjectType<${2:parentType}, Context>({",
+      "  description: \"${3:description}\",",
+      "  name: \"${4:name}\",",
+      "})$0"
+    ],
+    "description": "GraphQL-strong createObjectType"
+  },
+  "GraphQL-strong: field": {
+    "prefix": "field",
+    "body": [
+      ".field<${1:type}>({",
+      "  description: \"${2:description}\",",
+      "  name: \"${3:name}\",",
+      "  resolve: $0,",
+      "  type: ${4:graphqlType}Type,",
+      "})"
+    ],
+    "description": "GraphQL-strong field"
+  },
+  "GraphQL-strong: non-null field": {
+    "prefix": "fieldNonNull",
+    "body": [
+      ".fieldNonNull<${1:type}>({",
+      "  description: \"${2:description}\",",
+      "  name: \"${3:name}\",",
+      "  resolve: $0,",
+      "  type: ${4:graphqlType}Type,",
+      "})"
+    ],
+    "description": "GraphQL-strong non-null field"
+  },
+  "io-ts-codegen: identifier": {
+    "prefix": "io - identifier",
+    "body": [
+      "export const $1 = t.identifier(\"$1\");$0"
+    ],
+  },
+  "io-ts-codegen: lowercased literal": {
+    "prefix": "io - lower literal",
+    "body": [
+      "export const $1LowercasedLiteral = lowercasedLiteralDeclaration(\"$1LowercasedLiteral\", \"$2\");$0"
+    ],
+  },
+  "io-ts-codegen: uppercased literal": {
+    "prefix": "io - upper literal",
+    "body": [
+      "export const $1UppercasedLiteral = uppercasedLiteralDeclaration(\"$1UppercasedLiteral\", \"$2\");$0"
+    ],
+  }
+}

@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --user-data-dir=$HOME/.config/vscode "$@"

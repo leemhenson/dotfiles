@@ -14,6 +14,15 @@
       source = ~/.dotfiles/nvim/init.vim;
     };
 
+    ".config/vscode/wrapper/code" = {
+      source = ~/.dotfiles/vscode/wrapper/vscode;
+    };
+
+    ".config/vscode/User" = {
+      source = ~/.dotfiles/vscode/user-settings;
+      recursive = true;
+    };
+
     ".config/vscode-insiders/wrapper/code" = {
       source = ~/.dotfiles/vscode-insiders/wrapper/code;
     };
