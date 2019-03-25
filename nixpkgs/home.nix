@@ -2,6 +2,10 @@
 
 {
   home.file = {
+    ".config/bat/config" = {
+      source = ~/.dotfiles/bat/config;
+    };
+
     ".config/pgcli/config" = {
       source = ~/.dotfiles/pgcli/config;
     };
