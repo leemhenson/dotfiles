@@ -354,8 +354,8 @@
       }
     ];
     sessionVariables = {
-      CHEATCOLORS = true;
-      CLICOLOR = true;
+      CHEATCOLORS = "true";
+      CLICOLOR = "true";
       DOTFILES = "$HOME/.dotfiles";
       DEFAULT_CHEAT_DIR = "$DOTFILES/cheatsheets";
     };
