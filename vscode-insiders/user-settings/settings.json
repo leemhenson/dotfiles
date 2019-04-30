@@ -2,6 +2,9 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "atlascode.jira.workingSite": {
+    "baseUrlSuffix": "atlassian.net"
+  },
   "bracketPairColorizer.consecutivePairColors": [
     "()",
     "[]",
