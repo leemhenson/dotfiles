@@ -2,9 +2,6 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "atlascode.jira.workingSite": {
-    "baseUrlSuffix": "atlassian.net"
-  },
   "bracketPairColorizer.consecutivePairColors": [
     "()",
     "[]",
@@ -91,6 +88,7 @@
   "languageServerHaskell.hieExecutablePath": "${HOME}/.local/bin/hie",
   "languageServerHaskell.useCustomHieWrapper": true,
   "languageServerHaskell.useCustomHieWrapperPath": "${HOME}/.local/bin/hie-wrapper",
+  "liveshare.featureSet": "insiders",
   "prettier.requireConfig": true,
   "search.location": "panel",
   "terminal.external.osxExec": "iTerm.app",
