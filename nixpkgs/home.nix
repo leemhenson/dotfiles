@@ -89,7 +89,7 @@
     pkgs.gnupg
     pkgs.httpie
     pkgs.jq
-    pkgs.nodejs-11_x
+    pkgs.nodejs-12_x
     pkgs.openssh
     pkgs.openssl
     pkgs.python
