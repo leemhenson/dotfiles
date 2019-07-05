@@ -94,6 +94,7 @@
   "terminal.external.osxExec": "iTerm.app",
   "todohighlight.toggleURI": true,
   "tslint.packageManager": "yarn",
+  "typescript.experimental.useSeparateSyntaxServer": true,
   "typescript.extension.sortImports.pathSortOrder": [
     "package",
     "relativeUpLevel",
