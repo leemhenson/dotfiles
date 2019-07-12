@@ -2,26 +2,10 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "bracketPairColorizer.consecutivePairColors": [
-    "()",
-    "[]",
-    "{}",
-    [
-      "#d8dee9",
-      "#EBCB8B",
-      "#A3BE8C",
-      "#B48EAD",
-      "#D08770",
-      "#5E81AC",
-      "#8FBCBB",
-      "Gold",
-      "Orchid",
-      "LightSkyBlue"
-    ],
-    "Red"
-  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "breadcrumbs.enabled": true,
-  "docker.showExplorer": false,
   "editor.detectIndentation": false,
   "editor.folding": false,
   "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
@@ -94,7 +78,6 @@
   "terminal.external.osxExec": "iTerm.app",
   "todohighlight.toggleURI": true,
   "tslint.packageManager": "yarn",
-  "typescript.experimental.useSeparateSyntaxServer": true,
   "typescript.extension.sortImports.pathSortOrder": [
     "package",
     "relativeUpLevel",
