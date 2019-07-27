@@ -61,10 +61,6 @@
       source = ~/.dotfiles/taskwarrior/taskrc;
     };
 
-    ".tmux.conf" = {
-      source = ~/.dotfiles/tmux/tmux.conf;
-    };
-
     ".zshenv" = {
       text = ''
         export LANG=en_GB.UTF-8
@@ -99,9 +95,7 @@
     pkgs.ripgrep
     pkgs.stack
     pkgs.taskwarrior
-    pkgs.terraform
     pkgs.tldr
-    pkgs.tmux
     pkgs.yarn
   ];
 
