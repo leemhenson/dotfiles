@@ -103,6 +103,11 @@
     "key": "alt+cmd+t",
     "command": "-hie.commands.showType",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+ctrl+e",
+    "command": "editor.action.codeAction",
+    "args": { "kind": "refactor.extract", "preferred": true }
   }
 ]
 

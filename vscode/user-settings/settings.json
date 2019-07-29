@@ -1,24 +1,14 @@
 {
-  "bracketPairColorizer.consecutivePairColors": [
-    "()",
-    "[]",
-    "{}",
-    [
-      "#d8dee9",
-      "#EBCB8B",
-      "#A3BE8C",
-      "#B48EAD",
-      "#D08770",
-      "#5E81AC",
-      "#8FBCBB",
-      "Gold",
-      "Orchid",
-      "LightSkyBlue"
-    ],
-    "Red"
-  ],
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "breadcrumbs.enabled": true,
-  "docker.showExplorer": false,
   "editor.detectIndentation": false,
   "editor.folding": false,
   "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
@@ -85,6 +75,7 @@
   "languageServerHaskell.hieExecutablePath": "${HOME}/.local/bin/hie",
   "languageServerHaskell.useCustomHieWrapper": true,
   "languageServerHaskell.useCustomHieWrapperPath": "${HOME}/.local/bin/hie-wrapper",
+  "liveshare.featureSet": "insiders",
   "prettier.requireConfig": true,
   "search.location": "panel",
   "terminal.external.osxExec": "iTerm.app",
@@ -136,6 +127,7 @@
       ]
     }
   ],
+  "vim.statusBarColorControl": true,
   "vim.useSystemClipboard": true,
   "window.newWindowDimensions": "inherit",
   "window.openFilesInNewWindow": "off",

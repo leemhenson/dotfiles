@@ -127,6 +127,7 @@
       ]
     }
   ],
+  "vim.statusBarColorControl": true,
   "vim.useSystemClipboard": true,
   "window.newWindowDimensions": "inherit",
   "window.openFilesInNewWindow": "off",
