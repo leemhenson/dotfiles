@@ -279,7 +279,10 @@
       source $HOME/.nix-profile/etc/profile.d/nix.sh
       source $HOME/.nix-profile/share/chruby/chruby.sh
 
-      export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$HOME/.config/vscode/wrapper:$HOME/.config/vscode-insiders/wrapper:$PATH"
+      case "$IN_NIX_SHELL" in
+        impure) export PATH=''${PATH/$HOME\/.nix-profile\/bin:/} ;;
+             *) export PATH="./node_modules/.bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$HOME/.config/vscode/wrapper:$HOME/.config/vscode-insiders/wrapper:$PATH" ;;
+      esac
 
       # This speeds up pasting w/ autosuggest
       # https://github.com/zsh-users/zsh-autosuggestions/issues/238
