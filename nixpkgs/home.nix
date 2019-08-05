@@ -70,7 +70,6 @@
   };
 
   home.packages = [
-    pkgs.awslogs
     pkgs.bash
     pkgs.bat
     pkgs.cachix
@@ -86,12 +85,9 @@
     pkgs.gnupg
     pkgs.httpie
     pkgs.jq
-    pkgs.nodejs-11_x
+    pkgs.nodejs-12_x
     pkgs.openssh
     pkgs.openssl
-    pkgs.python
-    pkgs.python37
-    pkgs.python37Packages.pynvim
     pkgs.readline
     pkgs.ripgrep
     pkgs.stack
