@@ -1,8 +1,5 @@
 { pkgs, ... }:
 
-let
-  all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
-in
 {
   home.file = {
     ".config/bat/config" = {
@@ -97,8 +94,6 @@ in
     pkgs.taskwarrior
     pkgs.tldr
     pkgs.yarn
-
-    (all-hies.selection { selector = p: { inherit (p) ghc865 ghc864; }; })
   ];
 
   nixpkgs.config = {

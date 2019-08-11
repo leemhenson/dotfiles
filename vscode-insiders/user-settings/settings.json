@@ -49,7 +49,6 @@
     "**/CVS": true,
     "**/build": true,
     "**/dist": true,
-    "**/generated": true,
     "**/log": true,
     "**/node_modules": true,
     "**/tmp": true
