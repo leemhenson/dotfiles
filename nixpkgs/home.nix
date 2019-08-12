@@ -155,6 +155,7 @@
       autocorrect = 1
 
       [merge]
+      renameLimit = 1000000
       tool = vscode
 
       [mergetool]
