@@ -15,6 +15,7 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 12,
   "editor.formatOnSave": true,
+  "editor.gotoLocation.multiple": "goto",
   "editor.minimap.enabled": false,
   "editor.rulers": [
     100
