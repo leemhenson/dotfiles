@@ -76,6 +76,12 @@
   "languageServerHaskell.useCustomHieWrapper": true,
   "languageServerHaskell.useCustomHieWrapperPath": "${HOME}/.local/bin/hie-wrapper",
   "liveshare.featureSet": "insiders",
+  "org.todoKeywords": [
+    "TODO",
+    "PROG",
+    "DONE",
+    "BLOK"
+  ],
   "prettier.requireConfig": true,
   "search.location": "panel",
   "shellformat.flag": "-sr -bn",
