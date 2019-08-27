@@ -39,6 +39,7 @@
       ]
     }
   },
+  "eslint.packageManager": "pnpm",
   "explorer.openEditors.visible": 0,
   "extensions.ignoreRecommendations": false,
   "files.exclude": {
