@@ -118,42 +118,55 @@
       tree = "log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit --date-order";
     };
     enable = true;
+  #   programs.git.extraConfig = {
+  #   push = { default = "current"; };
+  #   apply = { whitespace = "nowarn"; };
+  #   core = { autocrlf = "input"; };
+  # };
+    extraConfig = {
+      apply = {
+        whitespace = "nowarn";
+      };
+
+      color = {
+        diff = "auto";
+        status = "auto";
+        branch = "auto";
+        ui = "true";
+        interactive = "auto";
+      };
+
+      # [color "diff-highlight"]
+      # oldNormal = red bold
+      # oldHighlight = red bold 52
+      # newNormal = green bold
+      # newHighlight = green bold 22
+
+      core = {
+        editor = "code --wait";
+        excludesfile = "$XDG_CONFIG_HOME/git/ignore";
+      };
+
+      diff = {
+        tool = "Kaleidoscope";
+      };
+
+      difftool = {
+        "prompt" = "false";
+      };
+
+      # [difftool "Kaleidoscope"]
+      # cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+      fetch = {
+        prune = "true";
+      };
+
+      help = {
+        autocorrect = "1";
+      }
+    };
     extraConfig = ''
-      [apply]
-      whitespace = nowarn
-
-      [color]
-      diff = auto
-      status = auto
-      branch = auto
-      ui = true
-      interactive = auto
-
-      [color "diff-highlight"]
-      oldNormal = red bold
-      oldHighlight = red bold 52
-      newNormal = green bold
-      newHighlight = green bold 22
-
-      [core]
-      editor = code --wait
-      excludesfile = $XDG_CONFIG_HOME/git/ignore
-
-      [diff]
-      tool = Kaleidoscope
-
-      [difftool]
-      prompt = false
-
-      [difftool "Kaleidoscope"]
-      cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-
-      [fetch]
-      prune = true
-
-      [help]
-      autocorrect = 1
-
       [merge]
       renameLimit = 1000000
       tool = vscode
