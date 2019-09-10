@@ -164,33 +164,37 @@
 
       help = {
         autocorrect = "1";
-      }
+      };
+
+      merge = {
+        renameLimit = "1000000";
+        tool = "vscode";
+      };
+
+      mergetool = {
+        keepBackup = "false";
+      };
+
+      # [mergetool "Kaleidoscope"]
+      # cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+      # trustExitCode = true
+
+      # [mergetool "vscode"]
+      # cmd = code --wait $MERGED
+
+      pager = {
+        diff = "diff-so-fancy | less --tabs=2 -RFX";
+        show = "diff-so-fancy | less --tabs=4 -RFX";
+      };
+
+      pull = {
+        rebase = "true";
+      };
+
+      push = {
+        default = "current";
+      };
     };
-    extraConfig = ''
-      [merge]
-      renameLimit = 1000000
-      tool = vscode
-
-      [mergetool]
-      keepBackup = false
-
-      [mergetool "Kaleidoscope"]
-      cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-      trustExitCode = true
-
-      [mergetool "vscode"]
-      cmd = code --wait $MERGED
-
-      [pager]
-      diff = diff-so-fancy | less --tabs=2 -RFX
-      show = diff-so-fancy | less --tabs=4 -RFX
-
-      [pull]
-      rebase = true
-
-      [push]
-      default = current
-    '';
     ignores = [
       "*~"
       ''\#*\#''
