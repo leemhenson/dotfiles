@@ -87,6 +87,12 @@
   "search.location": "panel",
   "shellformat.flag": "-sr -bn",
   "terminal.external.osxExec": "iTerm.app",
+  "todohighlight.keywords": [{
+    "text": "TODO",
+    "color": "black",
+    "backgroundColor": "yellow",
+    "borderRadius": "1px solid #ddd"
+  }],
   "todohighlight.toggleURI": true,
   "tslint.packageManager": "yarn",
   "typescript.extension.sortImports.pathSortOrder": [
