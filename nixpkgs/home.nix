@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  ghcide = (import (fetchTarball "https://github.com/hercules-ci/ghcide-nix/tarball/master") {}).ghcide-ghc865;
+in
 {
   home.file = {
     ".config/bat/config" = {
@@ -70,6 +73,7 @@
   };
 
   home.packages = [
+    ghcide
     pkgs.bash
     pkgs.bat
     pkgs.cachix

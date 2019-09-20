@@ -4,44 +4,56 @@ let g:maplocalleader = ','
 
 call plug#begin('~/.local/share/nvim/plugged')
 " Plug 'HerringtonDarkholme/yats.vim'
-Plug 'LnL7/vim-nix', { 'for': ['nix'] }
-Plug 'airblade/vim-gitgutter'
-Plug 'airblade/vim-rooter'
-Plug 'artnez/vim-wipeout'
+Plug 'LnL7/vim-nix', { 'for': ['nix'] }		" Vim configuration files for Nix
+Plug 'airblade/vim-gitgutter'							" A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks and partial hunks.
+Plug 'airblade/vim-rooter'								" Changes Vim working directory to project root
+Plug 'artnez/vim-wipeout'									" Destroy all buffers that are not open in any tabs or windows.
 " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
-Plug 'easymotion/vim-easymotion'
-Plug 'elzr/vim-json'
-Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.local/share/nvim/fzf', 'do': './install --bin' }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-peekaboo'
-Plug 'justinmk/vim-dirvish'
-Plug 'liuchengxu/vim-which-key'
-Plug 'markonm/traces.vim'
-Plug 'matze/vim-move'
+Plug 'easymotion/vim-easymotion'					" Vim motions on speed!
+Plug 'elzr/vim-json'											" A better JSON for Vim
+Plug 'itchyny/lightline.vim'							" A light and configurable statusline/tabline plugin for Vim
+Plug 'joshdick/onedark.vim'								" theme
+Plug 'junegunn/fzf', { 'dir': '~/.local/share/nvim/fzf', 'do': './install --bin' }	" fzf for nvim
+Plug 'junegunn/fzf.vim'										" Things you can do with fzf and Vim.
+Plug 'junegunn/vim-peekaboo'							" see the contents of the registers.
+Plug 'justinmk/vim-dirvish'								" Directory viewer for Vim
+Plug 'liuchengxu/vim-which-key'						" Vim plugin that shows keybindings in popup
+Plug 'markonm/traces.vim'									" Range, pattern and substitute preview for Vim
+Plug 'matze/vim-move'											" Plugin to move lines and selections up and down
 " Plug 'mhartington/nvim-typescript', { 'for': ['typescript', 'tsx'], 'build': './install.sh' }
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-cssomni'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
-Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'nightsense/snow'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'purescript-contrib/purescript-vim'
-Plug 'qpkorr/vim-bufkill'
-Plug 'roxma/nvim-yarp'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
+" Plug 'ncm2/ncm2'
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-cssomni'
+" Plug 'ncm2/ncm2-path'
+" Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
+" Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
+" Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}	" It's a completion framework and language server client which supports extension features of VSCode.
+Plug 'neovimhaskell/haskell-vim'					" Syntax Highlighting and Indentation for Haskell and Cabal
+Plug 'ntpeters/vim-better-whitespace'			" Better whitespace highlighting
+Plug 'purescript-contrib/purescript-vim'	" Syntax highlighting and indentation for Purescript
+Plug 'qpkorr/vim-bufkill'									" Unload/delete/wipe a buffer, keep its window(s), display last accessed buffer(s)
+" Plug 'roxma/nvim-yarp'
+Plug 'tpope/vim-commentary'								" comment stuff out
+Plug 'tpope/vim-fugitive'                 " A Git wrapper so awesome, it should be illegal<Paste>
+Plug 'tpope/vim-surround'                 " quoting/parenthesizing made simple
+Plug 'w0rp/ale'                           " Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support
 call plug#end()
 
 " vim-bufkill
 let g:BufKillCreateMappings = 0
+
+" coc
+let g:coc_global_extensions = [
+  'coc-css',
+  'coc-eslint',
+  'coc-highlight',
+  'coc-html',
+  'coc-json',
+  'coc-tslint-plugin',
+  'coc-tsserver',
+  'coc-yaml'
+]
 
 " vim-easymotion
 let g:EasyMotion_do_mapping = 0
@@ -50,14 +62,14 @@ let g:EasyMotion_smartcase = 1
 " fzf
 let g:fzf_command_prefix = 'Fzf'
 
-" languageclient-neovim
-let g:LanguageClient_serverCommands = {
-  \ 'javascript': ['javascript-typescript-stdio'],
-  \ 'haskell': ['hie-wrapper'],
-  \ 'typescript': ['javascript-typescript-stdio'],
-  \ }
+" " languageclient-neovim
+" let g:LanguageClient_serverCommands = {
+"   \ 'javascript': ['javascript-typescript-stdio'],
+"   \ 'haskell': ['hie-wrapper'],
+"   \ 'typescript': ['javascript-typescript-stdio'],
+"   \ }
 
-" vim-lightline
+" " vim-lightline
 let g:lightline = { 'colorscheme': 'one' }
 
 " vim-move
@@ -212,26 +224,26 @@ nmap <leader>bsl :rightbelow vnew<cr>
 " git
 nmap <leader>gs :Gstatus<cr>
 
-" language
-nmap <leader>lR :call LanguageClient#textDocument_references()<CR>
-nmap <leader>lS :call LanguageClient#textDocument_documentSymbol()<CR>
-nmap <leader>la :call LanguageClient#textDocument_codeAction()<CR>
-nmap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-nmap <leader>ld :call LanguageClient#textDocument_definition()<cr>
-nmap <leader>lh :call LanguageClient#textDocument_hover()<cr>
-nmap <leader>lm :call LanguageClient_contextMenu()<cr>
-nmap <leader>lr :call LanguageClient#textDocument_rename()<cr>
+" " language
+" nmap <leader>lR :call LanguageClient#textDocument_references()<CR>
+" nmap <leader>lS :call LanguageClient#textDocument_documentSymbol()<CR>
+" nmap <leader>la :call LanguageClient#textDocument_codeAction()<CR>
+" nmap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
+" nmap <leader>ld :call LanguageClient#textDocument_definition()<cr>
+" nmap <leader>lh :call LanguageClient#textDocument_hover()<cr>
+" nmap <leader>lm :call LanguageClient_contextMenu()<cr>
+" nmap <leader>lr :call LanguageClient#textDocument_rename()<cr>
 
-autocmd FileType typescript nmap <buffer> <localleader>lD :TSDoc<cr>
-autocmd FileType typescript nmap <buffer> <localleader>lF :TSGetCodeFix<cr>
-autocmd FileType typescript nmap <buffer> <localleader>lR :TSRefs<cr>
-autocmd FileType typescript nmap <buffer> <localleader>ld :TSDef<cr>
-autocmd FileType typescript nmap <buffer> <localleader>li :TSImport<cr>
-autocmd FileType typescript nmap <buffer> <localleader>lr :TSRename
-autocmd FileType typescript nmap <buffer> <localleader>lt :TSTypeDef<cr>
-autocmd FileType typescript nmap <buffer> <localleader>lx :TSRestart<cr>
+" " autocmd FileType typescript nmap <buffer> <localleader>lD :TSDoc<cr>
+" autocmd FileType typescript nmap <buffer> <localleader>lF :TSGetCodeFix<cr>
+" autocmd FileType typescript nmap <buffer> <localleader>lR :TSRefs<cr>
+" autocmd FileType typescript nmap <buffer> <localleader>ld :TSDef<cr>
+" autocmd FileType typescript nmap <buffer> <localleader>li :TSImport<cr>
+" autocmd FileType typescript nmap <buffer> <localleader>lr :TSRename
+" autocmd FileType typescript nmap <buffer> <localleader>lt :TSTypeDef<cr>
+" autocmd FileType typescript nmap <buffer> <localleader>lx :TSRestart<cr>
 
-" search
+" " search
 nmap <leader>sC :FzfColors<cr>
 nmap <leader>sF :FzfFiles<cr>
 nmap <leader>sb :FzfBuffers<cr>
@@ -252,8 +264,8 @@ nmap <leader>wsl :botright vnew<cr>
 " autocommands
 " ==========================================================
 
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" " enable ncm2 for all buffers
+" autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " stripe whitespace on save
 autocmd BufWritePre * StripWhitespace
