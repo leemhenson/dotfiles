@@ -3,12 +3,11 @@ let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
 
 call plug#begin('~/.local/share/nvim/plugged')
-" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim'       " The most advanced TypeScript Syntax Highlighting in Vim
 Plug 'LnL7/vim-nix', { 'for': ['nix'] }		" Vim configuration files for Nix
 Plug 'airblade/vim-gitgutter'							" A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks and partial hunks.
 Plug 'airblade/vim-rooter'								" Changes Vim working directory to project root
 Plug 'artnez/vim-wipeout'									" Destroy all buffers that are not open in any tabs or windows.
-" Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
 Plug 'easymotion/vim-easymotion'					" Vim motions on speed!
 Plug 'elzr/vim-json'											" A better JSON for Vim
 Plug 'itchyny/lightline.vim'							" A light and configurable statusline/tabline plugin for Vim
@@ -20,20 +19,11 @@ Plug 'justinmk/vim-dirvish'								" Directory viewer for Vim
 Plug 'liuchengxu/vim-which-key'						" Vim plugin that shows keybindings in popup
 Plug 'markonm/traces.vim'									" Range, pattern and substitute preview for Vim
 Plug 'matze/vim-move'											" Plugin to move lines and selections up and down
-" Plug 'mhartington/nvim-typescript', { 'for': ['typescript', 'tsx'], 'build': './install.sh' }
-" Plug 'ncm2/ncm2'
-" Plug 'ncm2/ncm2-bufword'
-" Plug 'ncm2/ncm2-cssomni'
-" Plug 'ncm2/ncm2-path'
-" Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
-" Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-" Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}	" It's a completion framework and language server client which supports extension features of VSCode.
 Plug 'neovimhaskell/haskell-vim'					" Syntax Highlighting and Indentation for Haskell and Cabal
 Plug 'ntpeters/vim-better-whitespace'			" Better whitespace highlighting
 Plug 'purescript-contrib/purescript-vim'	" Syntax highlighting and indentation for Purescript
 Plug 'qpkorr/vim-bufkill'									" Unload/delete/wipe a buffer, keep its window(s), display last accessed buffer(s)
-" Plug 'roxma/nvim-yarp'
 Plug 'tpope/vim-commentary'								" comment stuff out
 Plug 'tpope/vim-fugitive'                 " A Git wrapper so awesome, it should be illegal<Paste>
 Plug 'tpope/vim-surround'                 " quoting/parenthesizing made simple
@@ -44,16 +34,7 @@ call plug#end()
 let g:BufKillCreateMappings = 0
 
 " coc
-let g:coc_global_extensions = [
-  'coc-css',
-  'coc-eslint',
-  'coc-highlight',
-  'coc-html',
-  'coc-json',
-  'coc-tslint-plugin',
-  'coc-tsserver',
-  'coc-yaml'
-]
+let g:coc_global_extensions = ['coc-css', 'coc-eslint', 'coc-highlight', 'coc-html', 'coc-json', 'coc-tslint-plugin', 'coc-tsserver', 'coc-yaml']
 
 " vim-easymotion
 let g:EasyMotion_do_mapping = 0
@@ -61,13 +42,6 @@ let g:EasyMotion_smartcase = 1
 
 " fzf
 let g:fzf_command_prefix = 'Fzf'
-
-" " languageclient-neovim
-" let g:LanguageClient_serverCommands = {
-"   \ 'javascript': ['javascript-typescript-stdio'],
-"   \ 'haskell': ['hie-wrapper'],
-"   \ 'typescript': ['javascript-typescript-stdio'],
-"   \ }
 
 " " vim-lightline
 let g:lightline = { 'colorscheme': 'one' }
@@ -224,24 +198,11 @@ nmap <leader>bsl :rightbelow vnew<cr>
 " git
 nmap <leader>gs :Gstatus<cr>
 
-" " language
-" nmap <leader>lR :call LanguageClient#textDocument_references()<CR>
-" nmap <leader>lS :call LanguageClient#textDocument_documentSymbol()<CR>
-" nmap <leader>la :call LanguageClient#textDocument_codeAction()<CR>
-" nmap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-" nmap <leader>ld :call LanguageClient#textDocument_definition()<cr>
-" nmap <leader>lh :call LanguageClient#textDocument_hover()<cr>
-" nmap <leader>lm :call LanguageClient_contextMenu()<cr>
-" nmap <leader>lr :call LanguageClient#textDocument_rename()<cr>
-
-" " autocmd FileType typescript nmap <buffer> <localleader>lD :TSDoc<cr>
-" autocmd FileType typescript nmap <buffer> <localleader>lF :TSGetCodeFix<cr>
-" autocmd FileType typescript nmap <buffer> <localleader>lR :TSRefs<cr>
-" autocmd FileType typescript nmap <buffer> <localleader>ld :TSDef<cr>
-" autocmd FileType typescript nmap <buffer> <localleader>li :TSImport<cr>
-" autocmd FileType typescript nmap <buffer> <localleader>lr :TSRename
-" autocmd FileType typescript nmap <buffer> <localleader>lt :TSTypeDef<cr>
-" autocmd FileType typescript nmap <buffer> <localleader>lx :TSRestart<cr>
+" language
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gt <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gr <Plug>(coc-references)
 
 " " search
 nmap <leader>sC :FzfColors<cr>
