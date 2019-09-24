@@ -3,6 +3,7 @@ let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
 
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'arcticicestudio/nord-vim'           " Theme
 Plug 'HerringtonDarkholme/yats.vim'       " The most advanced TypeScript Syntax Highlighting in Vim
 Plug 'LnL7/vim-nix', { 'for': ['nix'] }		" Vim configuration files for Nix
 Plug 'airblade/vim-gitgutter'							" A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks and partial hunks.
@@ -30,6 +31,11 @@ Plug 'tpope/vim-surround'                 " quoting/parenthesizing made simple
 Plug 'w0rp/ale'                           " Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support
 call plug#end()
 
+" nord
+let g:nord_uniform_diff_background = 1
+let g:nord_italic = 1
+let g:nord_underline = 1
+
 " vim-bufkill
 let g:BufKillCreateMappings = 0
 
@@ -44,7 +50,7 @@ let g:EasyMotion_smartcase = 1
 let g:fzf_command_prefix = 'Fzf'
 
 " " vim-lightline
-let g:lightline = { 'colorscheme': 'one' }
+let g:lightline = { 'colorscheme': 'nord' }
 
 " vim-move
 let g:move_map_keys = 0
@@ -147,8 +153,8 @@ set wildignore+=*/vendor/*
 set wrap
 
 " theme
-colorscheme onedark
-highlight Normal ctermfg=249 ctermbg=236 guifg=#afb7c0 guibg=111213 guisp=NONE cterm=NONE gui=NONE
+colorscheme nord
+" highlight Normal ctermfg=249 ctermbg=236 guifg=#afb7c0 guibg=111213 guisp=NONE cterm=NONE gui=NONE
 
 " ==========================================================
 " non-mnemonic key mapping
