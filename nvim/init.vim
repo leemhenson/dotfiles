@@ -12,7 +12,6 @@ Plug 'artnez/vim-wipeout'									" Destroy all buffers that are not open in any
 Plug 'easymotion/vim-easymotion'					" Vim motions on speed!
 Plug 'elzr/vim-json'											" A better JSON for Vim
 Plug 'itchyny/lightline.vim'							" A light and configurable statusline/tabline plugin for Vim
-Plug 'joshdick/onedark.vim'								" theme
 Plug 'junegunn/fzf', { 'dir': '~/.local/share/nvim/fzf', 'do': './install --bin' }	" fzf for nvim
 Plug 'junegunn/fzf.vim'										" Things you can do with fzf and Vim.
 Plug 'junegunn/vim-peekaboo'							" see the contents of the registers.
@@ -226,6 +225,11 @@ nmap <leader>wsh :topleft vnew<cr>
 nmap <leader>wsj :botright new<cr>
 nmap <leader>wsk :topleft new<cr>
 nmap <leader>wsl :botright vnew<cr>
+
+" show syntax highlighting group under cursor
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " ==========================================================
 " autocommands
