@@ -153,7 +153,9 @@ set wrap
 
 " theme
 colorscheme nord
-" highlight Normal ctermfg=249 ctermbg=236 guifg=#afb7c0 guibg=111213 guisp=NONE cterm=NONE gui=NONE
+highlight Normal ctermfg=249 ctermbg=236 guifg=#afb7c0 guibg=111213 guisp=NONE cterm=NONE gui=NONE
+hi typescriptImport ctermfg=4 guifg=#81A1C1
+" hi typescriptIdentifierName ctermfg=5 guifg=#B48EAD
 
 " ==========================================================
 " non-mnemonic key mapping
