@@ -97,6 +97,7 @@ in
     pkgs.stack
     pkgs.taskwarrior
     pkgs.tldr
+    pkgs.tmux
     pkgs.yarn
   ];
 
