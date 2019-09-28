@@ -12,6 +12,7 @@ Plug 'artnez/vim-wipeout'									" Destroy all buffers that are not open in any
 Plug 'easymotion/vim-easymotion'					" Vim motions on speed!
 Plug 'elzr/vim-json'											" A better JSON for Vim
 Plug 'itchyny/lightline.vim'							" A light and configurable statusline/tabline plugin for Vim
+Plug 'jceb/vim-orgmode'                   " Org-mode
 Plug 'junegunn/fzf', { 'dir': '~/.local/share/nvim/fzf', 'do': './install --bin' }	" fzf for nvim
 Plug 'junegunn/fzf.vim'										" Things you can do with fzf and Vim.
 Plug 'junegunn/vim-peekaboo'							" see the contents of the registers.
