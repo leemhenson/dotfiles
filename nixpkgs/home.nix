@@ -79,6 +79,7 @@
     pkgs.coreutils
     pkgs.curl
     pkgs.fd
+    pkgs.gawk
     pkgs.git-crypt
     pkgs.gitAndTools.diff-so-fancy
     pkgs.gitAndTools.tig
@@ -356,6 +357,7 @@
       DEFAULT_CHEAT_DIR = "$DOTFILES/cheatsheets";
     };
     shellAliases = {
+      awk = "gawk";
       grom = "git rebase origin/master";
       gt = "git tree";
       j = "z";
