@@ -15,6 +15,7 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 12,
   "editor.formatOnSave": true,
+  "editor.gotoLocation.multiple": "goto",
   "editor.minimap.enabled": false,
   "editor.rulers": [
     100
@@ -38,6 +39,7 @@
       ]
     }
   },
+  "eslint.packageManager": "pnpm",
   "explorer.openEditors.visible": 0,
   "extensions.ignoreRecommendations": false,
   "files.exclude": {
@@ -49,7 +51,6 @@
     "**/CVS": true,
     "**/build": true,
     "**/dist": true,
-    "**/generated": true,
     "**/log": true,
     "**/node_modules": true,
     "**/tmp": true
@@ -76,9 +77,22 @@
   "languageServerHaskell.useCustomHieWrapper": true,
   "languageServerHaskell.useCustomHieWrapperPath": "${HOME}/.local/bin/hie-wrapper",
   "liveshare.featureSet": "insiders",
+  "org.todoKeywords": [
+    "TODO",
+    "PROG",
+    "DONE",
+    "BLOK"
+  ],
   "prettier.requireConfig": true,
   "search.location": "panel",
+  "shellformat.flag": "-sr -bn",
   "terminal.external.osxExec": "iTerm.app",
+  "todohighlight.keywords": [{
+    "text": "TODO",
+    "color": "black",
+    "backgroundColor": "yellow",
+    "borderRadius": "1px solid #ddd"
+  }],
   "todohighlight.toggleURI": true,
   "tslint.packageManager": "yarn",
   "typescript.extension.sortImports.pathSortOrder": [
@@ -92,6 +106,9 @@
   "typescript.referencesCodeLens.enabled": false,
   "typescript.reportStyleChecksAsWarnings": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.visual": "block",
   "vim.disableExtension": false,
   "vim.easymotion": true,
   "vim.easymotionMarkerFontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
