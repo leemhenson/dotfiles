@@ -15,7 +15,11 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 12,
   "editor.formatOnSave": true,
-  "editor.gotoLocation.multiple": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleImplemenations": "goto",
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "editor.minimap.enabled": false,
   "editor.rulers": [
     100
@@ -72,18 +76,7 @@
   "gitlens.keymap": "chorded",
   "html.format.endWithNewline": true,
   "javascript.validate.enable": false,
-  "languageServerHaskell.enableHIE": true,
-  "languageServerHaskell.hieExecutablePath": "${HOME}/.local/bin/hie",
-  "languageServerHaskell.useCustomHieWrapper": true,
-  "languageServerHaskell.useCustomHieWrapperPath": "${HOME}/.local/bin/hie-wrapper",
   "liveshare.featureSet": "insiders",
-  "org.todoKeywords": [
-    "TODO",
-    "PROG",
-    "DONE",
-    "BLOK"
-  ],
-  "prettier.requireConfig": true,
   "search.location": "panel",
   "shellformat.flag": "-sr -bn",
   "terminal.external.osxExec": "iTerm.app",
