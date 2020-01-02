@@ -72,7 +72,6 @@
   home.packages = [
     pkgs.bash
     pkgs.bat
-    pkgs.cachix
     pkgs.cargo
     pkgs.cheat
     pkgs.chruby
