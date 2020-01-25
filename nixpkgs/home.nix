@@ -94,6 +94,7 @@
     pkgs.taskwarrior
     pkgs.tldr
     pkgs.tmux
+    pkgs.wget
     pkgs.yarn
   ];
 
