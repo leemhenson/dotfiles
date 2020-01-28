@@ -70,7 +70,6 @@
   "gitlens.keymap": "chorded",
   "html.format.endWithNewline": true,
   "javascript.validate.enable": false,
-  "search.location": "panel",
   "shellformat.flag": "-sr -bn",
   "terminal.external.osxExec": "iTerm.app",
   "todohighlight.keywords": [
