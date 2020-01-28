@@ -17,13 +17,10 @@
   "editor.formatOnSave": true,
   "editor.gotoLocation.multipleDeclarations": "goto",
   "editor.gotoLocation.multipleDefinitions": "goto",
-  "editor.gotoLocation.multipleImplemenations": "goto",
   "editor.gotoLocation.multipleReferences": "goto",
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "editor.minimap.enabled": false,
-  "editor.rulers": [
-    100
-  ],
+  "editor.rulers": [100],
   "editor.suggestSelection": "first",
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
@@ -32,10 +29,7 @@
       "textMateRules": [
         {
           "name": "keywords",
-          "scope": [
-            "keyword",
-            "punctuation.definition.keyword"
-          ],
+          "scope": ["keyword", "punctuation.definition.keyword"],
           "settings": {
             "foreground": "#737c8c"
           }
@@ -76,16 +70,17 @@
   "gitlens.keymap": "chorded",
   "html.format.endWithNewline": true,
   "javascript.validate.enable": false,
-  "liveshare.featureSet": "insiders",
   "search.location": "panel",
   "shellformat.flag": "-sr -bn",
   "terminal.external.osxExec": "iTerm.app",
-  "todohighlight.keywords": [{
-    "text": "TODO",
-    "color": "black",
-    "backgroundColor": "yellow",
-    "borderRadius": "1px solid #ddd"
-  }],
+  "todohighlight.keywords": [
+    {
+      "text": "TODO",
+      "color": "black",
+      "backgroundColor": "yellow",
+      "borderRadius": "1px solid #ddd"
+    }
+  ],
   "todohighlight.toggleURI": true,
   "tslint.packageManager": "yarn",
   "typescript.extension.sortImports.pathSortOrder": [
@@ -110,31 +105,16 @@
   "vim.neovimPath": "/Users/leehenson/.nix-profile/bin/vim",
   "vim.normalModeKeyBindings": [
     {
-      "before": [
-        "g",
-        "d"
-      ],
-      "commands": [
-        "editor.action.revealDefinition"
-      ]
+      "before": ["g", "d"],
+      "commands": ["editor.action.revealDefinition"]
     },
     {
-      "before": [
-        "g",
-        "D"
-      ],
-      "commands": [
-        "editor.action.revealDefinitionAside"
-      ]
+      "before": ["g", "D"],
+      "commands": ["editor.action.revealDefinitionAside"]
     },
     {
-      "before": [
-        "g",
-        "t"
-      ],
-      "commands": [
-        "editor.action.goToTypeDefinition"
-      ]
+      "before": ["g", "t"],
+      "commands": ["editor.action.goToTypeDefinition"]
     }
   ],
   "vim.useSystemClipboard": true,
