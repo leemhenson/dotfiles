@@ -78,6 +78,7 @@
     pkgs.chruby
     pkgs.coreutils
     pkgs.curl
+    pkgs.dhall-json
     pkgs.fd
     pkgs.gawk
     pkgs.git-crypt
