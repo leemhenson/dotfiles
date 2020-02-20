@@ -69,6 +69,7 @@
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.keymap": "chorded",
   "html.format.endWithNewline": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
   "shellformat.flag": "-sr -bn",
   "terminal.external.osxExec": "iTerm.app",
