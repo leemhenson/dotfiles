@@ -72,7 +72,6 @@
   home.packages = [
     pkgs.bash
     pkgs.bat
-    pkgs.broot
     pkgs.cargo
     pkgs.cheat
     pkgs.chruby
@@ -303,7 +302,7 @@
     oh-my-zsh = {
       custom = "$DOTFILES/oh-my-zsh";
       enable = true;
-      plugins = [ "docker" "git" "httpie" "stack" "taskwarrior" "vi-mode" "z" ];
+      plugins = [ "docker" "git" "httpie" "taskwarrior" "vi-mode" "z" ];
       theme = "custom";
     };
     plugins = [
