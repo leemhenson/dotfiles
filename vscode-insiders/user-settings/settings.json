@@ -1,4 +1,7 @@
 {
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -71,6 +74,7 @@
   "html.format.endWithNewline": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
+  "mermaid.vscode.minimap": false,
   "shellformat.flag": "-sr -bn",
   "terminal.external.osxExec": "iTerm.app",
   "todohighlight.keywords": [
