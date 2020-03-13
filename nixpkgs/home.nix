@@ -57,6 +57,14 @@
       '';
     };
 
+    ".sqitch/sqitch.conf" = {
+      text = ''
+        [user]
+	      name = Lee Henson
+	      email = lee.m.henson@gmail.com
+      '';
+    };
+
     ".taskrc" = {
       source = ~/.dotfiles/taskwarrior/taskrc;
     };
@@ -89,6 +97,7 @@
     pkgs.nodejs-13_x
     pkgs.openssh
     pkgs.openssl
+    pkgs.pgcli
     pkgs.readline
     pkgs.ripgrep
     pkgs.stack
