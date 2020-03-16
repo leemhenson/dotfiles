@@ -62,6 +62,9 @@
         [user]
 	      name = Lee Henson
 	      email = lee.m.henson@gmail.com
+
+        [engine "pg"]
+	      client = /Applications/Postgres.app/Contents/Versions/11/bin/psql
       '';
     };
 
