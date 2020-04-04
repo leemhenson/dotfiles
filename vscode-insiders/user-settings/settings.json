@@ -40,7 +40,8 @@
       ]
     }
   },
-  "eslint.packageManager": "pnpm",
+  "eslint.validate": ["graphql", "typescript", "typescriptreact"],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
   "explorer.openEditors.visible": 0,
   "extensions.ignoreRecommendations": false,
   "files.exclude": {
