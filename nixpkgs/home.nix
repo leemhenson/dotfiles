@@ -105,6 +105,7 @@
     pkgs.ripgrep
     pkgs.stack
     pkgs.taskwarrior
+    pkgs.terraform
     pkgs.tldr
     pkgs.tmux
     pkgs.wget
@@ -244,6 +245,9 @@
       };
       "github.com" = {
         identityFile = "~/.ssh/github";
+      };
+      "digitalocean.com" = {
+        identityFile = "~/.ssh/smol";
       };
     };
   };
