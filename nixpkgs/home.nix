@@ -297,7 +297,7 @@
 
       case "$IN_NIX_SHELL" in
         impure) export PATH=''${PATH/$HOME\/.nix-profile\/bin:/} ;;
-             *) export PATH="./node_modules/.bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$HOME/.config/vscode/wrapper:$HOME/.config/vscode-insiders/wrapper:$PATH" ;;
+             *) export PATH="./node_modules/.bin:$HOME/.pulumi:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$HOME/.config/vscode/wrapper:$HOME/.config/vscode-insiders/wrapper:$PATH" ;;
       esac
 
       # This speeds up pasting w/ autosuggest
