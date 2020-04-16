@@ -89,6 +89,7 @@
     pkgs.coreutils
     pkgs.curl
     pkgs.dhall-json
+    pkgs.doctl
     pkgs.fd
     pkgs.gawk
     pkgs.git-crypt
@@ -105,7 +106,6 @@
     pkgs.ripgrep
     pkgs.stack
     pkgs.taskwarrior
-    pkgs.terraform
     pkgs.tldr
     pkgs.tmux
     pkgs.wget
