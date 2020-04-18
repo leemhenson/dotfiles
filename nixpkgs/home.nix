@@ -81,6 +81,7 @@
   };
 
   home.packages = [
+    pkgs.awscli
     pkgs.bash
     pkgs.bat
     pkgs.cargo
