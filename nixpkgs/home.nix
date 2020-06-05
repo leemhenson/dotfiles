@@ -105,6 +105,7 @@
     pkgs.pgcli
     pkgs.readline
     pkgs.ripgrep
+    pkgs.sbt
     pkgs.stack
     pkgs.taskwarrior
     pkgs.tldr
