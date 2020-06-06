@@ -106,6 +106,7 @@
     pkgs.readline
     pkgs.ripgrep
     pkgs.sbt
+    pkgs.scala
     pkgs.stack
     pkgs.taskwarrior
     pkgs.tldr
