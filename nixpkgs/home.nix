@@ -81,6 +81,7 @@
   };
 
   home.packages = [
+    pkgs.ammonite-repl
     pkgs.awscli
     pkgs.bash
     pkgs.bat
