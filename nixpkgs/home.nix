@@ -96,6 +96,7 @@
     pkgs.gawk
     pkgs.git-crypt
     pkgs.gitAndTools.diff-so-fancy
+    pkgs.gitAndTools.gh
     pkgs.gitAndTools.tig
     pkgs.gnupg
     pkgs.httpie
