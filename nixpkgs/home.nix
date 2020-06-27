@@ -102,7 +102,7 @@
     pkgs.httpie
     pkgs.jq
     pkgs.mill
-    pkgs.nodejs-13_x
+    pkgs.nodejs-14_x
     pkgs.openssh
     pkgs.openssl
     pkgs.pgcli
