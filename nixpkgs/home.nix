@@ -99,6 +99,7 @@
     pkgs.gitAndTools.gh
     pkgs.gitAndTools.tig
     pkgs.gnupg
+    pkgs.google-cloud-sdk
     pkgs.httpie
     pkgs.jq
     pkgs.mill
