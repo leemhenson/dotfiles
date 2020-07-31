@@ -375,6 +375,7 @@
       }
     ];
     sessionVariables = {
+      BAT_PAGER = "";
       CHEATCOLORS = "true";
       CLICOLOR = "true";
       DOTFILES = "$HOME/.dotfiles";
