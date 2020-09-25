@@ -129,6 +129,9 @@
   "window.openFoldersInNewWindow": "off",
   "window.restoreFullscreen": true,
   "window.zoomLevel": 0,
+  "workbench.colorCustomizations": {
+    "errorLens.errorBackground": "#fff0"
+  },
   "workbench.colorTheme": "Plastic - deprioritised punctuation",
   "workbench.commandPalette.preserveInput": true,
   "workbench.editor.enablePreview": false,
