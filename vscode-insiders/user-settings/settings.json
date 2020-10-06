@@ -5,6 +5,9 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -88,7 +91,6 @@
     }
   ],
   "todohighlight.toggleURI": true,
-  "tslint.packageManager": "yarn",
   "typescript.extension.sortImports.pathSortOrder": [
     "package",
     "relativeUpLevel",
@@ -105,7 +107,6 @@
   "vim.cursorStylePerMode.visual": "block",
   "vim.disableExtension": false,
   "vim.easymotion": true,
-  "vim.easymotionMarkerFontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "vim.enableNeovim": true,
   "vim.leader": " ",
   "vim.neovimPath": "/Users/leehenson/.nix-profile/bin/vim",
