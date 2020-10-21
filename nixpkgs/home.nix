@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  trunk = import <trunk> {};
+in
 {
   home.file = {
     ".config/bat/config" = {
@@ -103,7 +106,7 @@
     pkgs.httpie
     pkgs.jq
     pkgs.mill
-    pkgs.nodejs-14_x
+    trunk.nodejs-15_x
     pkgs.openssh
     pkgs.openssl
     pkgs.pgcli
