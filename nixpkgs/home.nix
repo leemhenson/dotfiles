@@ -60,17 +60,6 @@ in
       '';
     };
 
-    ".sqitch/sqitch.conf" = {
-      text = ''
-        [user]
-	      name = Lee Henson
-	      email = lee.m.henson@gmail.com
-
-        [engine "pg"]
-	      client = /Applications/Postgres.app/Contents/Versions/11/bin/psql
-      '';
-    };
-
     ".taskrc" = {
       source = ~/.dotfiles/taskwarrior/taskrc;
     };
@@ -383,6 +372,7 @@ in
       CLICOLOR = "true";
       DOTFILES = "$HOME/.dotfiles";
       DEFAULT_CHEAT_DIR = "$DOTFILES/cheatsheets";
+      NPM_CONFIG_USERCONFIG = "$HOME/Documents/dotfiles/npmrc";
     };
     shellAliases = {
       awk = "gawk";
