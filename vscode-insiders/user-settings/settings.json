@@ -56,6 +56,7 @@
   "extensions.ignoreRecommendations": false,
   "files.exclude": {
     "**/.DS_Store": true,
+    "**/.emitted": true,
     "**/.git": true,
     "**/.hg": true,
     "**/.svn": true,
