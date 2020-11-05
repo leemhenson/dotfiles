@@ -116,7 +116,7 @@
   "vim.easymotion": true,
   "vim.enableNeovim": true,
   "vim.leader": " ",
-  "vim.neovimPath": "/Users/leehenson/.nix-profile/bin/vim",
+  "vim.neovimPath": "/Users/leehenson/.nix-profile/bin/nvim",
   "vim.normalModeKeyBindings": [
     {
       "before": ["g", "d"],
