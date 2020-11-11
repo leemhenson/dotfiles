@@ -380,6 +380,7 @@ in
       gt = "git tree";
       j = "z";
       ls = "ls -alh --color=auto";
+      oni="/Applications/Onivim2.App/Contents/MacOS/Oni2";
     };
   };
 }
