@@ -66,7 +66,8 @@
     "**/dist": true,
     "**/log": true,
     "**/node_modules": true,
-    "**/tmp": true
+    "**/tmp": true,
+    "**/tsconfig.tsbuildinfo": true
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
