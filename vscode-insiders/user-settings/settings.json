@@ -146,6 +146,12 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.showTabs": true,
+  "workbench.editorAssociations": [
+		{
+			"viewType": "default",
+			"filenamePattern": "git-rebase-todo"
+		}
+	],
   "workbench.iconTheme": "vs-seti",
   "workbench.startupEditor": "newUntitledFile"
 }
