@@ -74,7 +74,7 @@ in
 
   home.packages = [
     pkgs.ammonite-repl
-    pkgs.awscli
+    pkgs.awscli2
     pkgs.bash
     pkgs.bat
     pkgs.cargo
