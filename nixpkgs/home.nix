@@ -9,12 +9,16 @@ in
       source = ~/.dotfiles/bat/config;
     };
 
+    # errr no idea why this has suddenly stopped working?
+    #   "Error installing file '.config/nvim/init.vim' outside $HOME"
+    # seems ok if i just comment this out tho
+    #
+    # ".config/nvim/init.vim" = {
+    #   source = ~/.dotfiles/nvim/init.vim;
+    # };
+
     ".config/pgcli/config" = {
       source = ~/.dotfiles/pgcli/config;
-    };
-
-    ".config/nvim/init.vim" = {
-      source = ~/.dotfiles/nvim/init.vim;
     };
 
     ".config/vscode/wrapper/vscode" = {
@@ -72,6 +76,8 @@ in
     };
   };
 
+  home.homeDirectory = "/Users/leemhenson";
+
   home.packages = [
     pkgs.ammonite-repl
     pkgs.awscli2
@@ -82,7 +88,7 @@ in
     pkgs.chruby
     pkgs.coreutils
     pkgs.curl
-    pkgs.dhall-json
+    # pkgs.dhall-json
     pkgs.doctl
     pkgs.fd
     pkgs.gawk
