@@ -53,6 +53,7 @@
   "eslint.validate": ["graphql", "typescript", "typescriptreact"],
   "eslint.workingDirectories": [{ "mode": "auto" }],
   "explorer.openEditors.visible": 0,
+  "explorer.sortOrder": "mixed",
   "extensions.ignoreRecommendations": false,
   "files.exclude": {
     "**/.DS_Store": true,
