@@ -21,6 +21,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "breadcrumbs.enabled": true,
+  "debug.javascript.codelens.npmScripts": "never",
   "editor.codeActionsOnSave": ["editor.action.formatDocument"],
   "editor.detectIndentation": false,
   "editor.folding": false,
