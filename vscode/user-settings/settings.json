@@ -1,4 +1,10 @@
 {
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -9,13 +15,18 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "breadcrumbs.enabled": true,
+  "debug.javascript.codelens.npmScripts": "never",
+  "editor.codeActionsOnSave": ["editor.action.formatDocument"],
   "editor.detectIndentation": false,
   "editor.folding": false,
   "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 12,
   "editor.formatOnSave": true,
-  "editor.gotoLocation.multiple": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "editor.minimap.enabled": false,
   "editor.rulers": [
     100
@@ -39,11 +50,14 @@
       ]
     }
   },
-  "eslint.packageManager": "pnpm",
+  "eslint.validate": ["graphql", "typescript", "typescriptreact"],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
   "explorer.openEditors.visible": 0,
+  "explorer.sortOrder": "mixed",
   "extensions.ignoreRecommendations": false,
   "files.exclude": {
     "**/.DS_Store": true,
+    "**/.emitted": true,
     "**/.git": true,
     "**/.hg": true,
     "**/.svn": true,
@@ -53,7 +67,8 @@
     "**/dist": true,
     "**/log": true,
     "**/node_modules": true,
-    "**/tmp": true
+    "**/tmp": true,
+    "**/tsconfig.tsbuildinfo": true
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
@@ -64,27 +79,14 @@
     "suppressGitVersionWarning": false,
     "suppressLineUncommittedWarning": false,
     "suppressNoRepositoryWarning": false,
-    "suppressResultsExplorerNotice": false,
-    "suppressShowKeyBindingsNotice": true
   },
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.keymap": "chorded",
   "html.format.endWithNewline": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
-  "languageServerHaskell.enableHIE": true,
-  "languageServerHaskell.hieExecutablePath": "${HOME}/.local/bin/hie",
-  "languageServerHaskell.useCustomHieWrapper": true,
-  "languageServerHaskell.useCustomHieWrapperPath": "${HOME}/.local/bin/hie-wrapper",
-  "liveshare.featureSet": "insiders",
-  "org.todoKeywords": [
-    "TODO",
-    "PROG",
-    "DONE",
-    "BLOK"
-  ],
   "prettier.requireConfig": true,
-  "search.location": "panel",
   "shellformat.flag": "-sr -bn",
   "terminal.external.osxExec": "iTerm.app",
   "todohighlight.keywords": [{
@@ -94,7 +96,6 @@
     "borderRadius": "1px solid #ddd"
   }],
   "todohighlight.toggleURI": true,
-  "tslint.packageManager": "yarn",
   "typescript.extension.sortImports.pathSortOrder": [
     "package",
     "relativeUpLevel",
@@ -111,7 +112,6 @@
   "vim.cursorStylePerMode.visual": "block",
   "vim.disableExtension": false,
   "vim.easymotion": true,
-  "vim.easymotionMarkerFontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "vim.enableNeovim": true,
   "vim.leader": " ",
   "vim.neovimPath": "/Users/leehenson/.nix-profile/bin/vim",
@@ -150,11 +150,20 @@
   "window.openFoldersInNewWindow": "off",
   "window.restoreFullscreen": true,
   "window.zoomLevel": 0,
+  "workbench.colorCustomizations": {
+    "errorLens.errorBackground": "#fff0"
+  },
   "workbench.colorTheme": "Plastic - deprioritised punctuation",
   "workbench.commandPalette.preserveInput": true,
   "workbench.editor.enablePreview": false,
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.showTabs": true,
+  "workbench.editorAssociations": [
+		{
+			"viewType": "default",
+			"filenamePattern": "git-rebase-todo"
+		}
+	],
   "workbench.iconTheme": "vs-seti",
   "workbench.startupEditor": "newUntitledFile"
 }
