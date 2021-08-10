@@ -88,7 +88,6 @@ in
     pkgs.chruby
     pkgs.coreutils
     pkgs.curl
-    # pkgs.dhall-json
     pkgs.doctl
     pkgs.fd
     pkgs.gawk
@@ -97,11 +96,10 @@ in
     pkgs.gitAndTools.gh
     pkgs.gitAndTools.tig
     pkgs.gnupg
-    pkgs.google-cloud-sdk
     pkgs.httpie
     pkgs.jq
     pkgs.mill
-    pkgs.nodejs-slim-15_x
+    pkgs.nodejs-slim-16_x
     pkgs.openssh
     pkgs.openssl
     pkgs.pgcli
@@ -110,7 +108,6 @@ in
     pkgs.sbt
     pkgs.scala
     pkgs.stack
-    pkgs.taskwarrior
     pkgs.tldr
     pkgs.tmux
     pkgs.wget
