@@ -112,6 +112,7 @@ in
     pkgs.tmux
     pkgs.wget
     pkgs.yarn
+    pkgs.zsh
   ];
 
   nixpkgs.config = {
