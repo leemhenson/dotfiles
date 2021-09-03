@@ -24,6 +24,7 @@
   },
   "breadcrumbs.enabled": true,
   "debug.javascript.codelens.npmScripts": "never",
+  "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": ["editor.action.formatDocument"],
   "editor.detectIndentation": false,
   "editor.folding": false,
