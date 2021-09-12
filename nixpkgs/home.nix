@@ -25,19 +25,23 @@ in
       source = ~/.dotfiles/vscode/wrapper/vscode;
     };
 
-    ".config/vscode/User" = {
-      source = ~/.dotfiles/vscode/user-settings;
-      recursive = true;
-    };
+    # switched to settings sync
+
+    # ".config/vscode/User" = {
+    #   source = ~/.dotfiles/vscode/user-settings;
+    #   recursive = true;
+    # };
 
     ".config/vscode-insiders/wrapper/code" = {
       source = ~/.dotfiles/vscode-insiders/wrapper/code;
     };
 
-    ".config/vscode-insiders/User" = {
-      source = ~/.dotfiles/vscode-insiders/user-settings;
-      recursive = true;
-    };
+    # switched to settings sync
+
+    # ".config/vscode-insiders/User" = {
+    #   source = ~/.dotfiles/vscode-insiders/user-settings;
+    #   recursive = true;
+    # };
 
     ".direnvrc" = {
       text = ''
@@ -79,11 +83,9 @@ in
   home.homeDirectory = "/Users/leemhenson";
 
   home.packages = [
-    pkgs.ammonite-repl
-    pkgs.awscli2
+      pkgs.awscli2
     pkgs.bash
     pkgs.bat
-    pkgs.cargo
     pkgs.cheat
     pkgs.chruby
     pkgs.coreutils
@@ -98,16 +100,12 @@ in
     pkgs.gnupg
     pkgs.httpie
     pkgs.jq
-    pkgs.mill
     pkgs.nodejs-slim-16_x
     pkgs.openssh
     pkgs.openssl
     pkgs.pgcli
     pkgs.readline
     pkgs.ripgrep
-    pkgs.sbt
-    pkgs.scala
-    pkgs.stack
     pkgs.tldr
     pkgs.tmux
     pkgs.wget
@@ -235,6 +233,7 @@ in
 
   programs.neovim = {
     enable = true;
+    extraConfig = (builtins.readFile ../nvim/init.vim);
     viAlias = true;
     vimAlias = true;
     withNodeJs = true;
@@ -248,9 +247,6 @@ in
       };
       "github.com" = {
         identityFile = "~/.ssh/github";
-      };
-      "digitalocean.com" = {
-        identityFile = "~/.ssh/smol";
       };
     };
   };
