@@ -1,0 +1,12 @@
+vim.o.syntax = 'on'             -- Enable syntax highlighting
+vim.o.clipboard = 'unnamedplus' -- Allow copy/paste from anywhere
+vim.o.colorcolumn = 100         -- Highlight 100th column
+vim.o.cursorline = true         -- Highlight current line
+vim.o.expandtab = true          -- use spaces instead of tabs
+vim.o.hidden = true             -- Enable hidden buffers (navigate away from buffer with unsaved changes)
+vim.o.backup = false            -- Disable overwrite-backup files
+vim.o.writebackup = false       -- Disable overwrite-backup files
+vim.o.incsearch = true          -- Makes search act like search in modern browsers
+vim.o.hlsearch = false          -- Don't highlight all search matches
+vim.o.errorbells = false        -- Don't beep on errors
+vim.o.showmode = false          -- Diasble current-mode message
