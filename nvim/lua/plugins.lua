@@ -36,7 +36,12 @@ packer.startup(function(use)
   }
 
   -- Languages
-  use {'leafgarland/typescript-vim', ft = {'typescript', 'typescriptreact'}}
+	use { 'pangloss/vim-javascript', ft = { 'javascript' } }
+	use { 'maxmellon/vim-jsx-pretty', ft = { 'javascriptreact' } }
+  use { 'leafgarland/typescript-vim', ft = { 'typescript' }}
+	use { 'peitalin/vim-jsx-typescript', ft = { 'typescriptreact' }}
+	use { 'LnL7/vim-nix' }
+	use { 'jparise/vim-graphql' }
 
   -- Telescope
   use {
