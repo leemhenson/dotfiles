@@ -4,18 +4,15 @@ let
   trunk = import <trunk> {};
 in
 {
+  xdg.configFile.nvim = {
+    source = ~/.dotfiles/nvim;
+    recursive = true;
+  };
+
   home.file = {
     ".config/bat/config" = {
       source = ~/.dotfiles/bat/config;
     };
-
-    # errr no idea why this has suddenly stopped working?
-    #   "Error installing file '.config/nvim/init.vim' outside $HOME"
-    # seems ok if i just comment this out tho
-    #
-    # ".config/nvim/init.vim" = {
-    #   source = ~/.dotfiles/nvim/init.vim;
-    # };
 
     ".config/pgcli/config" = {
       source = ~/.dotfiles/pgcli/config;
@@ -83,11 +80,10 @@ in
   home.homeDirectory = "/Users/leemhenson";
 
   home.packages = [
-      pkgs.awscli2
+    pkgs.awscli2
     pkgs.bash
     pkgs.bat
     pkgs.cheat
-    pkgs.chruby
     pkgs.coreutils
     pkgs.curl
     pkgs.doctl
@@ -100,7 +96,9 @@ in
     pkgs.gnupg
     pkgs.httpie
     pkgs.jq
-    pkgs.nodejs-slim-16_x
+    pkgs.neovim
+    pkgs.nginx
+    # pkgs.openjdk8_headless
     pkgs.openssh
     pkgs.openssl
     pkgs.pgcli
@@ -109,7 +107,6 @@ in
     pkgs.tldr
     pkgs.tmux
     pkgs.wget
-    pkgs.yarn
     pkgs.zsh
   ];
 
@@ -231,20 +228,20 @@ in
     enable = true;
   };
 
-  programs.neovim = {
-    enable = true;
-    extraConfig = (builtins.readFile ../nvim/init.vim);
-    viAlias = true;
-    vimAlias = true;
-    withNodeJs = true;
-  };
+  # programs.neovim = {
+  #   enable = true;
+  #   viAlias = true;
+  #   vimAlias = true;
+  #   withNodeJs = true;
+
+  #   # plugins = with pkgs.vimPlugins; [
+  #   #   packer-nvim
+  #   # ];
+  # };
 
   programs.ssh = {
     enable = true;
     matchBlocks = {
-      "bitbucket.org" = {
-        identityFile = "~/.ssh/bitbucket";
-      };
       "github.com" = {
         identityFile = "~/.ssh/github";
       };
@@ -292,7 +289,6 @@ in
 
       source $HOME/.dotfiles/oh-my-zsh/plugins/vi-mode.zsh
       source $HOME/.nix-profile/etc/profile.d/nix.sh
-      source $HOME/.nix-profile/share/chruby/chruby.sh
 
       case "$IN_NIX_SHELL" in
         impure) export PATH=''${PATH/$HOME\/.nix-profile\/bin:/} ;;
@@ -313,6 +309,33 @@ in
 
       zstyle :bracketed-paste-magic paste-init pasteinit
       zstyle :bracketed-paste-magic paste-finish pastefinish
+
+      # nvm
+      if [ -s "$HOME/.nvm/nvm.sh" ]; then
+        export NVM_DIR="$HOME/.nvm"
+
+        source "$NVM_DIR/nvm.sh"
+        [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+
+        load-nvmrc() {
+          local nvmrc_path="$(nvm_find_nvmrc)"
+
+          if [ -n "$nvmrc_path" ]; then
+            local node_version="$(nvm version)"
+            local nvmrc_node_version=$(nvm version "$(cat "''${nvmrc_path}")")
+
+            if [ "$nvmrc_node_version" = "N/A" ]; then
+              nvm install
+            elif [ "$nvmrc_node_version" != "$node_version" ]; then
+              nvm use
+            fi
+          fi
+        }
+
+        autoload -U add-zsh-hook
+        add-zsh-hook chpwd load-nvmrc
+        load-nvmrc
+      fi
     '';
     oh-my-zsh = {
       custom = "$DOTFILES/oh-my-zsh";

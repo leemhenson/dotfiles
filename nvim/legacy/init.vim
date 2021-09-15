@@ -246,4 +246,3 @@ autocmd BufWritePre * StripWhitespace
 
 " reload file on focus if it changed on disk
 autocmd FocusGained * silent! checktime
-
