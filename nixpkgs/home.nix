@@ -336,6 +336,9 @@ in
         add-zsh-hook chpwd load-nvmrc
         load-nvmrc
       fi
+
+			# 1password cli
+			export OP_SESSION_trayio="dtt7z_7gpZ4Io1A27z3k_m2Y_7BBhJqCHftdWdDaDDg"
     '';
     oh-my-zsh = {
       custom = "$DOTFILES/oh-my-zsh";
