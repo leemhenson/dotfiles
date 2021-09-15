@@ -24,7 +24,18 @@ packer.startup(function(use)
   use { 'wbthomason/packer.nvim', opt = true }
 
   -- LSP
-  use 'neovim/nvim-lspconfig'
+  use {
+		'neovim/nvim-lspconfig',
+		config = function()
+			local lspconfig = require('lspconfig');
+
+			lspconfig.graphql.setup{}
+			lspconfig.html.setup{}
+			lspconfig.jsonls.setup{}
+			lspconfig.tsserver.setup{}
+		end
+	}
+
   use 'nvim-lua/completion-nvim'
   use 'nvim-lua/lsp_extensions.nvim'
 
