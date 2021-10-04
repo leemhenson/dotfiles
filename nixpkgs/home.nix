@@ -399,6 +399,7 @@ in
     };
     shellAliases = {
       awk = "gawk";
+      gcnv = "git commit --no-verify -m ";
       grom = "git rebase origin/master";
       gt = "git tree";
       j = "z";
