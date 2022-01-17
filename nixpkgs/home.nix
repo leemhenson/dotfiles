@@ -84,6 +84,7 @@ in
     pkgs.bash
     pkgs.bat
     pkgs.cheat
+    pkgs.cmake
     pkgs.coreutils
     pkgs.curl
     pkgs.doctl
@@ -106,6 +107,7 @@ in
     pkgs.ripgrep
     pkgs.tldr
     pkgs.tmux
+    # pkgs.vips
     pkgs.wget
     pkgs.zsh
   ];
