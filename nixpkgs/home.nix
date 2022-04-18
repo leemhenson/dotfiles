@@ -14,6 +14,10 @@ in
       source = ~/.dotfiles/bat/config;
     };
 
+    ".config/helix/config.toml" = {
+      source = ~/.dotfiles/helix/config.toml;
+    };
+
     ".config/pgcli/config" = {
       source = ~/.dotfiles/pgcli/config;
     };
@@ -95,6 +99,7 @@ in
     pkgs.gitAndTools.gh
     pkgs.gitAndTools.tig
     pkgs.gnupg
+    pkgs.helix
     pkgs.httpie
     pkgs.jq
     pkgs.neovim
