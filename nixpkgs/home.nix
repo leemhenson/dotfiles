@@ -4,10 +4,10 @@ let
   trunk = import <trunk> {};
 in
 {
-  xdg.configFile.nvim = {
-    source = ~/.dotfiles/nvim;
-    recursive = true;
-  };
+  # xdg.configFile.nvim = {
+  #   source = ~/.dotfiles/nvim;
+  #   recursive = true;
+  # };
 
   home.file = {
     ".config/bat/config" = {
@@ -411,7 +411,7 @@ in
       gt = "git tree";
       j = "z";
       ls = "ls -alh --color=auto";
-      oni="/Applications/Onivim2.App/Contents/MacOS/Oni2";
+      oni = "/Applications/Onivim2.App/Contents/MacOS/Oni2";
     };
   };
 }
