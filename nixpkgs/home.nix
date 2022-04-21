@@ -357,15 +357,7 @@ in
         src = builtins.fetchGit {
           name = "djui-alias-tips";
           url = "https://github.com/djui/alias-tips.git";
-          rev = "881ac952033dc62ba9ea3a215e45eb9b9b945362";
-        };
-      }
-      {
-        name = "fzf-z";
-        src = builtins.fetchGit {
-          name = "andrewferrier-fzf";
-          url = "https://github.com/andrewferrier/fzf-z.git";
-          rev = "4dee410557024671ae7763fce342009d03aa171f";
+          rev = "45e4e97ba4ec30c7e23296a75427964fc27fb029";
         };
       }
       {
@@ -374,7 +366,7 @@ in
         src = builtins.fetchGit {
           name = "spwhitt-nix-zsh-completions";
           url = "https://github.com/spwhitt/nix-zsh-completions.git";
-          rev = "8f1921160472307cbbc3e16813e57d3db7a2956e";
+          rev = "468d8cf752a62b877eba1a196fbbebb4ce4ebb6f";
         };
       }
       {
@@ -383,7 +375,7 @@ in
         src = builtins.fetchGit {
           name = "chisui-zsh-nix-shell";
           url = "https://github.com/chisui/zsh-nix-shell.git";
-          rev = "dceed031a54e4420e33f22a6b8e642f45cc829e2";
+          rev = "af6f8a266ea1875b9a3e86e14796cadbe1cfbf08";
         };
       }
       {
@@ -392,7 +384,7 @@ in
         src = builtins.fetchGit {
           name = "zsh-users-zsh-syntax-highlighting";
           url = "https://github.com/zsh-users/zsh-syntax-highlighting.git";
-          rev = "e900ad8bad53501689afcb050456400d7a8466e5";
+          rev = "c5ce0014677a0f69a10b676b6038ad127f40c6b1";
         };
       }
     ];
