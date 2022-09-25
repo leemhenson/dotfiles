@@ -9,6 +9,9 @@ in
   #   recursive = true;
   # };
 
+  home.stateVersion = "22.05";
+  home.username = "leemhenson";
+
   home.file = {
     ".config/bat/config" = {
       source = ~/.dotfiles/bat/config;
